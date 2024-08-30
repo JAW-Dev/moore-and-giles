@@ -1,0 +1,44 @@
+.facetwp-type-slider {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  .noUi-target {
+    border: none;
+    box-shadow: none;
+    background: $dark-4;
+    padding: 0;
+  }
+  .noUi-horizontal {
+    height: 1px;
+    .noUi-handle {
+      width: cRem(10);
+      height: cRem(10);
+      background: $accent-1;
+      border: none;
+      box-shadow: none;
+      border-radius: 100%;
+      top: cRem(-4);
+      right: -10px !important;
+      &:before,
+      &:after {
+        display: none;
+      }
+      &.noUi-handle-upper {
+        right: 0px !important;
+      }
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  .noUi-connect {
+    background: $accent-1;
+  }
+}
+.facetwp-slider-reset {
+  display: none !important;
+}
+
+.facetwp-slider-label {
+  font-size: cRem(13);
+}

@@ -1,0 +1,19 @@
+{% if enable %}
+
+	{% if banner.background.type == 'image' %}
+		{% set section_attrs  = ' class="hero-banner footer-banner landing-page-banner mg-background-image"' %}
+	{% elseif banner.background.type == 'video' %}
+		{% set section_attrs  = ' class="hero-banner footer-banner landing-page-banner video-banner banner__background-video"' %}
+	{% else %}
+		{% set section_attrs  = '' %}
+	{% endif %}
+
+	<section id="landing-page-banner"{{section_attrs}}>
+		{% include "components/landing/banner/background.twig" with { "background": banner.background } %}
+		{% include "components/landing/banner/content.twig" with { "content": banner.content } %}
+	</section>
+	<div id="swatch-form" class="about-the-leather__form" style="display: none;">
+		{{ do_shortcode('[gravityform id="37" ajax="true" title="true" description="true"]') }}
+	</div>
+
+{% endif %}

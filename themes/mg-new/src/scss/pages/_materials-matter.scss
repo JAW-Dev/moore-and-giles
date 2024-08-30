@@ -1,0 +1,206 @@
+.page-template-template-materials-matter {
+
+  .banner-one {
+    .hero-banner__content-heading {
+      font-size: cRem(18);
+      text-transform: uppercase;
+      color: $dark-2;
+      font-weight: bold;
+      letter-spacing: 5.09px;
+      line-height: 1.4em;
+    }
+  }
+
+  .banner-two {
+    .hero-banner__content-heading {
+      display: none;
+    }
+  }
+
+  .post_content {
+    text-align: center;
+    max-width: calc(100% - 3em);
+    line-height: 1.8;
+
+    p {
+      margin: 0;
+      line-height: 1.8em;
+      font-weight: lighter;
+      font-size: 18px;
+    }
+
+    @media (min-width: $break-tablet-large) {
+      max-width: cRem(500);
+    }
+  }
+
+  .offset-image {
+    .wrap {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      max-width: calc(100% - 3em);
+    }
+
+    &__body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__title {
+      margin: 2.5rem 0;
+      font-family: $font-serif;
+      font-size: cRem(32);
+      text-align: center;
+    }
+
+    &__text {
+      text-align: center;
+      font-size: cRem(14);
+      margin-bottom: 2.5rem;
+      margin-top: 0;
+      line-height: 1.6em;
+      font-weight: lighter;
+    }
+
+    @media (min-width: $break-tablet-large) {
+      .wrap {
+        flex-direction: row;
+        max-width: cRem(850);
+      }
+      &__title {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .offset-image-one {
+    .offset-image__body {
+      max-width: cRem(260);
+    }
+    .offset-image__image {
+      max-width: cRem(500);
+    }
+  }
+
+  .offset-image-two {
+    .offset-image__body {
+      max-width: cRem(410);
+    }
+    .offset-image__image {
+      max-width: cRem(385);
+    }
+
+    @media (min-width: $break-tablet-large) {
+      .wrap {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+
+  .banner-three {
+    text-shadow: rgba(0,0,0, 0.5) 0 2px 4px;
+
+    height: 50rem;
+
+    .hero-banner__content-heading {
+      font-size: cRem(11);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .hero-banner__content-blurb {
+      font-size: 1rem;
+      max-width: cRem(850);
+
+      p {
+        line-height: 1.4em;
+        font-size: 28px;
+        color: #FFFFFF;
+        letter-spacing: -0.41px;
+        text-align: center;
+      }
+
+      @media (min-width: $break-tablet) {
+        font-size: cRem(28);
+      }
+    }
+
+    @media (min-width: $break-tablet) {
+      height: 40rem;
+    }
+  }
+
+  .banner-four {
+    height: cRem(500);
+
+    .hero-banner__content {
+      align-items: flex-start;
+      max-width: calc(100% - 3em);
+    }
+
+    .hero-banner__content-heading,
+    .hero-banner__content-blurb {
+      color: $dark-2;
+      text-shadow: none;
+    }
+
+    .hero-banner__content-heading {
+      font-family: $font-serif;
+      font-size: cRem(32);
+      text-align: center;
+      font-weight: normal;
+      width: 100%;
+
+      @media (min-width: $break-tablet) {
+        text-align: left;
+      }
+    }
+
+    .hero-banner__content-blurb {
+      font-family: $font-sans;
+      max-width: cRem(470);
+      font-size: cRem(14);
+      margin-bottom: 2.5rem;
+      margin-top: 0;
+      line-height: 1.6em;
+      font-weight: lighter;
+      text-align: left;
+    }
+
+    .hero-banner__background-wrapper--image {
+      background-position: right center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      display: none;
+
+      @media (min-width: $break-tablet) {
+        display: flex;
+      }
+    }
+
+    .hero-banner__content-button {
+      background-color: transparent;
+      color: $dark-2;
+      padding: 0 0 0.75rem;
+      text-align: left;
+      border-bottom: 2px solid $dark-1;
+      font-size: cRem(14);
+
+      &:hover {
+        background-color: transparent;
+        color: $dark-2;
+        border-bottom: 2px solid $accent-2;
+      }
+    }
+
+    @media (min-width: $break-tablet-large) {
+      .hero-banner__content {
+        align-items: flex-start;
+        max-width: cRem(850);
+      }
+    }
+  }
+}

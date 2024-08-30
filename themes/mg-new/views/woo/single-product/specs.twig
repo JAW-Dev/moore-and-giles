@@ -1,0 +1,24 @@
+{% set margin = description ? ' margin' : '' %}
+<div class="specs{{margin}}">
+	{% if features %}
+		<div class="features">
+			<h3 class="extra-info__header">Features</h3>
+			<ul class="list">
+				{% for key, feature in features %}
+					{% for item in feature %}
+						<li>{{ item }}</li>
+					{% endfor %}
+				{% endfor %}
+			</ul>
+		</div>
+	{% endif %}
+
+	{% if dimensions.enable %}
+		<div class="dimensions-weight">
+			<h3 class="extra-info__header">Dimensions</h3>
+			<div>
+				<div class="dimensions">{{ dimensions.content|wpautop }}</div>
+			</div>
+		</div>
+	{% endif %}
+</div>

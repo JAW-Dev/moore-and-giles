@@ -1,0 +1,8 @@
+@charset "UTF-8";
+// ========================================
+// Layer Index
+// ========================================
+
+@function layer-index($layer) {
+	@return index(reverse-list($layers), $layer);
+}

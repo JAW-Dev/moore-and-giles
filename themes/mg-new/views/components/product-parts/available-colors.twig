@@ -1,0 +1,23 @@
+{% set is_variable = product.is_type('variable') %}
+{% set colors_count = 0  %}
+
+{% set colors_count = fn( 'array_filter', attribute(product, 'get_attribute', ['pa_color'] )|split('|') )|length %}
+
+{% if colors_count == 0 %}
+	{% set colors_count = fn( 'array_filter', attribute(product, 'get_attribute', ['leather'] )|split('|') )|length %}
+{% endif %}
+
+{% if colors_count == 0 or colors_count == 1 %}
+	{% set colors_count = 1  %}
+	{% set colors_text = 'color' %}
+{% else %}
+	{% set colors_text = 'colors' %}
+{% endif %}
+
+{% if link %}
+	<a href="{{ product.link }}" class="media-content__available-colors-link">
+{% endif %}
+<div class="media-content__available-colors{% if classes %} {{classes}}{% endif %}">+ Available in {{ colors_count }} {{ colors_text }}</div>
+{% if link %}
+	</a>
+{% endif %}

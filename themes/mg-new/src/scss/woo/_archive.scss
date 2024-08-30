@@ -1,0 +1,133 @@
+$padding: 1.5em;
+
+.woocommerce-archive-sidebar {
+  display: none;
+}
+
+.woocommerce-archive-products-container {
+  padding: $padding * 2;
+}
+
+nav.woocommerce-pagination {
+  margin-top: 2em;
+}
+
+.woocommerce-archive {
+  .variable-items-wrapper[data-attribute_name="attribute_pa_color-family"] {
+    display: none;
+  }
+
+  p.price,
+  span.price {
+    del,
+    del span.amount {
+      color: #d7d7d7;
+      font-weight: 100;
+    }
+
+    ins,
+    ins span.amount {
+      color: #d44d3d;
+      text-decoration: none;
+    }
+  }
+}
+
+.entry {
+  margin-bottom: $padding * 2.5;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: $break-tablet-large) {
+  .woocommerce-archive-wrap {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    @media screen and (-ms-high-contrast: active),
+      screen and (-ms-high-contrast: none) {
+      display: block;
+    }
+  }
+
+  .woocommerce-archive-sidebar {
+    padding-right: $padding * 2;
+    display: block;
+    @media screen and (-ms-high-contrast: active),
+      screen and (-ms-high-contrast: none) {
+      width: 22%;
+      float: left;
+    }
+  }
+
+  .woocommerce-archive-products {
+    @media screen and (-ms-high-contrast: active),
+      screen and (-ms-high-contrast: none) {
+      width: 73%;
+      float: left;
+    }
+  }
+
+  .woocommerce-archive-products-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: $padding * 2;
+    grid-auto-rows: minmax(100px, auto);
+    padding: 0;
+    @media screen and (-ms-high-contrast: active),
+      screen and (-ms-high-contrast: none) {
+      display: block;
+    }
+  }
+
+  .entry {
+    margin-bottom: 0;
+    @media screen and (-ms-high-contrast: active),
+      screen and (-ms-high-contrast: none) {
+      display: inline-block;
+      max-width: 29%;
+      margin: 0 1% 1.5em;
+    }
+  }
+}
+
+.woocommerce-archive-products-container {
+  .entry {
+    max-width: cRem(315);
+    margin: 0 auto 3.75rem auto;
+
+    @media (min-width: $break-tablet-large) {
+      margin: 0 0 3.75rem 0;
+    }
+  }
+}
+
+.archive-page__header {
+  font-size: cRem(60);
+  font-weight: 600;
+  font-family: $font-sans;
+  margin: 0 0 cRem(32) cRem(-3); // attempt to negative out phantom left margin from Proxima Nova font
+}
+
+.search-results__label {
+  font-size: cRem(14);
+  font-family: $font-sans;
+  font-weight: normal;
+  color: #222e32;
+  text-transform: uppercase;
+}
+
+.post-type-archive {
+  .woocommerce-variation-availability,
+  .stock .in-stock,
+  .stock .available-on-backorder {
+    display: none;
+  }
+}
+
+.woocommerce-archive-products-wrapper .entry .variations {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+}

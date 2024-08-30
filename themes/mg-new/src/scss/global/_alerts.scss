@@ -1,0 +1,14 @@
+.site-wrap .woocommerce-message {
+  border: none;
+}
+.site-wrap .woocommerce-message {
+  background: transparent;
+  padding: 1rem 1.5rem;
+  &:before {
+    left: 0;
+  }
+}
+
+#cookie-notice {
+  z-index: 10000;
+}

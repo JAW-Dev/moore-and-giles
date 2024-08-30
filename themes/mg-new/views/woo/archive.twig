@@ -1,0 +1,114 @@
+{% extends "base.twig" %}
+
+{% block layout %}
+    {{function('tha_content_before')}}
+
+    {% embed 'layouts/normal.twig' %}
+        {% block content %}
+
+		{% if is_product_category_term() %}
+			{% set category_banner = fn( 'get_field', 'mg_category_background_image', 'product_cat_'~category.term_id ) %}
+		{% endif %}
+
+          {% if is_product_category_term('gifts') %}
+		  	<section class="gift-guide-top">
+				{% include "woo/archive/gift-guide/top.twig" %}
+			</section>
+          {% endif %}
+
+		  {% if is_product_category_term() and category_banner and not is_product_category_term('gifts') %}
+		  	<section class="category-top">
+				{% include "components/product-category-banner/banner.twig" with {
+					"content": {
+						"image": category_banner,
+						"title": category.name
+					},
+					"wrapper_classes": 'category-top__banner'
+				} %}
+			</section>
+          {% endif %}
+
+            <section class="woocommerce-wrap woocommerce-archive">
+                <div class="wrap wrap-woo-archive">
+
+					{% if not is_product_category_term('gifts') and not category_banner %}
+						<h2 class="archive-page__header">
+
+							{% if is_product_category %}
+								{{ category.name }}
+							{% elseif is_search == true %}
+								<p class="search-results__label">Search Results:</p>
+								{{ search_value }}
+							{% else %}
+								Shop All
+							{% endif %}
+
+						</h2>
+					{% endif %}
+
+                    <section class="woocommerce-archive-wrap">
+
+                        {% include "woo/archive/sidebar.twig" with {
+                            "sidebar": sidebar
+                        } %}
+
+						<section class="woocommerce-archive-products">
+
+							<div class="products-container-filters">
+                                {{ do_shortcode('[facetwp selections="true"]') }}
+								<button class="filters-clear" onclick="FWP.reset()">clear all</button>
+								{{ do_shortcode('[facetwp sort="true"]') }}
+							</div>
+
+							<div class="woocommerce-archive-products-wrapper facetwp-template">
+								<div class="woocommerce-archive-products-container">
+
+									{% for product in products %}
+										{% include "components/tease-product.twig" with {
+											"post": product,
+											"set_product": true,
+											"color": acf.shop.color
+										} %}
+									{% endfor %}
+
+								</div>
+								{% do action('woocommerce_after_shop_loop') %}
+							</div>
+                    	</section>
+					</section>
+                </div>
+            </section>
+
+			{% if not is_product_category_term('gifts') %}
+				{% include "woo/archive/process.twig" with {
+					"descriptors": acf.shop.descriptors
+				} %}
+			{% endif %}
+
+			{% if is_product_category_term('gifts') %}
+				<section class="gift-guide-bottom">
+					{% include "woo/archive/gift-guide/bottom.twig" %}
+				</section>
+			{% endif %}
+
+			{% include "woo/archive/50-50.twig" with {
+				"fifty_fifty": acf.shop.fifty_fifty
+			} %}
+
+			{% if not is_product_category_term('gifts') %}
+				{% set content = fn( 'get_field', 'catalog_footer_banner', 'options' ) %}
+				{% if content.hero_banner_enabled %}
+					<section class="gift-guide-bottom">
+						{% include "components/hero-banner/banner.twig" with {
+							"content": content,
+							"wrapper_classes": "gift-guide-bottom__banner",
+						} %}
+					</section>
+				{% endif %}
+			{% endif %}
+
+        {% endblock %}
+    {% endembed %}
+
+    {{function('tha_content_after')}}
+{% endblock %}

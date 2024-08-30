@@ -1,0 +1,56 @@
+{% extends "base.twig" %}
+
+{% block layout %}
+    {{function('tha_content_before')}}
+    {{function('tha_content_top')}}
+    {% embed '/layouts/full-width.twig' %}
+        {% block content %}
+            <div class="wrap">
+                <div>
+                    <h3 style="margin-top: 0;">Headings</h3>
+                    <div style="background-color: #F6F6F6; border-radius: 2px; padding: 30px;">
+                        <h1 style="margin-top: 0;">h1 - This is a main title</h1>
+                        <h2>h2 - This is a subtitle</h2>
+                        <h3>h3 - This is a section title</h3>
+                        <h4>h4 - This is a section subtitle</h4>
+                        <h5 style="margin-bottom: 0;">h5 - this is an alternate subtitle</h5>
+                    </div>
+                </div>
+                <div>
+                    <h3>Block Quote</h3>
+                    <blockquote>
+                        <p>
+                            “The Greenwood is sick, Gandalf. A darkness has fallen over it, nothing grows anymore. At least nothing good. The air is foul decay, but worse are the webs.”
+                        </p>
+                        <small>- Radagast The Brown</small>
+                    </blockquote>
+                </div>
+                <div>
+                    <h3>Buttons</h3>
+                    <div style="display: flex; justify-content: space-evenly; text-align: center; flex-wrap: wrap;">
+                        <div>
+                            <h4>Primary Buttons</h4>
+                            <div>
+                                <button class="button">Sign Up</button>
+                            </div>
+                        </div>
+                        <div>
+                            <h4>Secondary Buttons</h4>
+                            <div>
+                                <button class="button secondary">Sign Up</button>
+                            </div>
+                        </div>
+                        <div>
+                            <h4>Disabled Button</h4>
+                            <div>
+                                <button class="button" disabled>Sign Up</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endblock %}
+    {% endembed %}
+    {{function('tha_content_bottom')}}
+    {{function('tha_content_after')}}
+{% endblock %}

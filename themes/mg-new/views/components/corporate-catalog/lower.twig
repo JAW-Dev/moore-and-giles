@@ -1,0 +1,77 @@
+{% set cc_bi_title = post.get_field('cc_bi_title') %}
+{% set cc_bi_blurb = post.get_field('cc_bi_blurb') %}
+{% set cc_bi_image = post.get_field('cc_bi_image') %}
+{% set cc_cta_pre_title = post.get_field('cc_cta_pre_title') %}
+{% set cc_cta_title = post.get_field('cc_cta_title') %}
+{% set cc_cta_button = post.get_field('cc_cta_button') %}
+{% set cc_form_blurb = post.get_field('cc_form_blurb') %}
+{% set cc_form = post.get_field('cc_form') %}
+
+<section class="corporate-catalog-lower">
+    {% if cc_bi_title is not empty or cc_bi_blurb is not empty or cc_bi_image is not empty %}
+        <div class="corporate-catalog-lower__blurb-img-outer section-margin">
+            <div class="wrap p0">
+                <div class="corporate-catalog-lower__blurb-img-inner">
+                    <div class="cc-blurb-image__content">
+                        {% if cc_bi_title is not empty %}
+                            <h2 class="cc-blurb-image__title">{{ cc_bi_title }}</h2>
+                        {% endif %}
+                        {% if cc_bi_blurb %}
+                            <div class="cc-blurb-image__blurb wysiwyg-content">{{ cc_bi_blurb }}</div>
+                        {% endif %}
+                    </div>
+                    {% if cc_bi_image is not empty %}
+                        <div class="cc-blurb-image__blurb-image-wrap">
+                            {% set img_id = cc_bi_image %}
+                            {% set image = img_id | get_timber_image_responsive('medium') %}
+                            <img {{ image }}>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
+    {% if cc_cta_pre_title is not empty or cc_cta_title is not empty or cc_cta_button is not empty %}
+        <div class="corporate-catalog-cta section-padding">
+            <div class="wrap p0">
+                <div class="corporate-catalog-lower__cta">
+
+                    {% if cc_cta_pre_title is not empty %}
+                        <h5 class="cc-cta">{{ cc_cta_pre_title }}</h5>
+                    {% endif %}
+                    {% if cc_cta_title is not empty %}
+                        <h2 class="cc-cta">{{ cc_cta_title }}</h2>
+                    {% endif %}
+                    {% if cc_cta_button is not empty %}
+                        {% set button = cc_cta_button %}
+                        {% include 'components/buttons/primary.twig' %}
+                    {% endif %}
+
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
+    {% if cc_form_blurb is not empty or cc_form is not empty %}
+        <div class="corporate-catalog-lower__form-wrap-outer section-margin">
+            <div class="wrap p0">
+                <div class="corporate-catalog-lower__form-wrap">
+                    {% if cc_form is not empty %}
+                        {% if cc_form_blurb is not empty %}
+                            <div class="cc-form-blurb wysiwyg-content">
+                                {{ cc_form_blurb }}
+                            </div>
+                        {% endif %}
+
+                        <div class="cc-form-wrap">
+                            {{ function('objectiv_gform', cc_form.id ) }}
+                        </div>
+                    {% endif %}
+
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
+</section>

@@ -1,0 +1,61 @@
+//***********************************
+// Override the modal plugin styles
+//***********************************
+#jckqv {
+  font-family: get_font("sans-serif");
+  display: flex;
+  flex-direction: column;
+  padding: cRem(50);
+  width: cRem(500);
+
+  &:before {
+    display: none;
+  }
+
+  @media (min-width: 900px) {
+    width: auto;
+    max-width: 800px;
+    flex-direction: row;
+  }
+
+  #jckqv_images_wrap,
+  #jckqv_summary {
+    width: 100%;
+
+    @media (min-width: 900px) {
+      width: 50%;
+    }
+  }
+
+  &.product-type-variable p.price {
+    display: none;
+  }
+
+  .cart {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
+
+  .mfp-close {
+    top: 16px;
+    right: 16px;
+    font-size: 16px;
+    color: $dark-3;
+    background: url("../icons/close.svg") no-repeat;
+    width: cRem(24);
+    height: cRem(24);
+    line-height: 1.2;
+    z-index: 20;
+    text-indent: 9999px;
+    background-size: cRem(24) cRem(24);
+    padding: 0;
+    border: none;
+    opacity: 1 !important;
+
+    &:hover {
+      cursor: pointer;
+      color: $dark-3;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{% if wrapper_classes %}
+	{% set wrapper_classes = ' '~wrapper_classes %}
+{% else %}
+	{% set wrapper_classes = '' %}
+{% endif %}
+
+<section class="product-category-banner{{ wrapper_classes }}">
+
+	{% include "components/product-category-banner/content.twig" with {
+		"content": content,
+	} %}
+	{% include "components/product-category-banner/background.twig" with {
+		"content": content,
+	} %}
+</section>

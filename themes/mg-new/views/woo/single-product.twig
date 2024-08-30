@@ -1,0 +1,114 @@
+{% extends "base.twig" %}
+{% block layout %}
+    {{function('tha_content_before')}}
+    {% embed 'layouts/normal.twig' %}
+        {% block content %}
+            <section class="woocommerce-wrap woocommerce-single-product">
+                {% do action('woocommerce_before_single_product') %}
+
+                {# The Main Product Section #}
+                {% include 'woo/single-product/product.twig' %}
+
+				{% if product.is_type('bundle') %}
+					{% do action('woocommerce_after_single_product_summary') %}
+				{% endif %}
+
+                {# The Help Tooltip Section #}
+				{% include 'woo/single-product/help.twig' with {
+					"tooltip": acf.product.tooltips,
+				} %}
+
+                {# Information Banner #}
+				{% if acf.product.information_banner['enable_banner'] %}
+					{% include 'woo/single-product/information-banner.twig' with {
+						"message": acf.product.information_banner['banner_message'],
+					} %}
+				{% endif %}
+
+                {# Product Description, Product Faq, and Specs section #}
+				{% if fn('get_field', 'mg_furniture_template') != 'custom'%}
+					{% include 'woo/single-product/faq-specs.twig' with {
+						"description_blurb": fn( 'get_the_content', product.get_id() ),
+						"description_title": acf.product.product_description_title,
+						"enable_features": acf.product.enable_features_list,
+						"features": acf.product.features,
+						"enable_faq": acf.product.enable_faq,
+						"faq": acf.product.faq,
+						"dimensions": {
+							"enable": acf.product.enable_customer_dimensions,
+							"content": acf.product.retail_dimensions
+						},
+					} %}
+				{% endif %}
+
+                {# Tri Gallery #}
+				{% if acf.product.enable_tri_gallery %}
+                	{% include 'woo/single-product/tri-gallery.twig' with {
+						"images": acf.product.tri_gallery_images,
+					} %}
+				{% endif %}
+
+				{% if fn('get_field', 'mg_furniture_template') == 'custom'%}
+					{{custom_furniture_specs()}}
+				{% endif %}
+
+				{# 50/50 Image #}
+				{% if acf.product.enable_5050_image %}
+                	{% include 'woo/single-product/fifty-fifty-image.twig' with {
+						"images": acf.product.fifty_fifty_image,
+					} %}
+				{% endif %}
+
+                {# Hashtag gallery #}
+				{% if acf.product.enable_hashtag_gallery %}
+					{% include 'woo/single-product/hashtag-gallery.twig' with {
+						"hashtag": acf.product.hashtag_gallery["hashtag_text"],
+						"gallery": acf.product.hashtag_gallery["product_images"]
+					} %}
+				{% endif %}
+
+                {# Product About Highlight Section with Image and WYSIWYG #}
+				{% if acf.product.enable_5050_highlight %}
+					{% include 'woo/single-product/about-highlight.twig' with {
+						"image": acf.product.about_highlight["image"],
+						"content": acf.product.about_highlight["content"]
+					} %}
+				{% endif %}
+
+				{# Other Product Associations #}
+				{% include 'woo/single-product/other-product-associations.twig' with {
+					"similar": get_similar_products(product.get_id() ),
+					"also_in": acf.product.other_products["also_in_products"][0]["product"],
+					"pairs": acf.product.other_products["pairs_well_with_products"][0]["product"],
+					"border": acf.product.border
+				} %}
+
+                {# Comments #}
+            	{% include 'woo/single-product/comments.twig' %}
+
+				{# About the product leather #}
+				{% if acf.product.enable_about_leather and acf.product.furniture_template != 'custom' %}
+					{{ init_class( 'LeatherSamples', 'Objectiv\\Site\\Components\\Products', 'render' ) }}
+				{% endif %}
+
+				{# Care and Cleaning #}
+				{% if acf.product.enable_care_cleaning %}
+            		{% include 'woo/single-product/care-cleaning.twig' with {
+						"title": acf.product.care_cleaning_title,
+						"blurb": acf.product.care_cleaning_blurb,
+					} %}
+				{% endif %}
+
+				{# 50/50 Text #}
+				{% if acf.product.enable_5050_text %}
+            		{% include 'woo/single-product/fifty-fifty-text.twig' with {
+						"content": acf.product.fifty_fifty_text,
+					} %}
+				{% endif %}
+
+                {% do action('woocommerce_after_single_product') %}
+            </section>
+        {% endblock %}
+    {% endembed %}
+    {{function('tha_content_after')}}
+{% endblock %}

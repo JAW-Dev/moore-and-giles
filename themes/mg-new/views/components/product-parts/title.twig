@@ -1,0 +1,26 @@
+{# See Timber Docs. Do not remove this. Product context will be incorrect if removed. #}
+{% if set_product %}
+    {{ set_woo_product(product) }}
+{% endif %}
+
+<div class="media-content__title{% if classes %} {{classes}}{% endif %}">
+  {% do action('woocommerce_before_shop_loop_item_title') %}
+
+  <h3 class="entry-title media-content__title-heading">
+
+    {% if link %}
+      <a href="{{ product.link }}" class="media-content__title-link">
+    {% endif %}
+
+    {% if product.title %}
+      {{ product.title }}
+    {% else %}
+        {{ function('the_title') }}
+    {% endif %}
+
+    {% if link %}
+      </a>
+    {% endif %}
+
+  </h3>
+</div>

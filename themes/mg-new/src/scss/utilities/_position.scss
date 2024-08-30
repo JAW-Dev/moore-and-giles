@@ -1,0 +1,55 @@
+.horizontal-list {
+  @extend .ul-list;
+  display: flex;
+  flex-direction: row;
+}
+
+.vertical-list {
+  @extend .ul-list;
+  display: flex;
+  flex-direction: column;
+}
+
+.flex {
+  display: flex;
+
+  &.align-center {
+    align-items: center;
+  }
+
+  &.justify-center {
+    justify-content: center;
+  }
+
+  &.row-reverse {
+    flex-direction: row-reverse;
+
+    &.mobile-stacked {
+      @media (max-width: $break-tablet) {
+        flex-direction: column;
+      }
+    }
+  }
+
+  &.mobile-stacked {
+    @media (max-width: $break-tablet) {
+      flex-direction: column;
+    }
+  }
+
+  &.wrap {
+    flex-wrap: wrap;
+  }
+}
+
+.clear-both {
+  clear: both;
+}
+
+.overflow-auto {
+  overflow: auto;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}

@@ -1,0 +1,18 @@
+.cookie-notice-container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+}
+
+.cn-more-info.cn-button.button {
+    background-color: transparent !important;
+    border: none !important;
+    font-size: cRem(12) !important;
+    padding: 0 !important;
+    text-decoration: underline;
+    text-transform: capitalize !important;
+
+    &:hover {
+        text-decoration: none;
+    }
+}

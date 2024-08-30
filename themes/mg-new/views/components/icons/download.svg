@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="13px" height="14px" viewBox="0 0 13 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>Download Symbol</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="1.70499535e-20 3.94366197e-05 1.70499535e-20 13.8472225 12.9365726 13.8472225 12.9365726 3.94366197e-05 0 3.94366197e-05"></polygon>
+    </defs>
+    <g id="Download" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-655.000000, -993.000000)">
+            <g id="Branding" transform="translate(449.000000, 688.000000)">
+                <g id="Primary-Logo">
+                    <g id="Download-Symbol" transform="translate(203.000000, 302.000000)">
+                        <g id="Page-1" transform="translate(3.000000, 3.000000)">
+                            <mask id="mask-2" fill="white">
+                                <use xlink:href="#path-1"></use>
+                            </mask>
+                            <g id="Clip-2"></g>
+                            <path d="M11.7504274,7.45001127 L7.34216935,11.5955887 L7.34216935,3.94366197e-05 L5.66475,3.94366197e-05 L5.66475,11.5953915 L1.18625,7.38375775 L-0.00010483871,8.49922254 L5.10952419,13.3041803 C5.48191129,13.6543775 5.97695968,13.8472225 6.50345968,13.8472225 C7.03016935,13.8472225 7.52521774,13.6543775 7.89760484,13.3041803 L12.9365726,8.56547606 L11.7504274,7.45001127 Z" id="Fill-1" fill="#9B9B9B" mask="url(#mask-2)"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

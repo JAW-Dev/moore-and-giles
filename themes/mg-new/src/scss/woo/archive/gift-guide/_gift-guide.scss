@@ -1,0 +1,125 @@
+.gift-guide-top {
+  &__blurb {
+    .blurb__body {
+      text-align: center;
+      max-width: cRem(900);
+      margin: 0 auto;
+
+      font-family: $font-serif;
+      font-size: cRem(20);
+      letter-spacing: -0.41px;
+      line-height: 1.4em;
+    }
+    p {
+      margin-top: 0;
+    }
+  }
+}
+
+.gift-guide-bottom {
+  .cards {
+    margin-top: cRem(-22);
+    &__card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-width: cRem(300);
+      max-width: none;
+      width: 100%;
+      height: cRem(200);
+      max-height: cRem(200);
+      margin-top: cRem(22);
+      margin-right: 0;
+      margin-left: 0;
+
+      @media (min-width: cRem(450)) {
+        min-width: cRem(450);
+        width: 32%;
+        margin-right: cRem(10);
+        margin-left: cRem(10);
+      }
+    }
+
+    &__title {
+      font-size: cRem(28);
+    }
+
+    &__blurb {
+      font-size: cRem(16);
+      text-align: center;
+    }
+
+    &__button-link {
+      padding-bottom: cRem(10);
+      color: white;
+      font-weight: bold;
+      border-bottom: 2px solid transparent;
+      transition: all 0.3s ease;
+      font-size: cRem(20);
+
+      &:hover {
+        border-color: white;
+        color: white;
+      }
+    }
+
+    &__button-text {
+      font-size: cRem(15);
+    }
+  }
+
+  &__banner {
+    height: cRem(440);
+    justify-content: flex-start;
+
+    .hero-banner__content {
+      align-items: center;
+      padding: cRem(22);
+      max-width: none;
+    }
+
+    .hero-banner__content-heading,
+    .hero-banner__content-blurb {
+      color: white;
+    }
+
+    .hero-banner__content-heading {
+      font-family: $font-sans;
+      font-size: cRem(11);
+      text-align: center;
+      font-weight: normal;
+      width: 100%;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+
+      @media (min-width: $break-tablet) {
+        text-align: left;
+      }
+    }
+
+    .hero-banner__content-blurb {
+      font-family: $font-serif;
+      font-size: cRem(28);
+      text-align: center;
+      max-width: cRem(470);
+      margin-bottom: 1rem;
+
+      p {
+        margin: 0;
+      }
+
+      @media (min-width: $break-tablet) {
+        text-align: left;
+      }
+    }
+
+    @media (min-width: $break-tablet) {
+      .hero-banner__content {
+        align-items: flex-start;
+        max-width: none;
+        padding-left: 21%
+      }
+    }
+  }
+}

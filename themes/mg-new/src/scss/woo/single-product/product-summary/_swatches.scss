@@ -1,0 +1,56 @@
+body {
+  .variable-item {
+    box-shadow: none !important;
+    width: 35px;
+    height: 35px;
+
+    &.selected {
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3) !important;
+    }
+  }
+
+  .wvs-archive-variation-wrapper .variable-item:not(.radio-variable-item) {
+    box-shadow: none !important;
+    width: 20px;
+    height: 20px;
+
+    &.selected {
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3) !important;
+    }
+  }
+}
+
+.woocommerce div.product form.cart .variations label {
+  font-weight: normal;
+}
+
+.woocommerce div.product form.cart .variations .swatches-label {
+  td {
+    line-height: 1;
+    label {
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+
+.woocommerce div.product form.cart .variations tr:not(.swatches-label) {
+  margin-bottom: 1rem;
+}
+
+.woo-variation-swatches-stylesheet-enabled
+  .product_cat-furniture
+  .variable-items-wrapper {
+  .variable-item.out-of-stock {
+    display: none;
+  }
+}
+
+.woo-variation-swatches.wvs-style-rounded
+  .variable-items-wrapper
+  .variable-item {
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3) !important;
+}
+
+.woo-variation-swatches .variable-items-wrapper .variable-item:not(.radio-variable-item).selected, .woo-variation-swatches .variable-items-wrapper .variable-item:not(.radio-variable-item).selected:hover {
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.9) !important;
+}

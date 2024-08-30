@@ -1,0 +1,19 @@
+{% if background_type != 'none' %}
+	{# Set up the banner background image #}
+	{% if not image and thumbnail %}
+		{% set banner_img = thumbnail | get_timber_image_src('large') %}
+	{% elseif image %}
+		{% set banner_img = image | get_timber_image_src('large') %}
+	{% else %}
+		{% set image = '' %}
+	{% endif %}
+
+	{% if background_type == 'image' %}
+		<div class="hero-banner__background-wrapper--image" style="background-image: url({{banner_img}})"></div>
+	{% elseif background_type == 'video' %}
+		<div class="hero-banner__background-wrapper--video">
+			{% set video_src  = 'src="'~video~'"' %}
+			<iframe {{ video_src }} class="hero-banner__background hero-banner__background--video" frameborder="0"></iframe>
+		</div>
+	{% endif %}
+{% endif %}

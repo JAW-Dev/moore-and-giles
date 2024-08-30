@@ -1,0 +1,58 @@
+.woo-process {
+  .wrap {
+    border-top: 2px solid $dark-4;
+    padding-top: 3em * 2;
+    margin-top: cRem(50);
+  }
+
+  .descriptors {
+    text-align: center;
+
+    .descriptor {
+      margin-bottom: 2em;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .icon-container {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        min-height: cRem(48);
+      }
+
+      .title {
+        font-family: $font-sans;
+        margin-bottom: 0.8em;
+      }
+
+      .content {
+        font-size: cRem(16);
+        line-height: 1.6em;
+        min-height: cRem(65);
+      }
+    }
+  }
+}
+
+@media (min-width: $break-tablet-large) {
+  .woo-process {
+    .wrap {
+      border-top: none;
+      padding-top: 3em;
+    }
+
+    .descriptors {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+
+      .descriptor {
+        margin: 0 1em;
+        width: 33.3%;
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+<section id="tri-gallery" class="tri-gallery">
+	{% if images|length == 1 %}
+		<div class="top mg-background-image" style="background-image: url({{ images[0]['image']|get_timber_image_src('large') }})"></div>
+	{% endif %}
+
+	{% if images|length == 2 %}
+		<div class="bottom">
+			<div class="left mg-background-image" style="background-image: url({{ images[0]['image']|get_timber_image_src('large') }})"></div>
+			<div class="right mg-background-image" style="background-image: url({{ images[1]['image']|get_timber_image_src('large') }})"></div>
+		</div>
+	{% endif %}
+
+	{% if images|length == 3 %}
+		<div class="top mg-background-image" style="background-image: url({{ images[0]['image']|get_timber_image_src('large') }})"></div>
+		<div class="bottom">
+			<div class="left mg-background-image" style="background-image: url({{ images[1]['image']|get_timber_image_src('large') }})"></div>
+			<div class="right mg-background-image" style="background-image: url({{ images[2]['image']|get_timber_image_src('large') }})"></div>
+		</div>
+	{% endif %}
+</section>

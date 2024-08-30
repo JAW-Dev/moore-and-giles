@@ -1,0 +1,17 @@
+{% set faq_title = post.get_field('re_faq_title') %}
+{% set faqs = post.get_field('re_faq_faqs') %}
+
+{% if faq_title is not empty and faqs is not empty %}
+    <section class="return-faq section-margin">    
+        <div class="wrap p0">
+            <div class="return-faq__inner">
+                {% if faq_title %}
+                    <h2 class="return-faq__title">{{ faq_title }}</h2>
+                {% endif %}
+                {% if faqs is not empty %}
+                    {% include 'components/faqs/faqs-grid.twig' %}
+                {% endif %}
+            </div>
+        </div>
+    </section>
+{% endif %}

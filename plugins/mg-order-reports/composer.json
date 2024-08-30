@@ -1,0 +1,15 @@
+{
+    "name": "objectiv/mg-order-reports",
+    "description": "Custom Woocmmerce order reports",
+    "version": "1.0.0",
+    "license": "GPL-2.0",
+    "authors": [{ "name": "objectiv" }],
+    "autoload": {
+        "psr-4": {"MGOrderReports\\": "includes/classes"},
+        "classmap": [
+            "includes/classes"
+        ],
+        "files": [],
+        "classmap-authoritative": true
+    }
+}

@@ -1,0 +1,41 @@
+.site-top-bar {
+  background-color: $dark-2;
+
+  .wrap {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: cRem(8) 0;
+  }
+
+  .left-text {
+    color: white;
+    margin-bottom: cRem(8);
+    margin-right: cRem(16);
+    margin-top: cRem(8);
+
+    a {
+      color: $accent-1;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+
+  .right-link {
+    margin-bottom: cRem(8);
+    margin-top: cRem(8);
+
+    a {
+      border-left: 2px solid $accent-1;
+      color: white;
+      padding-left: cRem(16);
+      white-space: nowrap;
+
+      &:hover {
+        color: $accent-1;
+      }
+    }
+  }
+}

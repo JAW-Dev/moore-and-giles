@@ -1,0 +1,108 @@
+.blog-builder-module.blog-builder-image,
+.blog-builder-module.blog-builder-gallery-1-by-2,
+.blog-builder-module.blog-builder-gallery-2-by-2 {
+    margin: 2em 0;
+}
+
+.blog-builder-module.blog-builder-image figcaption {
+    font-size: 14px;
+    margin-top: -5px;
+}
+
+.blog-builder-module-grid {
+    overflow: auto;
+}
+
+.blog-builder-image.one-one,
+.blog-builder-image.three-four {
+    display: block;
+    float: left;
+    height: 0;
+    padding-bottom: 50%;
+    width: 50%;
+}
+
+.blog-builder-image.three-four {
+    padding-bottom: 75%;
+}
+
+.blog-builder-tweet {
+    display: block;
+    font-family: "adobe-garamond-pro", sans-serif;
+    font-size: 24px;
+    margin: 40px auto;
+    max-width: 700px;
+    text-align: center;
+}
+
+@media only screen and (min-width:900px) {
+    .blog-builder-tweet {
+        font-size: 30px;
+        margin: 70px auto;
+        max-width: 800px;
+    }
+}
+
+.blog-builder-inline-tweet {
+    display: inline;
+}
+
+.blog-builder-inline-tweet-content {
+    border-bottom: 1px dotted #E9A81D;
+    color: rgba(17,17,17,.8);
+    transition: all 0.3s ease-in-out;
+}
+
+.blog-builder-inline-tweet-icon {
+    display: inline-block;
+    position: relative;
+    width: 20px;
+    heigth: 20px;
+    vertical-align: middle;
+}
+
+.blog-builder-inline-tweet:hover .blog-builder-inline-tweet-content {
+    border-bottom: 1px solid #E9A81D;
+    color: #E9A81D;
+}
+
+.blog-builder-inline-tweet-icon svg {
+    height: 20px;
+    position: relative;
+    top: 2px;
+    width: 20px;
+}
+
+.blog-builder-tweet-icon {
+    margin-top: 15px;
+}
+
+.blog-builder-tweet-icon svg {
+    height: 35px;
+    width: 35px;
+}
+
+.blog-builder-tweet-icon svg #twitter_bird,
+.blog-builder-inline-tweet-icon svg #twitter_bird,
+.blog-builder-tweet-icon svg #bg_box,
+.blog-builder-inline-tweet-icon svg #bg_box {
+    transition: all 0.3s ease-in-out;
+}
+
+.blog-builder-tweet-icon svg #twitter_bird,
+.blog-builder-inline-tweet-icon svg #twitter_bird {
+    fill: #E9A81D;
+}
+
+.blog-builder-tweet:hover .blog-builder-tweet-icon svg #twitter_bird,
+.blog-builder-inline-tweet:hover .blog-builder-inline-tweet-icon svg #twitter_bird {
+    fill: #fff;
+}
+
+.blog-builder-tweet:hover .blog-builder-tweet-icon svg #bg_box {
+    fill: rgba(17,17,17,.8) !important;
+}
+
+.blog-builder-inline-tweet:hover .blog-builder-inline-tweet-icon svg #bg_box {
+    fill: #E9A91D !important;
+}

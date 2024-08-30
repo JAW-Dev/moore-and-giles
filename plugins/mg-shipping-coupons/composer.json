@@ -1,0 +1,21 @@
+{
+  "name": "objectivco/mg-shipping-coupons",
+  "description": "Create Coupons for Shipping Methods",
+  "type": "wordpress-plugin",
+  "config": {
+    "optimize-autoloader": true,
+    "classmap-authoritative": true
+  },
+  "authors": [
+    {
+      "name": "Clifton Griffin",
+      "email": "clif@objectiv.co"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "MG_Shipping_Coupons\\": "includes/"
+    },
+    "files": []
+  }
+}

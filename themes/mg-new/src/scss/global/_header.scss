@@ -1,0 +1,29 @@
+@media (min-width: $break-tablet-large) {
+  .site-header {
+    .nav {
+      a {
+        color: $dark-2;
+
+        &:focus,
+        &:hover {
+          color: $accent-1;
+
+          path {
+            fill: $accent-1;
+            stroke: $accent-1;
+          }
+        }
+
+        &:active,
+        &.active {
+          color: $accent-2;
+
+          path {
+            fill: $accent-2;
+            stroke: $accent-2;
+          }
+        }
+      }
+    }
+  }
+}

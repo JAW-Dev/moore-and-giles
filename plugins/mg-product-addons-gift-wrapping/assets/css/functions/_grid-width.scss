@@ -1,0 +1,12 @@
+@charset "UTF-8";
+// ========================================
+// Grid Width
+// ========================================
+
+@function grid-width($col, $has-gutter: true) {
+	@if $has-gutter {
+		@return calc(((100% / #{$columns}) * #{$col}) - #{$gutter});
+	} @else {
+		@return calc((100% / #{$columns}) * #{$col});
+	}
+}

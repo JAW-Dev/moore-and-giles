@@ -1,0 +1,43 @@
+{
+    "key": "group_5bc5e5815154b",
+    "title": "Variation - Number of Pockets",
+    "fields": [
+        {
+            "key": "field_5bc5e5956cee0",
+            "label": "Display Name",
+            "name": "woo_number_of_pockets_display_name",
+            "type": "text",
+            "instructions": "This is the text used for the facet breadcrumbs on the catalog pages.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "pa_number-of-pockets"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1580230800
+}

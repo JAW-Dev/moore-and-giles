@@ -1,0 +1,34 @@
+//***********************************
+// Quickview Summary Quantity Counter
+//***********************************
+#jckqv #jckqv_summary {
+  .quantity {
+    margin: 0;
+    .qty {
+      -moz-appearance: textfield;
+      border: none;
+      height: auto;
+      line-height: 1.4;
+      margin: 0 cRem(10);
+      padding: 0;
+      background: white;
+      color: $dark-2;
+    }
+  }
+
+  .quantity-counter {
+    .quantity-counter__buttons .plus-span::before,
+    .quantity-counter__buttons .minus-span::before {
+      pointer-events: none;
+    }
+  }
+
+  .jckqv-qty-spinners {
+    display: none;
+  }
+
+  .quantity-counter__buttons .minus-span::before,
+  .quantity-counter__buttons .plus-span::before {
+    z-index: 1;
+  }
+}

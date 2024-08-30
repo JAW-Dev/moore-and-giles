@@ -1,0 +1,26 @@
+{#
+Template Name: Log In
+#}
+{% extends "base.twig" %}
+{% block layout %}
+    {{function('tha_content_before')}}
+    {{function('tha_content_top')}}
+    {% embed '/layouts/full-width.twig' %}
+        {% block content %}
+            <div class="wrap">
+                {% set home = function('home_url') %}
+                {% if user %}
+                    You're already logged in. Want to
+                    <a href="{{ function('wp_logout_url', home) }}">Log Out?</a>
+                    {% else %}
+                    <div class="woocommerce">
+                        {% set args = { 'redirect' : home} %}
+                        {{ function('woocommerce_login_form', args ) }}
+                    </div>
+                {% endif %}
+            </div>
+        {% endblock %}
+    {% endembed %}
+    {{function('tha_content_bottom')}}
+    {{function('tha_content_after')}}
+{% endblock %}

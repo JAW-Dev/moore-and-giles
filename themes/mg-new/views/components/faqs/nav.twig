@@ -1,0 +1,13 @@
+{% if faqs is not empty %}
+    <div class="faq-nav__outer margin-top-sec margin-bot-sec">
+        <ul class="faq-nav mw-600 mlra mt0 mb0">
+            {% for faq in faqs %}
+                {% set title = faq.title %}
+                {% set id = function ('objectiv_id_from_string', title, false) %}
+                <li class="faq-nav-item">
+                    <a href="#{{id}}-{{loop.index}}">{{title}}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}

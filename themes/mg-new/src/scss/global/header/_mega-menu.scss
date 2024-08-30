@@ -1,0 +1,165 @@
+.primary-nav.mega-menu-triggers {
+  display: none;
+
+  @media (min-width: $break-tablet-large) {
+    display: flex;
+  }
+
+  a {
+    color: $dark-2;
+    display: flex;
+    flex-direction: column;
+    min-height: cRem(20);
+    padding: cRem(8) cRem(6);
+    text-align: center;
+
+    @media (min-width: 1000px) {
+      padding: cRem(8) cRem(12);
+    }
+
+    @media (min-width: 1100px) {
+      padding: cRem(8) cRem(24);
+    }
+
+    &:first-of-type {
+      padding-left: 0;
+    }
+
+    &:after {
+      content: attr(title);
+      display: block;
+      font-size: cRem(16);
+      font-weight: bold;
+      height: 0;
+      visibility: hidden;
+      white-space: nowrap;
+    }
+
+    &:hover,
+    &.active,
+    &.current {
+      font-weight: bold;
+    }
+  }
+}
+
+.site-header-main {
+  position: relative;
+}
+
+.mega-menu-content-outer {
+  background: white;
+  box-shadow: $menu-shadow;
+  display: none;
+  left: 0;
+  position: absolute;
+  right: 0;
+  z-index: 1000;
+}
+
+.mega-menu-drop-top {
+  align-items: center;
+  border-bottom: 1px solid $dark-1;
+  border-top: 1px solid $dark-1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  a {
+    color: $dark-2;
+    font-weight: bold;
+    line-height: 1;
+    padding: cRem(14) cRem(24);
+
+    &:hover {
+      color: $accent-1;
+    }
+  }
+}
+
+.mega-menu-item-content {
+  display: none;
+  margin-bottom: cRem(32);
+  margin-top: cRem(24);
+
+  &.active {
+    display: flex;
+  }
+
+  .side-links {
+    margin-top: cRem(-4);
+    max-width: cRem(160);
+    min-width: cRem(160);
+
+    a {
+      color: $dark-2;
+      display: block;
+      margin-top: cRem(4);
+      min-height: cRem(18);
+
+      &:hover,
+      &.active {
+        font-weight: bold;
+      }
+    }
+
+    .bottom-links {
+      border-top: 2px solid $dark-1;
+      margin-top: cRem(18);
+      padding-top: cRem(18);
+    }
+  }
+
+  .right-content {
+    padding-left: cRem(48);
+
+    .side-hover-content {
+      display: flex;
+      height: 0;
+      opacity: 0;
+      z-index: 0;
+      position: relative;
+
+      &.active {
+        height: auto;
+        opacity: 1;
+        transition: opacity 0.5s linear;
+        z-index: 10000;
+      }
+
+      a.product-link {
+        color: $dark-2;
+        padding: 0 cRem(16);
+        text-align: center;
+        width: 33.333%;
+
+        @media (min-width: $break-desktop) {
+          width: 25%;
+        }
+
+        .product-title {
+          font-weight: bold;
+          margin-top: cRem(10);
+        }
+
+        .product-color {
+          font-family: $font-serif;
+          font-size: cRem(14);
+          margin-top: cRem(4);
+        }
+
+        &:nth-child(4) {
+          display: none;
+
+          @media (min-width: $break-desktop) {
+            display: block;
+          }
+        }
+
+        &:hover {
+          color: $accent-1;
+        }
+      }
+    }
+  }
+}

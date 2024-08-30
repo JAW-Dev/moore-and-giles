@@ -1,0 +1,62 @@
+{
+    "key": "group_5f46cc12b34d7",
+    "title": "One - Form",
+    "fields": [
+        {
+            "key": "field_5f46cc222b949",
+            "label": "Action",
+            "name": "one_form_action",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "https:\/\/customers.listrak.com\/q\/GZYIVKsXTpi30E30PN2bSXmIklD-KgJZxW",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5f46cc472b94a",
+            "label": "CRVS Value",
+            "name": "one_form_crvs_value",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "AlaRohSLa8DrPgqwitVkl4uZKgQ_91IYPGacpPynFDA4jaAEZOkdMVsfhHt8MnNE2BOzwaSIU0DvXWJ3EDGfxMKomZX2AdnqHjuvOX_08ASoo3nSC-uvSbNhu-FV0lsoshVG4tUrNx2jCIiWC6rqUMYecZowxRdQGyz798zw6P89JgKSkrV2uuQiUs2WmJco",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "template-flexible-content-one-product.php"
+            }
+        ]
+    ],
+    "menu_order": 2,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1598475406
+}

@@ -1,0 +1,21 @@
+{
+  "name": "objectivco/mg-vip-customer",
+  "description": "VIP Customer Features",
+  "type": "wordpress-plugin",
+  "config": {
+    "optimize-autoloader": true,
+    "classmap-authoritative": true
+  },
+  "authors": [
+    {
+      "name": "Clifton Griffin",
+      "email": "clif@objectiv.co"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "MG_VIP_Customer\\": "includes/"
+    },
+    "files": []
+  }
+}

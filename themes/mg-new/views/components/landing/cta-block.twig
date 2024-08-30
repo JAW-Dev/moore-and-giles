@@ -1,0 +1,29 @@
+{% if enable %}
+
+	{% for block in blocks %}
+
+		<section class="cta-block {{ block.direction }}{% if block.classes %} {{ block.classes }}{% endif %}">
+			<div class="cta-block__wrapper wrap">
+				<div class="cta-block__image-container">
+					<img {{ block.image|get_timber_image_responsive('medium') }} class="cta-block__image"/>
+				</div>
+				<div class="cta-block__content {{ block.content_alignment }}">
+
+					{% if block.heading %}
+						<h3 class="cta-block__heading">{{ block.heading }}</h3>
+					{% endif %}
+
+					{% if block.text %}
+						<div class="cta-block__text">{{ block.text }}</div>
+					{% endif %}
+
+					{% if block.button %}
+						<a href="{{ block.link }}" target="{{ block.link['target'] }}" class="cta-block__link button alt">{{ block.button }}</a>
+					{% endif %}
+				</div>
+			</div>
+		</section>
+
+	{% endfor %}
+
+{% endif %}

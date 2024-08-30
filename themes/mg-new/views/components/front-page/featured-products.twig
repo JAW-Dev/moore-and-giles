@@ -1,0 +1,43 @@
+<section id="travel-holidays" class="travel-holidays wrap">
+	<header class="travel-holidays__header">
+		<h2 class="travel-holidays__title">{{ title }}</h2>
+	</header>
+
+	<section class="travel-holidays__body">
+
+		<div class="travel-holidays__sidebar">
+			<h3>{{ side_title }}</h3>
+			<h4>{{ side_subtitle }}</h4>
+			<p>{{ side_text }}</p>
+			<div class="travel-holidays__carousel-controlls">
+				<div class="prev-arrow arrow">{{ svg('chevron-left') }}</div>
+				<div class="next-arrow arrow">{{ svg('chevron-right') }}</div>
+			</div>
+		</div>
+		<div class="travel-holidays__carousel">
+			<div class="carousel">
+				{% for item in carousel %}
+					{% set color_attr  = fn('wc_get_product_terms', item.id, 'pa_color' )[0] %}
+					<div {{ fn('post_class', 'entry', item.id ) }}>
+						<figure class="carousel__figure">
+							<a href="{{ item.link }}" class="carousel__link">
+								{% if item.thumbnail %}
+									<img{{ item.thumbnail|get_timber_image_responsive('thumbnail') }} class="carousel__image"/>
+								{% else %}
+									<img src="{{ fn('wc_placeholder_img_src') }}" />
+								{% endif %}
+							</a>
+						</figure>
+						<h3 class="carousel__title">
+							<a href="{{ item.link }}">{{ item.title }}</a>
+						</h3>
+
+						<div class="carousel__color">
+							<span>{{ color_attr.name }}</span>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</section>
+</section>

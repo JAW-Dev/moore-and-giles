@@ -1,0 +1,137 @@
+main .sign-up {
+  .wrap {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    .constrainer {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: stretch;
+      max-width: 325px;
+      width: 100%;
+    }
+
+    .title {
+      margin-bottom: 6px;
+    }
+
+    .headings {
+      margin-bottom: 2em;
+      text-align: center;
+    }
+
+    input {
+      margin-bottom: $spacing-desktop;
+      text-align: center;
+    }
+
+    .mg-input-wrap {
+      width: 100%;
+    }
+
+    .frontpage {
+      .title {
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.site-footer {
+  .social-sign-up-wrap {
+    .wrap {
+      display: none;
+    }
+  }
+  .sign-up {
+    .footer {
+      .headings p {
+        font-size: cRem(13);
+        color: get_color('light', 5);
+      }
+    }
+  }
+}
+
+@media (min-width: $break-tablet-large) {
+  .site-footer {
+    .social-sign-up-wrap {
+      padding-right: 2.5em;
+      max-width: cRem(250);
+
+      .wrap {
+        align-items: flex-start;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        padding: 0 0 3em 0;
+        width: 100%;
+
+        .headings {
+          margin-bottom: 1em;
+        }
+
+        input {
+          background: white;
+          border-bottom: 1px solid $light-5;
+          text-align: center;
+          color: white;
+
+          &::placeholder {
+            color: $light-5;
+          }
+        }
+
+        .constrainer,
+        .mg-input-wrap {
+          width: 100%;
+        }
+
+        .title {
+          display: none;
+        }
+
+        .footer {
+          input {
+            background: transparent;
+            text-align: left;
+            padding: 0;
+
+            &:focus {
+              padding: 0 0.5rem;
+            }
+
+            &::-webkit-input-placeholder {
+              color: get_color('light', 4);
+              opacity: 1;
+            }
+            &::-moz-placeholder {
+              color: get_color('light', 4);
+              opacity: 1;
+            }
+            &:-ms-input-placeholder {
+              color: get_color('light', 4);
+              opacity: 1;
+            }
+            &:-moz-placeholder {
+              color: get_color('light', 4);
+              opacity: 1;
+            }
+          }
+
+          button,
+          .button.alt {
+            width: auto;
+            float: left;
+            font-size: cRem(10);
+            padding-left: 2rem;
+            min-height: 30px;
+          }
+        }
+      }
+    }
+  }
+}

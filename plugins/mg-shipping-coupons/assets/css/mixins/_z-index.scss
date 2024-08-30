@@ -1,0 +1,12 @@
+@charset "UTF-8";
+// ========================================
+// z-index
+// ========================================
+// The layers, add them here.
+$layers: ();
+
+// z-index Mixin used to automatically assign z-index based on position in $layers
+@mixin z-index($layer, $position: relative) {
+	position: $position;
+	z-index: layer-index($layer);
+}

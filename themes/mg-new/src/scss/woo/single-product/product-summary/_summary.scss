@@ -1,0 +1,64 @@
+.single-product .woocommerce-single-product .product {
+  .summary {
+    clear: none;
+    flex: 0 1 auto;
+    float: none;
+    font-family: $font-sans;
+    margin: 0 auto;
+    max-width: cRem(500);
+    width: 90%;
+
+    @media (min-width: $break-tablet-large) {
+      max-width: none;
+      width: 35%;
+    }
+
+    form.cart .variations td.label {
+      padding-right: 0.5em;
+    }
+
+    .selected-pa_color {
+      font-weight: bold;
+    }
+
+    .single_add_to_cart_button {
+      margin-left: auto;
+    }
+
+    .below-button-message {
+      margin-bottom: 0;
+      margin-top: 2rem;
+      color: #D44D3D;
+      font-size: 0.85rem;
+      font-style: italic;
+      text-align: center;
+    }
+  }
+
+  .affirm-as-low-as {
+    border-top: 1px solid #e7e6e6;
+    padding-top: 1.25rem;
+    margin-top: 1.5rem;
+    height: cRem(45);
+  }
+
+  .wc-no-matching-variations {
+    display: none !important;
+  }
+}
+
+.single_add_to_cart_button.disabled {
+  display: none !important;
+}
+
+/**
+ * Prevent add to cart button showing up while variation swatches are still loading
+ */
+form.variations_form .single_add_to_cart_button {
+  display: none;
+}
+
+form.variations_form.wvs-loaded .single_add_to_cart_button {
+  display: inline-block;
+}
+

@@ -1,0 +1,34 @@
+{% extends "base.twig" %}
+
+{% block banner %}
+    {% embed '/components/banner.twig' %}
+        {% block content %}
+            <h1>{{page.title}}</h1>
+        {% endblock %}
+    {% endembed %}
+{% endblock %}
+
+{% block content %}
+    {{function('tha_content_before')}}
+    <div class="content-sidebar-wrap">
+        {{function('tha_content_top')}}
+        {% block layout %}
+            {% embed '/layouts/full-width.twig' %}
+                {% block content %}
+                    <div class="wrap">
+                        <div itemscope="itemscope" itemtype="https://schema.org/Blog">
+                            <div class="blog-posts-grid">
+                                {% for post in posts %}
+                                    {% include 'components/blog-archive/post-block.twig' %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                        {% include 'components/pagination.twig' %}
+                    </div>
+                {% endblock %}
+            {% endembed %}
+        {% endblock %}
+        {{function('tha_content_bottom')}}
+    </div>
+    {{function('tha_content_after')}}
+{% endblock %}

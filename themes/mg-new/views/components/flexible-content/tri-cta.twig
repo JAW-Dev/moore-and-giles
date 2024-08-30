@@ -1,0 +1,56 @@
+{# The custom classes #}
+{% if content.classes %}
+	{% set custom_classes = ' '~content.classes %}
+{% else %}
+	{% set custom_classes = '' %}
+{% endif %}
+
+{# Blurb Class #}
+{% if content.blurb %}
+	{% set blurb_class = ' blurb' %}
+{% else %}
+	{% set blurb_class = ' no-blurb' %}
+{% endif %}
+
+<section class="tri-cta{{ custom_classes }}">
+
+	{% if content.title %}
+		<h2 class="tri-cta__title{{blurb_class}}">{{content.title}}</h2>
+	{% endif %}
+
+	{% if content.blurb %}
+		<div class="tri-cta__blurb">{{content.blurb}}</div>
+	{% endif %}
+
+	{% if content.cta %}
+		<div class="tri-cta__blocks">
+			{% set counter = 1 %}
+			{% for data in content.cta %}
+				<div class="tri-cta__item item">
+
+					{% if data.icon %}
+						{% set image = function( 'wp_get_attachment_url', data.icon ) %}
+						{% set image_get = svg_url(image) %}
+						<div class="item__icon">{{ image_get }}</div>
+					{% endif %}
+
+					{# If Care Tips #}
+					{% if 'care-tips' in custom_classes %}
+						<div class="care-tips__number">NO. {{counter}}</div>
+						{% set counter = counter + 1 %}
+					{% endif %}
+
+					{% if data.title %}
+						<h3 class="item__title">{{data.title}}</h3>
+					{% endif %}
+
+					{% if data.blurb %}
+						<div class="item__blurb">{{data.blurb}}</div>
+					{% endif %}
+				</div>
+
+			{% endfor %}
+		</div>
+	{% endif %}
+
+</section>

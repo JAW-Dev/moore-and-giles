@@ -1,0 +1,19 @@
+.facetwp-sort-select {
+  width: cRem(143);
+  height: cRem(26);
+  border-bottom: 1px solid $dark-3;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-border-radius: 0px;
+  background: url('../icons/triangle.svg') no-repeat 96% center;
+  min-height: cRem(35);
+  padding-left: 0;
+}
+
+.facetwp-sort-select::-ms-expand {
+  display: none;
+}

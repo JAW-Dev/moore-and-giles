@@ -1,0 +1,22 @@
+{#
+Template Name: Reclaimed
+#}
+{% extends "base.twig" %}
+{% block layout %}
+    {{function('tha_content_before')}}
+    {{function('tha_content_top')}}
+    {% embed '/layouts/full-width.twig' %}
+        {% block content %}
+            {% include "components/reclaimed/below-hero.twig" %}
+            {% include "components/reclaimed/watch-film.twig" %}
+            {% include "components/reclaimed/big-image.twig" %}
+            {% include "components/reclaimed/real-message.twig" %}
+            {% include "components/reclaimed/shop-now.twig" %}
+            {% include "components/reclaimed/all-good.twig" %}
+            {% include "components/reclaimed/what-to-expect.twig" %}
+            {% include "components/reclaimed/follow-along.twig" %}
+        {% endblock %}
+    {% endembed %}
+    {{function('tha_content_bottom')}}
+    {{function('tha_content_after')}}
+{% endblock %}

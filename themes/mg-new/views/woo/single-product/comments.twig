@@ -1,0 +1,49 @@
+{% set hasComments = fn('get_comments', { 'post_id': product.get_id() }) %}
+<div id="single-product-reviews" class="single-product-reviews {% if not hasComments %}no-comments{% endif %}">
+    <div class="wrap comments-wrap">
+        <div class="comments-template-main-mobile">
+            <h3 class="title">
+                Customer Reviews
+            </h3>
+            <div class="reviews-total">
+                {{ fn('wc_get_template', 'single-product/rating-blurb.php') }}
+            </div>
+            <div class="reviews-actions">
+                <a id="read-reviews-modal-btn" class="button button__orange read-reviews-mobile" href="javascript:;">Read Reviews</a>
+                <a id="write-reviews-modal-btn" class="button write-a-review-mobile" href="javascript:;">Write A Review</a>
+            </div>
+        </div>
+        <div class="comments-template">
+            <div class="mobile-comments-modal-controls">
+                <div class="close-icon-wrap">
+                    {{ svg('close') }}
+                </div>
+            </div>
+            <div class="comment-header-controls-wrap">
+                <div class="comment-desktop-control-write">
+                    <a id="write-reviews-desktop-btn" class="button write-a-review-desktop" href="javascript:;">Write A Review</a>
+                </div>
+                <div class="comment-header-modal-display">
+                    <h3 class="title">
+                        Customer Reviews
+                    </h3>
+                    <div class="comment-modal-control-write">
+                        <a id="write-reviews-modal-open-btn" class="button write-a-review-mobile" href="javascript:;">Write A Review</a>
+                    </div>
+                    <div class="comment-modal-review-rating">
+                        {{ fn('wc_get_template', 'single-product/rating-blurb.php') }}
+                    </div>
+                </div>
+                <div class="comment-header-desktop-display">
+                    <h3 class="title {% if not hasComments %}no-comments{% endif %}">
+                        Customer Reviews
+                    </h3>
+                    {{ fn('wc_get_template', 'single-product/rating-blurb.php') }}
+                </div>
+            </div>
+            <hr class="comments-list-border-mobile" />
+            {# Template located in the theme woocommerce folder - Sadly cant twig all the things #}
+            {{ fn('comments_template') }}
+        </div>
+    </div>
+</div>

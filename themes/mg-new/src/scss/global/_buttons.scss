@@ -1,0 +1,302 @@
+body.mg-body {
+  button,
+  .button,
+  .button.alt,
+  a.button,
+  a.button.alt,
+  a .fake-button,
+  .woocommerce #respond input#submit,
+  .woocommerce #respond input#submit.alt,
+  .woocommerce a.button,
+  .woocommerce a.button.alt,
+  .woocommerce .button,
+  .woocommerce button.button,
+  .woocommerce button.button.alt,
+  .woocommerce input.button,
+  .woocommerce input.button.alt,
+  input[type="submit"].button,
+  #jckqv .button {
+    background-color: transparent;
+    border: cRem(1) solid $dark-3;
+    border-radius: cRem(2);
+    color: $dark-2;
+    cursor: pointer;
+    display: inline-block;
+    font-size: cRem(14);
+    font-weight: 500;
+    letter-spacing: cRem(2);
+    padding: cRem(12) cRem(32);
+    text-align: center;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    width: auto;
+
+    &:focus,
+    &:hover {
+      background-color: $dark-3;
+      border-color: transparent;
+      color: white;
+    }
+
+    &:active {
+      background-color: $dark-2;
+      border-color: transparent;
+    }
+
+    &__orange {
+      background-color: $accent-1;
+      border-color: transparent;
+      color: white;
+      padding: cRem(12) 2rem;
+
+      &:focus,
+      &:hover {
+        background-color: $accent-2;
+      }
+
+      &:active {
+        background-color: $accent-3;
+        color: white;
+      }
+    }
+
+    &__ghost {
+      border-color: white;
+      color: white;
+
+      &:focus,
+      &:hover {
+        background-color: white;
+        color: $dark-3;
+      }
+
+      &:active {
+        background-color: $dark-2;
+        color: white;
+      }
+    }
+
+    &__gray {
+      background-color: $dark-3;
+      color: white;
+
+      &:focus,
+      &:hover {
+        background-color: $accent-2;
+      }
+
+      &:active {
+        background-color: $accent-3;
+        color: white;
+      }
+    }
+
+    &__tiny {
+      font-size: cRem(16);
+      padding: cRem(8) cRem(14);
+    }
+
+    &__small {
+      padding: cRem(12) cRem(24);
+    }
+
+    &__content {
+      padding: cRem(8) cRem(24);
+      font-size: cRem(11);
+      line-height: 1;
+    }
+
+    &__font-base {
+      font-size: cRem(16);
+    }
+
+    &__center {
+      display: block;
+      margin: 0 auto;
+    }
+
+    &.rounded {
+      border-radius: cRem(24);
+    }
+
+    &.wide {
+      padding: cRem(14) cRem(48);
+    }
+  }
+
+  button[disabled],
+  button.disabled,
+  .button[disabled],
+  .button.disabled,
+  .woocommerce button.button.alt.disabled,
+  .woocommerce button.button.alt:disabled[disabled] {
+    background: transparent;
+    color: $dark-3;
+    opacity: 0.5;
+
+    &:hover {
+      background: $dark-3;
+      color: white;
+    }
+  }
+
+  .right-icon-menu-wrap {
+    .button {
+      &__tiny {
+        background-color: #5a5d5d;
+        color: white;
+        font-size: cRem(12);
+        margin-top: cRem(8);
+
+        &:hover {
+          background-color: $accent-1;
+        }
+      }
+    }
+  }
+
+  .site-footer {
+    input[type="submit"].button {
+      float: left;
+      font-size: cRem(10);
+      margin-top: cRem(14);
+      min-height: cRem(30);
+      padding-left: 2rem;
+    }
+  }
+
+  .sidebar-cart__button.cart-button {
+    border-radius: 0;
+    display: block;
+    width: 100%;
+  }
+
+  .gift-guide-bottom {
+    .hero-banner__content-button {
+      background-color: transparent;
+      border-color: white;
+      color: white;
+
+      &:focus,
+      &:hover {
+        background-color: white;
+        color: $dark-3;
+      }
+
+      &:active {
+        background-color: $dark-2;
+        color: white;
+      }
+    }
+  }
+
+  .about-the-leather__content {
+    .about-the-leather__button {
+      font-size: cRem(12);
+      white-space: nowrap;
+    }
+  }
+
+  .site-search-icon-button {
+    background-color: unset;
+    border: none;
+    border: unset;
+    border-radius: unset;
+    color: unset;
+    font-weight: unset;
+    margin-right: 14px;
+    padding: unset;
+    text-align: unset;
+
+    &:focus,
+    &:hover {
+      background-color: transparent;
+    }
+
+    &:active {
+      background-color: transparent;
+    }
+  }
+}
+
+#jckqv .button {
+  height: auto;
+  line-height: 1.2;
+  margin-left: 1rem;
+}
+
+.text-button {
+  color: $dark-2;
+  position: relative;
+
+  &.active {
+    color: $dark-3;
+
+    &:after {
+      opacity: 1;
+    }
+  }
+
+  &:after,
+  &.active:after {
+    background-color: $accent-1;
+    content: "";
+    height: 1px;
+    left: 50%;
+    opacity: 1;
+    position: absolute;
+    top: calc(100% + 8px);
+    transform: translateX(-50%);
+    transition: get-anim(opacity);
+    width: 80px;
+  }
+
+  @media (min-width: $break-tablet-large) {
+    &:hover:after {
+      opacity: 1;
+    }
+
+    &:after {
+      left: 0;
+      opacity: 0;
+      transform: none;
+    }
+  }
+}
+
+a {
+  &:hover {
+    .fake-button.secondary.white {
+      background-color: white;
+      border: 1px solid transparent;
+      color: black;
+    }
+  }
+}
+
+#cookie-notice #cn-notice-buttons .cn-button {
+  @extend .button;
+  background-color: $dark-3 !important;
+  background-image: none;
+  box-shadow: none;
+  color: white !important;
+  font-size: cRem(10) !important;
+  left: auto;
+  line-height: 1;
+  margin-left: cRem(20);
+  overflow: visible;
+  padding: cRem(8) cRem(30) !important;
+  position: relative;
+  text-decoration: none;
+  text-shadow: none;
+
+  &:focus,
+  &:hover {
+    background-color: $accent-2 !important;
+  }
+
+  &:active {
+    background-color: $accent-3 !important;
+    color: white;
+  }
+}

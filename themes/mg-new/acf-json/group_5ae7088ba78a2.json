@@ -1,0 +1,53 @@
+{
+    "key": "group_5ae7088ba78a2",
+    "title": "Bag Site Meta Menu Items",
+    "fields": [
+        {
+            "key": "field_5ae708bb2fd4f",
+            "label": "Icon",
+            "name": "bsm_icon",
+            "type": "select",
+            "instructions": "Select an Icon please.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "menu": "Menu",
+                "search": "Search",
+                "person": "Sign In",
+                "cart": "Cart"
+            },
+            "default_value": [
+                "menu"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "nav_menu_item",
+                "operator": "==",
+                "value": "location\/site_meta"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1580230800
+}

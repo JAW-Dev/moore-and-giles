@@ -1,0 +1,8 @@
+<nav class="nav nav-{{ name }} {{ classes }}" role="navigation">
+	{% include "/components/nav/nav-loop.twig" with {
+        'nav': nav.menu.get_items,
+        'orientation': orientation ? orientation : nav.orientation,
+        'has_icons': nav.icons is defined,
+        'icons': nav.icons
+    } %}
+</nav>

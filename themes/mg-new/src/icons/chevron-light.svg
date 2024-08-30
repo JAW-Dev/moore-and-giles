@@ -1,0 +1,22 @@
+<svg width="13px" height="8px" viewBox="0 0 13 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<defs>
+        <polygon id="path-1" points="7.07726508e-20 0 8.79336349 0 8.79336349 8.96578238 0 8.96578238 0 0"></polygon>
+    </defs>
+    <g id="Product-Page" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Product-Page---Desktop" transform="translate(-240.000000, -631.000000)">
+            <g id="Main-Product-Group" transform="translate(228.000000, 224.000000)">
+                <g id="Image" transform="translate(0.000000, 2.000000)">
+                    <g id="Image-NAV" transform="translate(12.000000, 399.000000)">
+                        <g id="arrow" transform="translate(6.500000, 12.500000) rotate(-135.000000) translate(-6.500000, -12.500000) translate(2.000000, 8.000000)">
+                            <mask id="mask-2" fill="white">
+                                <use xlink:href="#path-1"></use>
+                            </mask>
+                            <g id="Clip-2"></g>
+                            <polyline id="Stroke-1" stroke="#979797" stroke-width="2" mask="url(#mask-2)" points="8.79336349 0 8.79336349 8.96578238 0 8.96578238"></polyline>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,18 @@
+{% if( post.get_field('real_mobile_message_black_text') or post.get_field('real_mobile_message_yellow_text') ) %}
+    {% set black_text = post.get_field('real_mobile_message_black_text') %}
+    {% set yellow_text = post.get_field('real_mobile_message_yellow_text') %}
+    <section class="real-message">
+        <div class="wrap p0">
+            <div class="real-message-inner">
+                <div class="the-message ff-roboto-slab">
+                	{% if( black_text ) %}
+                        <span class="black-text">{{ black_text }}</span>
+                    {% endif %}
+                	{% if( yellow_text ) %}
+                        <span class="yellow-text">{{ yellow_text }}</span>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endif %}

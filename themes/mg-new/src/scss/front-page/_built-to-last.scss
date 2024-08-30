@@ -1,0 +1,55 @@
+.built-to-last {
+  display: none;
+  color: white;
+  min-height: cRem(440);
+
+  &.left {
+    justify-content: flex-start;
+  }
+
+  &.center {
+    justify-content: center;
+  }
+
+  &.right {
+    justify-content: flex-end;
+  }
+
+  &__body {
+    display: inline-block;
+
+    &.left {
+      margin-left: 21%;
+    }
+
+    &.center {
+      text-align: center;
+    }
+
+    &.right {
+      text-align: right;
+      margin-right: 21%;
+    }
+  }
+
+  &__title {
+    font-family: proxima-nova, sans-serif;
+    margin-bottom: 0.3125rem;
+    font-size: cRem(11);
+    text-transform: uppercase;
+    color: white;
+    font-weight: normal;
+    letter-spacing: 2px;
+  }
+
+  &__blurb {
+    font-size: cRem(28);
+    margin: 0 0 1.5rem;
+    font-family: $font-serif;
+  }
+
+  @media (min-width: $break-front-page-custom-breakpoint-cat-blocks) {
+    display: flex;
+    align-items: center;
+  }
+}

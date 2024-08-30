@@ -1,0 +1,125 @@
+.products-container-filters {
+  align-items: center;
+  display: flex;
+  margin-bottom: cRem(24);
+
+  .filters-clear {
+    background: transparent;
+    border: none;
+    color: $dark-2;
+    font-size: cRem(12);
+    font-weight: normal;
+    height: auto;
+    letter-spacing: initial;
+    margin: 0;
+    padding: 0;
+    text-transform: none;
+    transition: none;
+    width: auto;
+
+    a {
+      color: inherit;
+
+      &:hover,
+      &:focus {
+        border: none;
+        color: $accent-1;
+        outline: none;
+      }
+    }
+
+    &.show {
+      display: block;
+    }
+  }
+
+  .facetwp-sort {
+    margin-left: auto;
+  }
+
+  .facetwp-sort-select {
+    height: auto;
+    margin-bottom: 0;
+    margin-left: auto;
+    padding: 0.5rem;
+
+    &:focus {
+      border-bottom: 1px solid $dark-3;
+      border-left: none;
+      border-right: none;
+      border-top: none;
+    }
+  }
+
+  .filters-clear {
+    display: none;
+  }
+}
+
+.facetwp-selections {
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding-left: 0;
+  }
+
+  li {
+    background: transparent;
+  }
+
+  .facetwp-selection-label {
+    display: none;
+  }
+
+  li[data-facet="days_of_travel"],
+  li[data-facet="exterior_pockets"],
+  li[data-facet="interior_pockets"] {
+    align-items: center;
+    background: $dark-2;
+    border-radius: cRem(20);
+    color: $light-1;
+    display: flex;
+    font-size: cRem(14);
+    height: cRem(20);
+    line-height: 1.5 !important;
+    margin: cRem(6) cRem(12) cRem(6) 0 !important;
+    padding: cRem(8) 0 cRem(8) cRem(16) !important;
+
+    .facetwp-selection-label {
+      display: block;
+    }
+
+    .facetwp-selection-value {
+      margin-right: 0 !important;
+    }
+  }
+
+  .facetwp-selection-value {
+    background: $dark-2;
+    background-image: none !important;
+    border-radius: cRem(20);
+    color: $light-1;
+    font-size: cRem(14);
+    height: cRem(20);
+    line-height: 1.5 !important;
+    margin: cRem(6) cRem(12) cRem(6) 0 !important;
+    padding: cRem(8) cRem(32) cRem(8) cRem(16) !important;
+    position: relative;
+
+    &:after {
+      background-image: url("../icons/close-light.svg") !important;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      content: "";
+      display: block;
+      height: cRem(12);
+      position: absolute;
+      right: cRem(12);
+      top: 50%;
+      transform: translateY(-50%);
+      width: cRem(12);
+    }
+  }
+}

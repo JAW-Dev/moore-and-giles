@@ -1,0 +1,17 @@
+{% if icon_blurb %}
+    {% set icon = function ('wp_get_attachment_url', icon_blurb.icon) %}
+    {% set blurb = icon_blurb.blurb %}
+    <div class="icon-blurb-outer">
+        <div class="icon-blurb">
+            {% if icon %}
+                <div class="icon-blurb__icon">
+                    {{  function( 'objectiv_echo_get_file_contents', icon ) }}
+                </div>
+            {% endif %}
+            {% if blurb %}
+                <div class="icon-blurb__blurb">{{ blurb }}</div>
+            {% endif %}
+
+        </div>
+    </div>
+{% endif %}

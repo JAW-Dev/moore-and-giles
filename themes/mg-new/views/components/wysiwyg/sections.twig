@@ -1,0 +1,13 @@
+{% if sections is not empty %}
+    <div class="wysiwyg-sections-outer mw-940 mlra">
+        {% for section in sections %}
+            <div class="wysiwyg-section margin-top-sec margin-bot-sec overflow-auto f18 wysiwyg-content">
+                {{ section.content }}
+            </div>
+            {% if not loop.last %}
+                <div class="separator-line"></div>
+            {% endif %}
+
+        {% endfor %}
+    </div>
+{% endif %}

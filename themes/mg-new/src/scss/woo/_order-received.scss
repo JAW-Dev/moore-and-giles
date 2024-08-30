@@ -1,0 +1,115 @@
+.woocommerce-thankyou-order-received {
+  margin-bottom: cRem(32);
+}
+
+// Order Details
+.woocommerce-order-received .woocommerce ul.order_details {
+  background: $light-1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: cRem(32);
+  padding: cRem(32);
+
+  &::before,
+  &::after {
+    display: none;
+  }
+
+  @media (min-width: $break-tablet) {
+    display: grid;
+    gap: cRem(12);
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.woocommerce-order-received .woocommerce ul.order_details li {
+  border: none;
+  font-size: cRem(16);
+  margin-bottom: cRem(8);
+  margin-right: 0;
+  padding-right: 0;
+  text-transform: capitalize;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: $break-tablet) {
+    align-items: center;
+    display: flex;
+    margin-bottom: unset;
+  }
+}
+
+.woocommerce-order-received .woocommerce ul.order_details li strong {
+  font-size: cRem(16);
+
+  @media (min-width: $break-tablet) {
+    margin-left: cRem(10);
+  }
+}
+
+.woocommerce-order-received .woocommerce-order-details {
+  margin-bottom: cRem(32);
+
+  .woocommerce-order-details__title {
+    font-size: cRem(24);
+    margin-bottom: cRem(12);
+    margin-top: 0;
+  }
+}
+
+// Shipping and Billing Address
+.woocommerce-order-received .woocommerce-columns--addresses {
+  display: grid;
+  gap: cRem(32);
+  grid-template-columns: 1fr;
+
+  &:before,
+  &:after {
+    display: none;
+  }
+
+  @media (min-width: $break-tablet-large) {
+    gap: cRem(32);
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.woocommerce-order-received .woocommerce-column--billing-address,
+.woocommerce-order-received .woocommerce-column--shipping-address {
+  background: $light-1;
+  padding: cRem(32);
+
+  .woocommerce-column__title {
+    font-size: cRem(24);
+    margin-bottom: cRem(12);
+    margin-top: 0;
+  }
+}
+
+.woocommerce-order-received .woocommerce .woocommerce-customer-details address {
+  border: none;
+  padding: 0;
+}
+
+.woocommerce-order-received.woocommerce-page .col2-set .col-1,
+.woocommerce-order-received.woocommerce-page .col2-set .col-2 {
+  width: auto;
+}
+
+.woocommerce .woocommerce-customer-details .woocommerce-customer-details--email,
+.woocommerce
+  .woocommerce-customer-details
+  .woocommerce-customer-details--phone {
+  align-items: center;
+  display: flex;
+}
+
+.woocommerce-order-received .woocommerce .woocommerce-customer-details {
+  margin-bottom: 0;
+}
+
+.woocommerce-order-received .woocommerce table.shop_table td {
+  padding: 9px 12px;
+}

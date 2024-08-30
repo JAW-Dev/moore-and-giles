@@ -1,0 +1,28 @@
+{% if faq %}
+    <section class="single-product-faq">
+        <h5 class="single-product-faq-section-title">
+            Frequently Asked Questions
+        </h5>
+        <div class="single-product-faq-items">
+            {% for q in faq %}
+                {% set title = q.title %}
+                {% set content = q.content %}
+                <div class="single-product-faq-item">
+                    <div class="single-product-faq-title-bar">
+                        <span class="title">
+                            {{ title }}
+                        </span>
+                        <span class="arrow">
+                            {{ svg('right-arrow-thin') }}
+                        </span>
+                    </div>
+                    <div class="single-product-faq-content-container">
+                        <div class="content">
+                            {{ content }}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endif %}

@@ -1,0 +1,105 @@
+{# See Timber Docs. Do not remove this. Product context will be incorrect if removed. #}
+{% if set_product %}
+	{{ stash_woo_product( product ) }}
+    {{ set_woo_product( product ) }}
+{% endif %}
+
+{% set product_attr  = get_color_attributes(product.id) %}
+
+{% set color_attr  = fn('wc_get_product_terms', product.id, 'pa_color' )[0] %}
+{% set product_type = fn('WC_Product_Factory::get_product_type', product.id ) %}
+
+{%  if product.custom.replacement_cover_image %}
+	{% set cover_image = product.custom.replacement_cover_image %}
+{%  else %}
+	{% set cover_image = product.thumbnail %}
+{%  endif %}
+
+{%  if product.custom.replacement_hover_image %}
+	{% set hover_image = product.custom.replacement_hover_image %}
+{%  else %}
+	{% set hover_image = product._product_image_gallery|split(',')|first  %}
+{%  endif %}
+
+{% if not hover_image %}
+	{% set hover_image = product.variation_image_gallery|split(',')|first  %}
+{% endif %}
+
+{% set images = tease_product_images({ product: product, cover_image: cover_image, hover_image: hover_image }) %}
+{% set cover_image = images.cover_image %}
+{% set hover_image = images.hover_image %}
+{% set custom_template = product.meta('mg_furniture_template') %}
+
+
+	<article id="archive-product-{{ product.id }}" class="entry tease-product">
+        <div class="tease-product__wrap">
+			<div class="media-figure {% if not product.thumbnail %}placeholder{% endif %}">
+				<a href="{{ product.link }}" class="media-figure__link"></a>
+				{% if custom_template != 'custom' %}
+					<a href="{{ product.link }}" data-jckqvpid="{{ product.id }}" class="button alt media-figure__button">{{ catalog.quick_shop_button }}</a>
+				{% endif %}
+
+				<div class="media-figure__images">
+					{% if cover_image %}
+						<img{{ cover_image|get_timber_image_responsive('thumbnail') }} class="media-figure__image archive-primary-product-image"/>
+					{% else %}
+						<img src="{{ fn('wc_placeholder_img_src') }}" />
+					{% endif %}
+
+					{% if hover_image %}
+						<img{{ hover_image|get_timber_image_responsive( 'thumbnail') }} class="media-figure__image--hover"/>
+					{% endif %}
+				</div>
+			</div>
+
+            <div class="media-content">
+
+                {% do action('woocommerce_before_shop_loop_item_title') %}
+
+                <div class="media-content__column">
+
+                    {% if product.title %}
+                        <h3 class="media-content__title">
+							<a href="{{ product.link }}" class="media-content__link">
+								{{ product.title }}
+							</a>
+						</h3>
+                    {% else %}
+                        <h3 class="media-content__title">
+							<a href="{{ product.link }}" class="media-content__link">
+								{{ function('the_title') }}
+							</a>
+						</h3>
+                    {% endif %}
+
+                    <div class="entry-color">
+                        <span class="media-content__color">
+							{% if product_type == "variable" and product_attr.color_count %}
+								Available in {{ product_attr.color_count }} colors.
+							{% elseif product_type == "variable" and product_attr.size_count %}
+								Available in {{ product_attr.size_count }} sizes.
+							{% elseif product_type == "variable" and product_attr.style_count %}
+								Available in {{ product_attr.style_count }} styles.
+							{% else %}
+								{{ color_attr.name }}
+							{% endif %}
+						</span>
+                    </div>
+                </div>
+
+                <div class="media-content__price">
+                    {% do action( 'woocommerce_after_shop_loop_item_title' ) %}
+
+					{% include "woo/tease/new.twig" with {
+						"product": product
+					} %}
+                </div>
+            </div>
+
+			{% do action( 'woocommerce_after_shop_loop_item' ) %}
+        </div>
+</article>
+{# This restores the global $product to the one that was the global $product before this ish ran #}
+{% if set_product %}
+	{{ unstash_woo_product( product ) }}
+{% endif %}

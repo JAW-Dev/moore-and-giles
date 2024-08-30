@@ -1,0 +1,27 @@
+.films-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: $spacing-mobile * 3;
+
+  @media (min-width: $break-tablet) {
+    grid-template-columns: 1fr 1fr;
+
+    .film:first-of-type {
+      grid-column-end: span 2;
+    }
+  }
+
+  .film-title {
+    margin-top: 0;
+    margin-bottom: $spacing-mobile;
+  }
+
+  .film-details {
+    padding: $spacing-mobile;
+    background: get-color(light, 3);
+
+    @media (min-width: $break-tablet) {
+      padding: $spacing-desktop;
+    }
+  }
+}

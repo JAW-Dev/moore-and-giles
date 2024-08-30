@@ -1,0 +1,48 @@
+.icon-blurb-grid {
+  display: grid;
+  grid-gap: $spacing-desktop;
+  grid-template-columns: 1fr;
+
+  @media (min-width: $break-tablet-large) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.icon-blurb-outer {
+  display: flex;
+}
+
+.icon-blurb {
+  background: $accent-1;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  max-width: 400px;
+  padding: $spacing-desktop * 2;
+
+  @media (min-width: $break-tablet-large) {
+    width: 100%;
+  }
+}
+
+.icon-blurb__icon {
+  margin-bottom: $spacing-desktop;
+  min-height: 70px;
+  text-align: center;
+  width: 100%;
+
+  svg {
+    height: 60px;
+    width: 60px;
+
+    path {
+      fill: white;
+    }
+  }
+}
+
+.icon-blurb__blurb {
+  color: white;
+  text-align: center;
+  width: 100%;
+}

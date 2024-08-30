@@ -1,0 +1,5 @@
+<li class="social-icon">
+	{% set image = function( 'wp_get_attachment_url', icon ) %}
+	{% set image_get = svg_url(image) %}
+    <a class="social-link" href="{{ link }}" target="_blank">{{ image_get }}</a>
+</li>

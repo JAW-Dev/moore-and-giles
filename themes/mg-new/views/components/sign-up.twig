@@ -1,0 +1,39 @@
+<section id="sign-up" class="sign-up">
+    <div class="wrap">
+		<form method="post" action="https://customers.listrak.com/q/GZYIVKsXTpi30E30PN2bSXmIklD-KgJZxW" accept-charset="UTF-8">
+			{% if type == 'frontpage' %}
+				<div class="constrainer frontpage">
+					<div class="headings">
+						<h3 class="title">{{sign_up_block['title']}}</h3>
+						<p class="mb0">{{sign_up_block['blurb']}}</p>
+					</div>
+					<span class="mg-input-wrap">
+						<input type="hidden" name="crvs" value="AlaRohSLa8DrPgqwitVkl4uZKgQ_91IYPGacpPynFDA4jaAEZOkdMVsfhHt8MnNE2BOzwaSIU0DvXWJ3EDGfxMKomZX2AdnqHjuvOX_08ASoo3nSC-uvSbNhu-FV0lsoshVG4tUrNx2jCIiWC6rqUMYecZowxRdQGyz798zw6P89JgKSkrV2uuQiUs2WmJco">
+						<input type="text" class="mg-input" name="email" size="40" maxlength="100" value="" placeholder="{{sign_up_block['placeholder']}}" required="">
+						<input type="hidden" name="CheckBox.Source.Footer" value="on">
+						<span class="validation-wrap" style="display: none;">
+							{{ svg('validated') }}
+						</span>
+					</span>
+				</div>
+				<input type="submit" class="button button__orange button__center" id="submit" value="{{sign_up_block['button']}}">
+			{% endif %}
+			{% if type == 'footer' %}
+				<div class="constrainer footer">
+					<div class="headings">
+						<h3 class="title">{{sign_up_footer['title']}}</h3>
+						<p class="mb0">{{sign_up_footer['blurb']}}</p>
+					</div>
+					<span class="mg-input-wrap">
+						<input type="hidden" name="crvs" value="AlaRohSLa8DrPgqwitVkl4uZKgQ_91IYPGacpPynFDA4jaAEZOkdMVsfhHt8MnNE2BOzwaSIU0DvXWJ3EDGfxMKomZX2AdnqHjuvOX_08ASoo3nSC-uvSbNhu-FV0lsoshVG4tUrNx2jCIiWC6rqUMYecZowxRdQGyz798zw6P89JgKSkrV2uuQiUs2WmJco">
+						<input type="text" class="mg-input" name="email" size="40" maxlength="100" value="" placeholder="{{sign_up_footer['placeholder']}}" required="">
+						<input type="hidden" name="CheckBox.Source.Footer" value="on">
+						<span class="validation-wrap" style="display: none;">
+							{{ svg('validated') }}
+						</span>
+					</div>
+				<input type="submit" class="button button__gray" id="submit-footer" value="{{sign_up_footer['button']}}">
+			{% endif %}
+		</form>
+    </div>
+</section>

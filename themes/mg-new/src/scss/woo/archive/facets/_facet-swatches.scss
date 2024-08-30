@@ -1,0 +1,25 @@
+.facetwp-facet-product_colors,
+.facetwp-facet-color,
+.facetwp-facet-color_family {
+  .facetwp-checkbox {
+    width: cRem(30);
+    height: cRem(30);
+    display: inline-block;
+    padding: 0;
+    margin-right: 0.125rem;
+    margin-left: 0.125rem;
+    margin-bottom: 0;
+    border: 2px solid white;
+    border-radius: 100%;
+    box-shadow: none;
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+    &:hover {
+      box-shadow: 0 0 0 1px $dark-3;
+    }
+  }
+}

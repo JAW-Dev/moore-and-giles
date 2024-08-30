@@ -1,0 +1,23 @@
+<div class="left-mega-menu-wrap">
+	<nav class="primary-nav mega-menu-triggers">
+	{% if mega_menu.mega_menu_items %}
+		{% for menu_item in mega_menu.mega_menu_items %}
+			{% set current_class = function( 'is_current_page', menu_item.mega_menu_title.url ) %}
+			{% if current_class %}
+				{% set active_class = 'current' %}
+			{% else %}
+				{% set active_class = '' %}
+			{% endif %}
+
+			<a 
+			href="{{ menu_item.mega_menu_title.url }}" 
+			target="{{ menu_item.mega_menu_title.target}}" 
+			class="top-menu-item {{ active_class }}" 
+			title="{{ menu_item.mega_menu_title.title }}"
+			id="mega-menu-item-{{loop.index}}">
+				{{ menu_item.mega_menu_title.title }}
+			</a>
+		{% endfor %}
+	{% endif %}
+	</nav>
+</div>

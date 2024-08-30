@@ -1,0 +1,38 @@
+.woocommerce div.product .woocommerce-product-rating {
+  margin-bottom: cRem(32);
+  position: relative;
+  color: $accent-1;
+  line-height: 1;
+
+  .star-rating,
+  .count {
+    font-size: 0.7em;
+    letter-spacing: 2px;
+  }
+  .star-rating {
+    width: 6em;
+    margin: 0 cRem(4) 0 0;
+  }
+  .count {
+    position: relative;
+    display: block;
+  }
+
+  @media (min-width: $break-tablet-large) {
+    margin-bottom: cRem(64);
+  }
+}
+
+.woocommerce-product-rating .count,
+.woocommerce div.product .woocommerce-product-rating .count {
+  color: $dark-2;
+}
+
+.woocommerce div.product .woocommerce-product-rating .star-rating::before,
+.woocommerce .star-rating::before,
+.woocommerce-product-rating,
+.owner-rating-wrap .star-rating span,
+.comment-form-rating .stars a,
+.comment-text .star-rating span {
+  color: $accent-1;
+}

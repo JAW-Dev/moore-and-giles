@@ -1,0 +1,141 @@
+.sidebar-cart {
+  box-sizing: border-box;
+  height: 100vh;
+  min-height: 100vh;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  visibility: visible;
+  width: 100%;
+  z-index: -1;
+
+  .woocommerce-error,
+  .woocommerce-info,
+  .woocommerce-message {
+    margin-bottom: 0;
+  }
+
+  .backorder_notification {
+    font-weight: normal;
+    margin: 0;
+  }
+
+  &__overlay,
+  &__container {
+    position: absolute;
+  }
+
+  &__overlay {
+    background: rgba(0, 0, 0, 0.6);
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    top: 0;
+    transition: opacity 0.1s ease;
+    width: 100%;
+    z-index: 1;
+  }
+
+  &__container {
+    background: white;
+    bottom: 0;
+    box-sizing: border-box;
+    max-width: none;
+    overflow: auto;
+    position: fixed;
+    right: cRem(-400);
+    top: 0;
+    transition: right 0.3s ease;
+    width: 100%;
+    z-index: 2;
+
+    .admin-bar & {
+      top: 32px;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .woocommerce {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    overflow-x: hidden;
+    overflow-y: visible;
+
+    .inner-row {
+      padding: 0 2rem;
+    }
+
+    .cart-header,
+    .cart-footer {
+      flex-shrink: 0;
+    }
+
+    .cart-header .inner-row {
+      padding-top: 2rem;
+    }
+
+    .cart-footer .inner-row {
+      padding-bottom: 2rem;
+    }
+
+    form {
+      height: 100%;
+      overflow-x: auto;
+      overflow-y: auto;
+
+      &.processing {
+        position: static !important;
+      }
+
+      .blockOverlay {
+        height: 100vh !important;
+      }
+    }
+  }
+
+  &.opened {
+    height: 100vh;
+    opacity: 1;
+    width: 100%;
+    z-index: 10001;
+
+    .sidebar-cart__container {
+      position: fixed;
+      right: 0;
+      transition: right 0.3s ease;
+    }
+    .sidebar-cart__overlay {
+      opacity: 1;
+      position: fixed;
+      transition: opacity 0.1s ease;
+    }
+  }
+
+  button[name="update_cart"] {
+    display: none !important;
+  }
+
+  .addon-field-container {
+    margin: 0.5rem 0;
+  }
+
+  .woocommerce .woocommerce-message .wc-forward {
+    display: none;
+  }
+
+  @media (min-width: $break-tablet-large) {
+    transition: all 0.3s ease;
+    &__container {
+      max-width: cRem(400);
+    }
+  }
+}
+
+p.return-to-shop {
+  display: none;
+}

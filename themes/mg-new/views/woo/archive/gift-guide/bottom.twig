@@ -1,0 +1,15 @@
+{% set content = fn( 'get_field', 'gift_guide_bottom', 'options' ) %}
+
+{% if content.enable_cards %}
+	{% include "components/cards/cards.twig" with {
+		"content": content,
+		"wrapper_classes": 'gift-guide-bottom__cards'
+	} %}
+{% endif %}
+
+{% if content.hero_banner_enabled %}
+	{% include "components/hero-banner/banner.twig" with {
+		"content": content,
+		"wrapper_classes": "gift-guide-bottom__banner",
+	} %}
+{% endif %}

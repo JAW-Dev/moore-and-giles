@@ -1,0 +1,27 @@
+.facet-widget {
+  color: get_color("light", 4);
+  border-bottom: 2px solid lighten(#9b9b9b, 20%);
+  h2 {
+    display: block;
+    font-weight: bold;
+    color: get_color("dark", 2);
+    background: url("../icons/plus.svg") center right no-repeat;
+    &:hover {
+      cursor: pointer;
+    }
+    &.opened {
+      background: url("../icons/minus.svg") center right no-repeat;
+    }
+  }
+
+  .facetwp-facet {
+    margin-bottom: 1rem;
+  }
+
+  .textwidget {
+    display: none;
+  }
+  .textwidget.show {
+    display: block;
+  }
+}

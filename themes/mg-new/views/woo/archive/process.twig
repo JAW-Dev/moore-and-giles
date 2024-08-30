@@ -1,0 +1,19 @@
+<section class="woo-process">
+    <div class="wrap wrap-woo-archive">
+        <div class="descriptors">
+        {% for descriptor in descriptors %}
+            <div class="descriptor">
+                <div class="icon-container">
+                    {{ svg(descriptor['icon']) }}
+                </div>
+                <h4 class="title">
+                    {{ descriptor['title'] }}
+                </h4>
+                <div class="content">
+                    {{ descriptor['content'] }}
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+</section>

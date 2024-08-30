@@ -1,0 +1,17 @@
+{
+    "name": "objectiv/mg-personalization-addon",
+    "description": "A WordPress plugin boilerplate",
+    "version": "1.0.0",
+    "license": "GFDL-1.2-or-later",
+    "authors": [{ "name": "objectiv" }],
+    "config": {
+        "optimize-autoloader": true,
+        "classmap-authoritative": true
+    },
+    "autoload": {
+        "psr-4": {"MG_Personalization_Addon\\": "includes/Classes"},
+        "classmap": [
+            "includes/Classes"
+        ]
+    }
+}

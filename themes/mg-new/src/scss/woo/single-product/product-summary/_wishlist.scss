@@ -1,0 +1,30 @@
+.wishlist {
+  display: none;
+  &__label {
+    position: relative;
+  }
+  &__icon {
+    position: relative;
+    display: inline-block;
+    background: url('../icons/check-heart.svg') no-repeat;
+    background-size: contain;
+    margin-right: cRem(9);
+    width: cRem(15);
+    height: cRem(14);
+    top: cRem(2);
+  }
+  input[type="checkbox"].wishlist__checkbox {
+    position: absolute;
+    margin: 0;
+    opacity: 0;
+    &:checked + span.wishlist__icon {
+      background: url('../icons/check-heart-fill.svg') no-repeat;
+      width: cRem(15);
+      height: cRem(14);
+    }
+  }
+  &__label-text {
+    display: inline-block;
+    font-weight: 500;
+  }
+}

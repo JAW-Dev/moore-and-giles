@@ -1,0 +1,45 @@
+{
+	"name": "objectiv",
+	"version": "1.0.0",
+	"description": "A starter theme for Objectiv websites",
+	"main": "index.js",
+	"author": "Objectiv",
+	"license": "MIT",
+	"scripts": {
+		"build": "$(yarn bin)/webpack -p",
+		"watch": "$(yarn bin)/webpack --watch"
+	},
+	"dependencies": {
+		"modaal": "^0.4.4",
+		"picturefill": "^3.0.3",
+		"slick-carousel": "^1.6.0",
+		"tippy.js": "^3.0.3"
+	},
+	"devDependencies": {
+		"@stencil/webpack": "0.0.6",
+		"@types/jquery": "^3.3.33",
+		"@types/jquery.blockui": "^0.0.28",
+		"@types/slick-carousel": "^1.6.32",
+		"autoprefixer": "^8.6.5",
+		"css-loader": "^1.0.1",
+		"extract-text-webpack-plugin": "^4.0.0-beta.0",
+		"file-loader": "^1.1.11",
+		"inline-source-map": "^0.6.2",
+		"jquery": "^1.12.4",
+		"mini-css-extract-plugin": "^0.4.4",
+		"node-sass": "^4.12",
+		"node-sass-json-importer": "^3.3.1",
+		"normalize.css": "^8.0.0",
+		"postcss": "^6.0.23",
+		"postcss-loader": "^2.1.6",
+		"reflect-metadata": "^0.1.12",
+		"sass-loader": "^7.1.0",
+		"script-loader": "^0.7.2",
+		"style-loader": "^0.20.3",
+		"ts-class-meta-generator": "^1.0.6",
+		"ts-loader": "^4.5.0",
+		"typescript": "^2.9.2",
+		"webpack": "^4.42.0",
+		"webpack-cli": "^3.3.11"
+	}
+}

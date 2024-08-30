@@ -1,0 +1,22 @@
+.breadcrumbs {
+  font-size: cRem(14);
+  margin: 0 auto 10px;
+  max-width: 1300px;
+  text-align: center;
+  width: 95%;
+
+  @media (min-width: $break-tablet-large) {
+    text-align: left;
+  }
+
+  a,
+  .breadcrumb_last {
+    color: $dark-3;
+    margin: 0 cRem(5);
+    white-space: nowrap;
+  }
+
+  a:first-child {
+    margin-left: 0;
+  }
+}

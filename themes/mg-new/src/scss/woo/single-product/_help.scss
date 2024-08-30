@@ -1,0 +1,38 @@
+.help-links {
+  display: flex;
+  justify-content: center;
+  margin-bottom: cRem(24);
+  line-height: 1.2;
+  &__shipping,
+  &__product-care,
+  &__help {
+    flex: 0 1 auto;
+    color: $light-4;
+    font-size: cRem(16);
+    letter-spacing: 0.4px;
+    padding-left: cRem(32);
+    background-size: cRem(21) cRem(21);
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  &__shipping,
+  &__product-care {
+    margin-right: cRem(20);
+
+    @media (min-width: $break-tablet-large) {
+      margin-right: cRem(40);
+    }
+  }
+  &__shipping {
+    background: url('../icons/shipping.svg') center left no-repeat;
+  }
+  &__product-care {
+    background: url('../icons/product-care.svg') center left no-repeat;
+  }
+  &__help {
+    background: url('../icons/question-mark-large.svg') center left no-repeat;
+    padding-left: cRem(22);
+    background-size: cRem(11) cRem(21);
+  }
+}

@@ -1,0 +1,38 @@
+{% if fifty_blocks is not empty %}
+    <section class="fifty-image-content section-padding bg-light-1">
+        <div class="wrap p0">
+            <div class="fifty-image-content-inner">
+                {% for row in fifty_blocks %}
+                    {% set title = row.title %}
+                    {% set blurb = row.blurb %}
+                    {% set button = row.button %}
+                    {% set image = row.image | get_timber_image_src('medium') %}
+                    {% set image_position = row.image_position %}
+                    {% if image is not empty %}
+                        <div class="fifty-image-content-row flex align-center justify-center mobile-stacked {{ image_position }}">
+                            <div class="image-side mh-350 width-50p bg-img" style="background-image:url({{ image }})"></div>
+                            <div class="content-side width-50p">
+                                <div class="content-side-content pad-all-2 tac">
+                                    {% if title is not empty %}
+                                        <h3 class="margin-bot-1 mt0">{{ title }}</h3>
+                                    {% endif %}
+                                    {% if blurb is not empty %}
+                                        <div class="wysiwyg-content">
+                                            {{ blurb }}
+                                        </div>
+                                    {% endif %}
+                                    {% if button is not empty %}
+                                        <div class="margin-top-1">
+                                            {% include '/components/buttons/primary.twig' %}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endif %}

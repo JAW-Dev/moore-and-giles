@@ -1,0 +1,11 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px"
+	 height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
+		<g id="Filled_Icon">
+			<path d="M23.709,12.293l-4.999-5c-0.391-0.391-1.023-0.391-1.414,0c-0.391,0.391-0.391,1.023,0,1.414L20.589,12H1.003
+				c-0.553,0-1,0.448-1,1c0,0.553,0.447,1,1,1h19.586l-3.293,3.293c-0.391,0.391-0.391,1.023,0,1.414c0.391,0.391,1.023,0.391,1.414,0
+				l4.999-4.999C24.1,13.317,24.095,12.679,23.709,12.293z"/>
+		</g>
+		<g id="Invisible_Shape">
+			<rect fill="none" width="24" height="24"/>
+		</g>
+	</svg>

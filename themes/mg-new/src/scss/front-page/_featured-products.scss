@@ -1,0 +1,151 @@
+.travel-holidays {
+  display: block;
+
+  &__header {
+    text-align: center;
+    margin-bottom: 0;
+    font-size: cReam(28);
+
+    @media (min-width: $break-front-page-custom-breakpoint-cat-blocks) {
+      margin-bottom: 4rem;
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+  }
+
+  &__body {
+    display: none;
+
+    @media (min-width: $break-front-page-custom-breakpoint-cat-blocks) {
+      display: flex;
+    }
+  }
+
+  &__sidebar {
+    display: flex;
+    flex-direction: column;
+    max-width: cRem(326);
+    box-sizing: border-box;
+    padding-right: 6rem;
+    padding-top: 1rem;
+    border-right: 1px solid #d5d5d5;
+
+    h3 {
+      margin: 0 0 1.5rem;
+      font-size: cRem(11);
+      text-transform: uppercase;
+      color:#5b5c5d;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    h4 {
+      font-size: cRem(26);
+      margin: 0 0 1rem;
+      font-weight: bold;
+      text-align: left;
+      line-height: 1.3em;
+      font-family: $font-sans;
+    }
+
+    p {
+      font-size: cRem(14);
+      text-align: left;
+      line-height: 18px;
+    }
+  }
+
+  &__carousel-controlls {
+    display: flex;
+    justify-content: space-between;
+    width: cRem(58);
+    margin-top: auto;
+    margin-bottom: 0.5rem;
+    padding-top: 1rem;
+
+    .arrow {
+      polyline {
+        stroke: $accent-1;
+      }
+
+      &:focus,
+      &:hover {
+        cursor: pointer;
+        polyline {
+          stroke: $accent-2;
+        }
+      }
+
+      &:active {
+        polyline {
+          stroke: $accent-3;
+        }
+      }
+    }
+
+    .prev-arrow,
+    .next-arrow {
+      width: cRem(20);
+      height: cRem(34);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.3s ease;
+
+      svg {
+        height: cRem(17);
+        fill: $accent-1;
+      }
+
+      &:hover {
+        svg {
+          fill: $dark-3;
+        }
+      }
+    }
+
+    .prev-arrow {
+    }
+
+    .next-arrow {
+    }
+  }
+
+  &__carousel {
+    overflow: hidden;
+    flex: 1;
+
+    .carousel__title {
+      margin: 0;
+      padding: cRem(22) 0 cRem(3);
+      font-size: 1em;
+      font-family: $font-serif;
+      font-weight: bold;
+      color: $dark-2;
+
+      a {
+        color: $dark-2;
+        font-family: $font-serif;
+
+        &:hover {
+          color: $accent-1;
+        }
+      }
+    }
+
+    .carousel__color {
+      font-family: $font-serif;
+      color: $dark-2;
+    }
+
+    .slick-slide {
+      padding: 0 1rem 1rem;
+    }
+
+    .carousel__figure:hover + .entry-title a {
+      color: $accent-1;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+<div class="wrap wysiwyg-content hero-banner__content">
+	{% if content.content_type == 'basic' %}
+		<h2 class="hero-banner__content-heading">{{ content.heading }}</h2>
+		<h3 class="hero-banner__content-subheading">{{ content.subheading }}</h3>
+
+		{% if content.button_link.link_type == 'internal_link' %}
+			{% set button_link_src  = 'href="'~content.button_link.internal_link~'"' %}
+		{% elseif content.button_link.link_type == 'external_url' %}
+			{% set button_link_src  = 'href="'~content.button_link.external_url~'"' %}
+		{% endif %}
+
+		<p>
+			<a {{ button_link_src }} class="button button__orange hero-banner__content-button swatch-form">
+				<span class="hero-banner__content-button-text">{{ content.button_text }}</spen>
+			</a>
+		</p>
+	{% elseif content.content_type == 'editor' %}
+		{{ content.editor }}
+	{% endif %}
+</div>

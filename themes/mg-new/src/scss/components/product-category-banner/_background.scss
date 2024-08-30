@@ -1,0 +1,14 @@
+.product-category-banner {
+  display: flex;
+  align-items: center;
+  min-height: cRem(420);
+
+  &__background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-position: center center;
+    background-size: cover;
+  }
+}

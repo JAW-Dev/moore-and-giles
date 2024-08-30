@@ -1,0 +1,5 @@
+<ul class="social-icons-wrap horizontal-list">
+    {% for item in items %}
+        {% include '/components/social/social-loop.twig' with { 'icon': item['social_link_image'], 'link': item['social_link'] } %}
+    {% endfor %}
+</ul>

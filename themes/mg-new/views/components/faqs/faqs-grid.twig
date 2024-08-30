@@ -1,0 +1,7 @@
+{% if faqs is not empty %}
+    <div class="faq-grid-wrap">
+        {% for faq in faqs %}
+            {% include 'components/faqs/faq.twig' %}
+        {% endfor %}
+    </div>
+{% endif %}

@@ -1,0 +1,264 @@
+// Margin Resets
+.mb0 {
+  margin-bottom: 0;
+}
+
+.lmb0 {
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+.fmt0 {
+  > :first-child {
+    margin-top: 0;
+  }
+}
+
+.lotmb0 {
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.mlra {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.m0,
+.wrap.m0 {
+  margin: 0;
+}
+
+.p0,
+.wrap.p0 {
+  padding: 0;
+}
+
+.mt0 {
+  margin-top: 0;
+}
+
+// Section Margins and Paddings
+.section-margin {
+  margin: $spacing-mobile-section 0;
+
+  @media (min-width: $break-tablet) {
+    margin: $spacing-desktop-section 0;
+  }
+}
+
+.section-padding {
+  padding: $spacing-mobile-section 0;
+
+  @media (min-width: $break-tablet) {
+    padding: $spacing-desktop-section 0;
+  }
+}
+
+// Base Spacing Paddings
+.pad-all-1 {
+  padding: $spacing-mobile;
+
+  @media (min-width: $break-tablet) {
+    padding: $spacing-desktop;
+  }
+}
+
+.pad-all-2 {
+  padding: $spacing-mobile * 2;
+
+  @media (min-width: $break-tablet) {
+    padding: $spacing-desktop * 2;
+  }
+}
+
+.pad-bot-half {
+  padding-bottom: $spacing-mobile/2;
+
+  @media (min-width: $break-tablet) {
+    padding-bottom: $spacing-desktop/2;
+  }
+}
+
+.pad-top-half {
+  padding-top: $spacing-mobile/2;
+
+  @media (min-width: $break-tablet) {
+    padding-top: $spacing-desktop/2;
+  }
+}
+
+.pad-bot-1 {
+  padding-bottom: $spacing-mobile;
+
+  @media (min-width: $break-tablet) {
+    padding-bottom: $spacing-desktop;
+  }
+}
+
+.pad-top-1 {
+  padding-top: $spacing-mobile;
+
+  @media (min-width: $break-tablet) {
+    padding-top: $spacing-desktop;
+  }
+}
+
+.pad-bot-1-half {
+  padding-bottom: $spacing-mobile * 1.5;
+
+  @media (min-width: $break-tablet) {
+    padding-bottom: $spacing-desktop * 1.5;
+  }
+}
+
+.pad-top-1-half {
+  padding-top: $spacing-mobile * 1.5;
+
+  @media (min-width: $break-tablet) {
+    padding-top: $spacing-desktop * 1.5;
+  }
+}
+
+.pad-top-sec {
+  padding-top: $spacing-mobile-section;
+
+  @media (min-width: $break-tablet) {
+    padding-top: $spacing-desktop-section;
+  }
+}
+
+.pad-bot-sec {
+  padding-bottom: $spacing-mobile-section;
+
+  @media (min-width: $break-tablet) {
+    padding-bottom: $spacing-desktop-section;
+  }
+}
+
+// Margin Bottoms
+.margin-all-half {
+  margin: $spacing-mobile/2;
+
+  @media (min-width: $break-tablet) {
+    margin: $spacing-desktop/2;
+  }
+}
+
+// Margin Bottoms
+.margin-bot-half {
+  margin-bottom: $spacing-mobile/2;
+
+  @media (min-width: $break-tablet) {
+    margin-bottom: $spacing-desktop/2;
+  }
+}
+
+.margin-bot-1 {
+  margin-bottom: $spacing-mobile;
+
+  @media (min-width: $break-tablet) {
+    margin-bottom: $spacing-desktop;
+  }
+}
+
+.margin-bot-1-half {
+  margin-bottom: $spacing-mobile * 1.5;
+
+  @media (min-width: $break-tablet) {
+    margin-bottom: $spacing-desktop * 1.5;
+  }
+}
+
+.margin-bot-2 {
+  margin-bottom: $spacing-mobile * 2;
+
+  @media (min-width: $break-tablet) {
+    margin-bottom: $spacing-desktop * 2;
+  }
+}
+
+.margin-bot-sec {
+  margin-bottom: $spacing-mobile-section;
+
+  @media (min-width: $break-tablet) {
+    margin-bottom: $spacing-desktop-section;
+  }
+}
+
+// Margin Tops
+.margin-top-half {
+  margin-top: $spacing-mobile/2;
+
+  @media (min-width: $break-tablet) {
+    margin-top: $spacing-desktop/2;
+  }
+}
+
+.margin-top-1 {
+  margin-top: $spacing-mobile;
+
+  @media (min-width: $break-tablet) {
+    margin-top: $spacing-desktop;
+  }
+}
+
+.margin-top-1-half {
+  margin-top: $spacing-mobile * 1.5;
+
+  @media (min-width: $break-tablet) {
+    margin-top: $spacing-desktop * 1.5;
+  }
+}
+
+.margin-top-2 {
+  margin-top: $spacing-mobile * 2;
+
+  @media (min-width: $break-tablet) {
+    margin-top: $spacing-desktop * 2;
+  }
+}
+
+.margin-top-sec {
+  margin-top: $spacing-mobile-section;
+
+  @media (min-width: $break-tablet) {
+    margin-top: $spacing-desktop-section;
+  }
+}
+
+// Margin Lefts
+.margin-left-half {
+  margin-left: $spacing-mobile/2;
+
+  @media (min-width: $break-tablet) {
+    margin-left: $spacing-desktop/2;
+  }
+}
+
+.margin-left-1 {
+  margin-left: $spacing-mobile;
+
+  @media (min-width: $break-tablet) {
+    margin-left: $spacing-desktop;
+  }
+}
+
+// Margin Rights
+.margin-right-half {
+  margin-right: $spacing-mobile/2;
+
+  @media (min-width: $break-tablet) {
+    margin-right: $spacing-desktop/2;
+  }
+}
+
+.margin-right-1 {
+  margin-right: $spacing-mobile;
+
+  @media (min-width: $break-tablet) {
+    margin-right: $spacing-desktop;
+  }
+}

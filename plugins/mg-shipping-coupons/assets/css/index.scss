@@ -1,0 +1,11 @@
+@charset "UTF-8";
+// ========================================
+// Core Sass file
+// ========================================
+
+// Dependencies
+@import "dependencies";
+
+#cfw-cart-coupons.coupon .woocommerce-Price-amount{
+	display: none;
+}

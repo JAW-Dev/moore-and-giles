@@ -1,0 +1,128 @@
+.hero-banner {
+  &.footer-banner {
+    overflow: hidden;
+    position: relative;
+
+    .hero-banner__background-wrapper {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      transform: translateY(-50%);
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .hero-banner__content {
+      position: relative;
+    }
+
+    .hero-banner__content-subheading {
+      color: white;
+    }
+
+  }
+}
+
+.cta-block {
+  &.testimonial {
+    .cta-block__heading {
+      font-size: cRem(24);
+      line-height: 1.4em;
+    }
+    .cta-block__text {
+      font-size: cRem(16);
+      color: $dark-3;
+      letter-spacing: 4px;
+      font-family: $font-sans;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.landing-page-cards.cards {
+    .cards__card {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      min-width: cRem(227.7);
+      max-width: cRem(227.7);
+      width: 100%;
+      height: cRem(338.1);
+      max-height: cRem(338.1);
+      margin-top: cRem(22);
+      margin-right: cRem(10);
+      margin-left: cRem(10);
+    }
+
+    .cards__body {
+      align-items: flex-start;
+    }
+
+    .cards__header {
+      text-align: left;
+    }
+
+    .cards__title {
+      font-size: cRem(28);
+      color: #FFFFFF;
+      letter-spacing: -0.41px;
+    }
+
+    .cards__blurb {
+      font-size: cRem(14);
+    }
+
+    .cards__button-link {
+      padding-bottom: cRem(10);
+      border-bottom: 2px solid transparent;
+      transition: all 0.3s ease;
+
+      &:hover {
+        border-color: white;
+        color: white;
+      }
+    }
+
+    .cards__button-text {
+      font-size: cRem(18);
+    }
+
+    .cards__background {
+      left: 0;
+    }
+}
+
+.hero-banner--image,
+.landing-page-banner {
+  .hero-banner__content-heading {
+    font-size: cRem(45);
+    @media (min-width: $break-tablet-large) {
+      margin-bottom: cRem(5);
+    }
+  }
+
+  .hero-banner__content-subheading {
+    font-size: 1rem;
+    font-family: $font-serif;
+    margin-top: 0;
+  }
+
+  .hero-banner__content-button {
+    font-size: cRem(14);
+  }
+}
+
+.landing-page-banner {
+  height: cRem(210);
+
+  .hero-banner__content {
+    height: 100%;
+    padding: 3em 0;
+  }
+}

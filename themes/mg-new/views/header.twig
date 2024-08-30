@@ -1,0 +1,16 @@
+<header class="site-header" itemscope itemtype="http://schema.org/WPHeader">
+
+	{% include "/components/header/main.twig" %}
+
+	{% if not is_home and not is_front_page and not fn('is_account_page') %}
+		{{ breadcrumbs('<p id="breadcrumbs" class="breadcrumbs">','</p>') }}
+	{% endif %}
+
+	{% set display_banner = post.get_field('display_banner') %}
+
+	{% if post.hero_banner_enabled or fn( 'is_wc_endpoint_url', 'order-received' ) or fn('is_404') %}
+		{% include "components/hero-banner/banner.twig" with {
+			"content": post,
+		} %}
+	{% endif %}
+</header>

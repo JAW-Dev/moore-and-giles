@@ -1,0 +1,44 @@
+.site-header {
+  .site-header-main {
+    .nav-primary {
+      display: none;
+
+      /**
+       * We do the desktop header @ 900px (tablet-large) for ipad / tablet-large users.
+       * No need for the mobile menu they have enough room for activities
+       */
+      @media (min-width: $break-tablet-large) {
+        display: flex;
+        margin-right: auto;
+
+        .nav-wrap {
+          justify-content: flex-start;
+          width: 100%;
+
+          & > .menu-item {
+            flex-grow: 1;
+            margin-right: 1rem;
+            white-space: nowrap;
+
+            &:last-child {
+              margin-right: 0;
+            }
+
+            &:nth-child(2) {
+              text-align: center;
+            }
+            &:last-child {
+              text-align: right;
+            }
+          }
+        }
+
+        .current-menu-item {
+          a {
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+}

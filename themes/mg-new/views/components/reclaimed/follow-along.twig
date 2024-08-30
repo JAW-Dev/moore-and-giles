@@ -1,0 +1,51 @@
+{% if( post.get_field('follow_section_title') or post.get_field('follow_hashtag_text') or post.get_field('follow_instagram_link') ) %}
+    {% set section_title = post.get_field('follow_section_title') %}
+    {% set hastag_text = post.get_field('follow_hashtag_text') %}
+    {% set ig_link = post.get_field('follow_instagram_link') %}
+    {% set first_img = post.get_field('follow_first_image') %}
+    {% set second_img = post.get_field('follow_second_image') %}
+    <section class="follow-along">
+            <div class="wrap p0">
+                <div class="follow-along-inner">
+                    <div class="first">
+                        {% if( first_img ) %}
+                            {% set first_img_html = first_img | get_timber_image_responsive('large') %}
+
+                            <img class="display-block" {{ first_img_html }}>
+                        {% endif %}
+
+                        {% if( section_title ) %}
+                            <h2 class="section-title mobile ff-roboto-slab">{{ section_title }}</h2>
+                        {% endif %}
+
+                        {% if( hastag_text ) %}
+                            <div class="hashtag ff-roboto-slab">{{ hastag_text }}</div>
+                        {% endif %}
+
+                        {% if( ig_link ) %}
+                            <div class="button-wrap">
+                                <div class="ig-svg-wrap">
+                                    <a target="_blank" href="{{ ig_link.url }}">
+                                        <svg viewBox="0 0 43 45" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path id="a" d="M.001.824h42.192V45H0z"/></defs><g fill="none" fill-rule="evenodd"><g><mask id="b" fill="#fff"><use xlink:href="#a"/></mask><path d="M21.097 4.802c5.632 0 6.3.022 8.527.13 2.056.098 3.171.456 3.915.76a6.54 6.54 0 012.427 1.652c.737.773 1.196 1.507 1.579 2.541.288.778.63 1.945.725 4.1.102 2.328.124 3.03.124 8.926 0 5.897-.022 6.595-.124 8.927-.094 2.151-.437 3.322-.725 4.1-.383 1.03-.842 1.768-1.579 2.541a6.54 6.54 0 01-2.427 1.653c-.744.3-1.86.661-3.915.759-2.228.108-2.895.13-8.527.13s-6.3-.022-8.526-.13c-2.056-.098-3.172-.46-3.915-.76a6.54 6.54 0 01-2.428-1.652c-.737-.773-1.196-1.51-1.579-2.541-.288-.778-.63-1.949-.725-4.1-.102-2.332-.124-3.03-.124-8.927 0-5.896.022-6.598.124-8.926.095-2.155.437-3.322.725-4.1.383-1.034.842-1.768 1.579-2.541A6.54 6.54 0 018.656 5.69c.743-.303 1.859-.661 3.915-.759 2.227-.108 2.894-.13 8.526-.13m0-3.98c-5.73 0-6.449.025-8.698.133-2.245.109-3.78.481-5.121 1.027-1.39.564-2.563 1.32-3.737 2.549-1.174 1.225-1.895 2.458-2.435 3.912-.521 1.402-.879 3.011-.98 5.361C.022 16.158 0 16.914 0 22.911c0 5.998.022 6.75.124 9.108.102 2.35.46 3.955.981 5.361.54 1.454 1.261 2.683 2.435 3.912 1.174 1.23 2.348 1.985 3.737 2.549 1.341.546 2.876.918 5.121 1.027 2.25.108 2.968.133 8.698.133s6.449-.025 8.698-.133c2.245-.109 3.78-.481 5.122-1.027 1.388-.564 2.562-1.32 3.736-2.549 1.174-1.23 1.896-2.458 2.435-3.912.521-1.406.875-3.011.98-5.361.103-2.358.125-3.11.125-9.108 0-5.997-.022-6.753-.124-9.107-.106-2.35-.46-3.959-.98-5.361-.54-1.454-1.262-2.687-2.436-3.912-1.174-1.23-2.348-1.985-3.736-2.549-1.342-.546-2.877-.918-5.122-1.027-2.25-.108-2.967-.134-8.698-.134" fill="#222E32" mask="url(#b)"/></g><path d="M20.813 11.25c-5.902 0-10.688 5.038-10.688 11.248 0 6.214 4.786 11.252 10.688 11.252 5.9 0 10.687-5.038 10.687-11.252 0-6.21-4.786-11.248-10.688-11.248m0 18.552c-3.83 0-6.936-3.27-6.936-7.304 0-4.03 3.107-7.3 6.937-7.3s6.936 3.27 6.936 7.3c0 4.034-3.107 7.304-6.936 7.304M34.875 11.25a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0" fill="#222E32"/></g></svg>
+                                    </a>
+                                </div>
+                                <a target="_blank" href="{{ ig_link.url }}" class="button rounded wide">{{ ig_link.title }}</a>
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="second">
+                        {% if( section_title ) %}
+                            <h2 class="section-title desktop ff-roboto-slab">{{ section_title }}</h2>
+                        {% endif %}
+
+                        {% if( second_img ) %}
+                            {% set second_img_html = second_img | get_timber_image_responsive('large') %}
+
+                            <img class="display-block" {{ second_img_html }}>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+    </section>
+{% endif %}

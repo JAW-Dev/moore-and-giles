@@ -1,0 +1,50 @@
+<section id="customer-reviews" class="customer-reviews wrap">
+	<div class="customer-reviews__sidebar_carousel">
+		<header class="customer-reviews__header">
+			<h2 class="customer-reviews__title">{{ title }}</h2>
+		</header>
+		<div class="carousel customer-reviews__carousel">
+			{% for item in reviews %}
+				<div {{ fn('post_class', 'entry', item.id ) }}>
+					{% set star_num = item.stars %}
+					{% if star_num == 5 %}
+						<div class="customer-reviews__stars stars-{{star_num}}" style="font-family: star;">SSSSS</div>
+					{% elseif star_num == 4 %}
+						<div class="customer-reviews__stars stars-{{star_num}}" style="font-family: star;">SSSSs</div>
+					{% elseif star_num == 3 %}
+						<div class="customer-reviews__stars stars-{{star_num}}" style="font-family: star;">SSSss</div>
+					{% elseif star_num == 2 %}
+						<div class="customer-reviews__stars stars-{{star_num}}" style="font-family: star;">SSsss</div>
+					{% elseif star_num == 1 %}
+						<div class="customer-reviews__stars stars-{{star_num}}" style="font-family: star;">Sssss</div>
+					{% else %}
+						<div class="customer-reviews__stars stars-{{star_num}}" style="font-family: star;">sssss</div>
+					{% endif %}
+					<p class="customer-reviews__blurb">{{ item.blurb }}</p>
+					<p class="customer-reviews__name">&ndash; {{ item.name }}</p>
+				</div>
+			{% endfor %}
+		</div>
+		<div class="customer-reviews__carousel-controlls">
+			<div class="prev-arrow arrow">{{ svg('chevron-left') }}</div>
+			<div class="next-arrow arrow">{{ svg('chevron-right') }}</div>
+		</div>
+	</div>
+	<div class="customer-reviews__image_carousel">
+		<div class="carousel">
+			{% for item in reviews %}
+				{% set product_a  = item.product[0] %}
+				<figure {{ fn('post_class', 'entry', product_a.id ) }}>
+					<a href="{{ function('get_permalink', product_a.id ) }}" class="image_carousel__link">
+						{% if product_a.thumbnail %}
+							<img{{ product_a.thumbnail|get_timber_image_responsive('medium') }} class="image_carousel__image"/>
+						{% else %}
+							<img src="{{ fn('wc_placeholder_img_src') }}" />
+						{% endif %}
+						<div class="button button__orange">Shop Now</div>
+					</a>
+				</figure>
+			{% endfor %}
+		</a>
+	</div>
+</section>

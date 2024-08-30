@@ -1,0 +1,11 @@
+.back-ordered {
+  background-color: $dark-2;
+
+  .wrap {
+    padding: 1em 0;
+    color: white;
+    text-align: center;
+    font-size: cRem(16);
+    font-weight: 300;
+  }
+}

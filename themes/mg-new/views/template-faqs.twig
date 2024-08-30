@@ -1,0 +1,27 @@
+{#
+Template Name: FAQs
+#}
+
+{% extends "base.twig" %}
+
+{% block layout %}
+    {{function('tha_content_before')}}
+    {{function('tha_content_top')}}
+    {% embed '/layouts/full-width.twig' %}
+        {% block content %}
+
+            {% set faqs = post.get_field('faqs') %}
+            {% set cta = post.get_field('cta_details') %}
+
+            <div class="wrap p0">
+                {% include 'components/faqs/nav.twig' %}
+                {% include 'components/faqs/faqs-list.twig' %}
+            </div>
+
+            {% include 'components/cta/simple.twig' %}
+
+        {% endblock %}
+    {% endembed %}
+    {{function('tha_content_bottom')}}
+    {{function('tha_content_after')}}
+{% endblock %}

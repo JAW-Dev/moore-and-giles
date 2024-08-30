@@ -1,0 +1,36 @@
+.empty-cart {
+  font-family: $font-sans;
+
+  h2,
+  h3 {
+    font-weight: 600;
+  }
+
+  &__heading {
+    font-family: $font-sans;
+    margin: 0;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid $dark-1;
+  }
+
+  &__body {
+    position: relative;
+    max-width: 300px;
+    text-align: center;
+    margin: 0 auto;
+
+    h3 {
+      margin: 0 0 1rem;
+    }
+  }
+}
+
+// Override them defaults.
+body.mg-body .empty-cart__button {
+  width: 100% !important;
+
+  &:before {
+    content: "";
+    padding: 0;
+  }
+}

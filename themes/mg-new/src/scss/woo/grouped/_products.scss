@@ -1,0 +1,106 @@
+//.single-product .woocommerce-single-product .product .woocommerce-product-gallery__image.bundled_product_image {
+//  width: auto !important;
+//
+//  img {
+//    width: 100%;
+//    max-width: none;
+//  }
+//}
+//
+//.woocommerce-page div.product div.bundled_product_images,
+//.woocommerce div.product div.bundled_product_images {
+//  width: auto !important;
+//}
+//
+//.bundled_product_summary .bundled_product_optional_checkbox {
+//  &:hover {
+//    cursor: pointer;
+//  }
+//}
+//
+//.bundle_form {
+//  overflow: hidden;
+//
+//  .bundle_data {
+//    margin-left: auto;
+//    margin-right: auto;
+//    max-width: calc(100% - 3em);
+//    padding: 3em 0 0;
+//    width: 100%;
+//    border-bottom: 1px solid #D8D8D8;
+//    @media (min-width: $break-tablet-large) {
+//      max-width: cRem(850);
+//    }
+//
+//    .counter-button-wrapper {
+//      border-bottom: none;
+//    }
+//  }
+//
+//  .bundle_data__inner {
+//    width: 100%;
+//    margin: 3em 0 0;
+//    float: right;
+//
+//    @media (min-width: $break-tablet-large) {
+//      width: cRem(296);
+//    }
+//
+//    .quantity-wrapper {
+//      display: flex;
+//    }
+//
+//    .quantity-counter__input input {
+//      max-width: cRem(25);
+//    }
+//  }
+//}
+
+.bundle-images-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.bundle_form {
+  margin-left: 0 !important;
+}
+
+.bundle_form .bundle-images-wrap .bundled_product_summary.product {
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 0;
+  padding: 0;
+  width: 50%;
+
+  .bundled_product_images {
+    max-width: cRem(125);
+    width: auto;
+
+    img {
+      max-height: cRem(125);
+      width: auto;
+    }
+  }
+
+  .details {
+    padding: 0;
+  }
+}
+
+.single-product .woocommerce-single-product .product-type-bundle.product {
+  align-items: flex-start !important;
+}
+
+.single-product .woocommerce-single-product .product {
+  align-items: flex-start;
+  display: block;
+  overflow: visible;
+
+  @media (min-width: $break-tablet-large) {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,25 @@
+{% include "/components/header/site-top-bar.twig" %}
+
+
+<div class="site-header-main">
+	<div class="wrap">
+		{{ function('tha_header_top') }}
+
+		{% include "/components/nav/mega-menu-triggers.twig" %}
+
+		<a class="logo" href="{{ site.url }}" rel="home">
+			{{ svg("logo") }}
+			{{ svg("logo-desktop") }}
+		</a>
+
+		<hr class="divider"/>
+
+		{% include "/components/nav/right-icon-menu.twig" %}
+
+		{{ function('tha_header_bottom') }}
+	</div>
+</div>
+
+{% do action('wp_special_offer_banner') %}
+
+{% include "/components/nav/mega-menu-content.twig" %}

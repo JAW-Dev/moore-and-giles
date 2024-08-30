@@ -1,0 +1,138 @@
+{
+    "key": "group_5e45a7d933148",
+    "title": "Template - Care and Cleaning",
+    "fields": [
+        {
+            "key": "field_5e45a7f286952",
+            "label": "Content",
+            "name": "mg_care_cleaning_content",
+            "type": "flexible_content",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layouts": {
+                "layout_5e45a9553cf9d": {
+                    "key": "layout_5e45a9553cf9d",
+                    "name": "tri_cta",
+                    "label": "Tri CTA",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5e4675d854c4a",
+                            "label": "Tri CTA",
+                            "name": "tri_cta",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5e467486e05bf"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5e466bdc084f4": {
+                    "key": "layout_5e466bdc084f4",
+                    "name": "adjustable_content_banner",
+                    "label": "Adjustable Content Banner",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5e466bf4084f5",
+                            "label": "Adjustable Content Banner",
+                            "name": "adjustable_content_banner",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5e466d392fbaa"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5e467201beff5": {
+                    "key": "layout_5e467201beff5",
+                    "name": "left_lead_5050_text",
+                    "label": "Left Lead 50\/50 Text",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5e46720dbeff6",
+                            "label": "Left Lead 50\/50 Text",
+                            "name": "left_lead_5050_text",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5e46715b80e81"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            },
+            "button_label": "Add Block",
+            "min": "",
+            "max": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "template-care-and-cleaning.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content"
+    ],
+    "active": 1,
+    "description": "",
+    "modified": 1582213539
+}

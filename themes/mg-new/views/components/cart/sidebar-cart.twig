@@ -1,0 +1,8 @@
+<div class="sidebar-cart {% if is_cart_opened() %}opened{% endif %}">
+	<div class="sidebar-cart__overlay sidebar-cart__close"></div>
+    <div class="sidebar-cart__container" id="mg_cart_wrap">
+		{% if post.post_name == 'cart' %}
+			{{ do_shortcode('[woocommerce_cart]') }}
+		{% endif %}
+    </div>
+</div>

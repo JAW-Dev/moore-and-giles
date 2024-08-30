@@ -1,0 +1,8 @@
+{% if icon_blurbs %}
+    <div class="icon-blurb-grid">
+        {% for ib in icon_blurbs %}
+            {% set icon_blurb = ib %}
+            {% include 'components/icon-blurbs/icon-blurb.twig' %}            
+        {% endfor %}
+    </div>
+{% endif %}

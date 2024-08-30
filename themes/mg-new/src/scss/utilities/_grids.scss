@@ -1,0 +1,28 @@
+.grid {
+  display: grid;
+  grid-gap: $spacing-mobile;
+
+  @media (min-width: $break-tablet-large) {
+    grid-gap: $spacing-desktop;
+  }
+}
+
+.grid.one23 {
+  grid-template-columns: 1fr;
+
+  @media (min-width: $break-tablet) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: $break-tablet-large) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.grid.one2 {
+  grid-template-columns: 1fr;
+
+  @media (min-width: $break-tablet) {
+    grid-template-columns: 1fr 1fr;
+  }
+}

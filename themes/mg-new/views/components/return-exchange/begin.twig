@@ -1,0 +1,25 @@
+{% set re_begin_title = post.get_field('re_begin_title') %}
+{% set re_form = post.get_field('re_form') %}
+{% set re_below_form_content = post.get_field('re_below_form_content') %}
+
+{% if re_begin_title is not empty or re_form is not empty or re_below_form_content is not empty %}
+    <section class="return-begin section-margin">
+        <div class="wrap p0">
+            <div class="return-begin__inner">
+                {% if re_begin_title %}
+                    <h2 class="return-begin__title">{{ re_begin_title }}</h2>
+                {% endif %}
+                {% if re_form is not empty %}
+                    <div class="return-begin__form-wrap" id="return-begin-form">
+                        {{ function('objectiv_gform', re_form.id ) }}
+                    </div>
+                {% endif %}
+                {% if re_below_form_content is not empty %}
+                    <div class="return-begin__below-form-content wysiwyg-content">
+                        {{ re_below_form_content }}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+{% endif %}

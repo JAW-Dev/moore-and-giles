@@ -1,0 +1,28 @@
+/*! Keep this comment Admin Styles*/
+
+// Dependencies
+@import "dependencies";
+
+.indicator {
+	display: inline-block;
+	width: 0.75rem;
+	height: 0.75rem;
+	vertical-align: middle;
+	background-color: red;
+	border-radius: 100%;
+}
+
+.indicator__text {
+	display: none;
+}
+
+input[name="date-from"], input[name="date-to"]{
+	width: px-to-rem( 150 );
+	height: px-to-rem( 28 );
+	margin: 0;
+	line-height: px-to-rem( 28 );
+}
+
+.wrap .order-dates {
+	float: left;
+}

@@ -1,0 +1,60 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "cdccb0cc739ba5891dd53da3d976b5e8",
+    "packages": [
+        {
+            "name": "mcred/detect-credit-card-type",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mcred/detect-credit-card-type.git",
+                "reference": "33bb3c5ce83ddb8eb0fb9e7f445b59bb3342e86e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mcred/detect-credit-card-type/zipball/33bb3c5ce83ddb8eb0fb9e7f445b59bb3342e86e",
+                "reference": "33bb3c5ce83ddb8eb0fb9e7f445b59bb3342e86e",
+                "shasum": ""
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "^0.4.4",
+                "phpab/phpab": "^0.1.0",
+                "phpunit/phpunit": "^6.1",
+                "theseer/autoload": "^1.24"
+            },
+            "bin": [
+                "card-detect"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "CardDetect\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Derek Smart",
+                    "email": "derek@grindaga.com"
+                }
+            ],
+            "description": "Utility to determine credit card type by PAN",
+            "time": "2017-10-24T16:52:21+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

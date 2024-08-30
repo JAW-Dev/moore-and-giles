@@ -1,0 +1,44 @@
+{#
+Template Name: Care and Cleaning
+#}
+
+{% extends "base.twig" %}
+
+{% block layout %}
+	{{function('tha_content_before')}}
+		{% embed '/layouts/full-width.twig' %}
+			{% block content %}
+				{% set flex = get_flexible_content({'post_id': page.ID, 'flexible_id': 'mg_care_cleaning_content' }) %}
+				{% for data in flex %}
+
+					{# Adjustable Content Banner #}
+					{% if data.acf_fc_layout == 'adjustable_content_banner' %}
+						{% set content = data.mg_adjustable_content_banner %}
+							{% include "components/flexible-content/adjustable-content-banner.twig" with {
+								"content": content
+							} %}
+					{% endif %}
+
+					{# Tri CTA #}
+					{% if data.acf_fc_layout == 'tri_cta' %}
+						{% set content = data.mg_tri_cta %}
+							{% include "components/flexible-content/tri-cta.twig" with {
+								"content": content
+							} %}
+					{% endif %}
+
+					{# Left Lead 50/50 Text #}
+					{% if data.acf_fc_layout == 'left_lead_5050_text' %}
+						{% set content = data.mg_left_lead_5050_text %}
+							{% include "components/flexible-content/left-lead-5050-text.twig" with {
+								"content": content
+							} %}
+					{% endif %}
+
+				{% endfor %}
+
+			{% endblock %}
+		{% endembed %}
+	{{function('tha_content_bottom')}}
+	{{function('tha_content_after')}}
+{% endblock %}

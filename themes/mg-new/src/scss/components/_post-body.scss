@@ -1,0 +1,26 @@
+.post-body-outer {
+  position: relative;
+  top: cRem(-64);
+}
+
+.post-body-inner {
+  background: white;
+  font-size: cRem(18);
+  font-weight: 100;
+  line-height: cRem(28);
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1140px;
+  padding: cRem(48) cRem(32) 0;
+
+  > p:first-child {
+    font-size: cRem(28);
+    font-weight: 400;
+    margin-top: 0;
+  }
+
+  p {
+    margin: 1em auto;
+    max-width: 940px;
+  }
+}

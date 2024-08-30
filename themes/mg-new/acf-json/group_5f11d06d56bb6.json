@@ -1,0 +1,244 @@
+{
+    "key": "group_5f11d06d56bb6",
+    "title": "Template - Flexible Content",
+    "fields": [
+        {
+            "key": "field_5f11d0788290d",
+            "label": "Flexible Content",
+            "name": "mg_flexible_content",
+            "type": "flexible_content",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layouts": {
+                "layout_5f11d0975a6b8": {
+                    "key": "layout_5f11d0975a6b8",
+                    "name": "hero_banner_title_multi_buttons",
+                    "label": "Hero Banner - Title, Multi-buttons",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5f11d0a28290e",
+                            "label": "Banner",
+                            "name": "banner",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5f11bcba3b35b"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5f158645611de": {
+                    "key": "layout_5f158645611de",
+                    "name": "product_image_carousel_and_info",
+                    "label": "Product Image Carousel and Info",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5f158656611df",
+                            "label": "Product",
+                            "name": "product",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5f158587b97bd"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5f16e0f8fc859": {
+                    "key": "layout_5f16e0f8fc859",
+                    "name": "fifty_fifty",
+                    "label": "Fifty Fifty",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5f16e127fc85a",
+                            "label": "Fifty Fifty",
+                            "name": "fifty_fifty",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5bf303b3ab066"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5f16ffd5f173d": {
+                    "key": "layout_5f16ffd5f173d",
+                    "name": "copy_carousel",
+                    "label": "Copy Carousel",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5f16ffeaf173e",
+                            "label": "Carousel Items",
+                            "name": "carousel_items",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5f16ff529a882"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5f1973e7f07f7": {
+                    "key": "layout_5f1973e7f07f7",
+                    "name": "upcoming_bags",
+                    "label": "Upcoming Bags",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5f1973f5f07f8",
+                            "label": "Upcoming",
+                            "name": "upcoming_bags",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5f19735e3eca1"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5f3bb4f85765a": {
+                    "key": "layout_5f3bb4f85765a",
+                    "name": "title_image_blurb_link",
+                    "label": "Title Image Blurb Link",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5f3bb5055765b",
+                            "label": "Title Image Blurb Link",
+                            "name": "title_image_blurb_link",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_5f3bb45ccff63"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            },
+            "button_label": "Add Content",
+            "min": "",
+            "max": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "template-flexible-content.php"
+            }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "template-flexible-content-one-product.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content",
+        "excerpt",
+        "discussion",
+        "comments",
+        "revisions",
+        "slug",
+        "author"
+    ],
+    "active": 1,
+    "description": "",
+    "modified": 1598367471
+}

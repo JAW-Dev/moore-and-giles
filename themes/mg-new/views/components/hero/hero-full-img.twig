@@ -1,0 +1,44 @@
+{% set hero_img = post.get_field('hero_image') %}
+{% set hero_title = post.get_field('hero_title') %}
+{% set hero_blurb = post.get_field('hero_blurb') %}
+{% set cc_hero_button = post.get_field('cc_hero_button') %}
+
+{% if hero_img is empty %}
+    {% set hero_img = post.thumbnail | get_timber_image_src('large') %}
+{% else %}
+    {% set hero_img = hero_img | get_timber_image_src('large') %}
+{% endif %}
+
+{% if hero_title is empty %}
+    {% set hero_title = post.title %}
+{% endif %}
+
+{% if hero_img is not empty or hero_title is not empty or hero_blurb is not empty %}
+
+    <section class="page-hero-full-img">
+        <div class="page-hero-full-img__img-wrap">
+            <img src="{{ hero_img }}" alt="{{ hero_title }}">
+            <div class="page-hero-full-img__content-wrap">
+                <div class="wrap p0">
+                    <div class="inner-page-hero lmb0">
+                        {% if hero_title is not empty %}
+                            <h1 class="page-hero__title white-text">{{ hero_title }}</h1>
+                        {% endif %}
+                        {% if hero_blurb is not empty %}
+                            <div class="page-hero__blurb white-text">
+                                {{ hero_blurb }}
+                            </div>
+                        {% endif %}
+                        {% if cc_hero_button is not empty %}
+                            {% set button = cc_hero_button %}
+                            <div class="page-hero__button-wrap">
+                                {% include 'components/buttons/primary.twig' %}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endif %}

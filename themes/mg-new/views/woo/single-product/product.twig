@@ -1,0 +1,9 @@
+<div id="product-{{ product.get_id }}" {{ fn('post_class', 'is_single_product' ) }}>
+
+	{% do action( 'woocommerce_before_single_product_summary' ) %}
+
+	<div class="summary entry-summary">
+		{% do action( 'woocommerce_single_product_summary' ) %}
+	</div>
+
+</div>

@@ -1,0 +1,149 @@
+body.page-template-template-flexible-content-one-product {
+
+  .title-multi-buttons {
+    height: cRem(270);
+    padding: 5rem 0;
+
+    @media (min-width: $break-tablet-large) {
+      height: cRem(800);
+      margin: 0;
+    }
+  }
+
+  .product-image-carousel-info,
+  .fifty-fifty,
+  .copy-carousel,
+  .title-image-blurb-link {
+    .wrap {
+      width: 100%;
+      max-width: initial;
+      align-items: center;
+      box-sizing: border-box;
+      padding: 6rem 2rem;
+
+      @media (min-width: $break-tablet-large) {
+        max-width: cRem(800);
+      }
+    }
+  }
+
+  .upcoming-bags  {
+    .wrap {
+      width: 100%;
+      max-width: initial;
+      align-items: flex-start;
+      box-sizing: border-box;
+      padding: 6rem 2rem;
+
+      @media (min-width: $break-tablet-large) {
+        align-items: center;
+        max-width: 1300px;
+        width: 95%;
+        padding: 6rem 0;
+      }
+    }
+  }
+
+  .product-image-carousel-info__carousel-container {
+    min-width: cRem(300);
+    min-height: cRem(300);
+    width: cRem(300);
+    margin: 0 auto;
+
+    @media (min-width: 675px) {
+      min-width: cRem(736);
+      min-height: cRem(736);
+      width: cRem(736);
+      margin: 2rem 0;
+    }
+  }
+
+  .fifty-fifty {
+    .wrap {
+
+      > div,
+      > img {
+        width: 100%;
+
+        @media (min-width: $break-tablet-large) {
+          font-size: cRem(28);
+        }
+      }
+    }
+
+    .wrap {
+      > div {
+        flex: 1 !important;
+      }
+    }
+
+    .wrap {
+      .fifty-fifty__image-wrap {
+        flex: 0 !important;
+      }
+    }
+
+    .row-reverse {
+      flex-direction: column;
+      padding-bottom: 4rem;
+
+      img {
+        width: 100%;
+        margin-left: 0;
+
+        @media (min-width: $break-tablet-large) {
+          width: cRem(323);
+          max-width: cRem(323);
+          min-width: cRem(323);
+          margin-left: 3rem;
+        }
+      }
+
+      @media (min-width: $break-tablet-large) {
+        flex-direction: row-reverse;
+      }
+    }
+
+    .left {
+      padding-top: 0;
+      img {
+        width: 100%;
+
+        margin-right: 3rem;
+
+        @media (min-width: $break-tablet-large) {
+          width: cRem(235);
+          max-width: cRem(235);
+          min-width: cRem(235);
+        }
+      }
+    }
+
+    &__body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    &__heading {
+      font-size: cRem(45);
+      font-weight: 900;
+      margin: 1.5rem 0 1rem;
+    }
+
+    &__blurb {
+      font-size: cRem(24);
+      color: #626364;
+      line-height: 1.2;
+      font-weight: bold;
+
+      p {
+        margin-top: 0;
+      }
+    }
+
+    img {
+      border-radius: cRem(10);
+    }
+  }
+}

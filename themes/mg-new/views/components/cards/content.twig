@@ -1,0 +1,17 @@
+<div class="cards__body">
+	{% if content.title %}
+		<header class="cards__header">
+			<h2 class="cards__title">{{content.title}}</h2>
+		</header>
+	{% endif %}
+
+	{% if content.blurb %}
+		<p class="cards__blurb">{{content.blurb}}</p>
+	{% endif %}
+
+	{% if content.button_text %}
+		<a class="cards__button-link" href="{{content.button_link}}">
+			<span class="cards__button-text">{{content.button_text}}</span>
+		</a>
+	{% endif %}
+</div>

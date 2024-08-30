@@ -1,0 +1,19 @@
+.care-and-cleaning {
+  background-color: $light-1;
+  display: flex;
+  justify-content: center;
+
+  &__wrap {
+    max-width: cRem(500);
+    text-align: center;
+  }
+
+  &__title {
+    font-size: cRem(24);
+  }
+
+  &__blurb {
+    font-size: cRem(16);
+    line-height: 1.4;
+  }
+}

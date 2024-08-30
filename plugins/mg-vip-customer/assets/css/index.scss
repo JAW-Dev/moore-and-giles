@@ -1,0 +1,14 @@
+@charset "UTF-8";
+// ========================================
+// Core Sass file
+// ========================================
+
+// Dependencies
+@import "dependencies";
+
+.mg-order-label {
+	background: red;
+	border-radius: 6px;
+	padding: 2px 4px;
+	color: white;
+}

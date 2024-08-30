@@ -1,0 +1,15 @@
+{% set content = fn( 'get_field', 'gift_guid_top', 'options' ) %}
+
+{% if content.enable_banner %}
+	{% include "components/product-category-banner/banner.twig" with {
+		"content": content,
+		"wrapper_classes": 'gift-guide-top__banner'
+	} %}
+{% endif %}
+
+{% if content.enable_header_blurb %}
+	{% include "woo/archive/gift-guide/top-blurb.twig" with {
+		"content": content,
+		"wrapper_classes": 'gift-guide-top__blurb'
+	} %}
+{% endif %}

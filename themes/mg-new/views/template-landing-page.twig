@@ -1,0 +1,71 @@
+{#
+Template Name: Landing Page Template
+#}
+
+{% extends "base.twig" %}
+
+{% block layout %}
+	{{function('tha_content_before')}}
+		{% embed '/layouts/full-width.twig' %}
+			{% block content %}
+				{# Carousel #}
+				{% include "components/landing/products-carousel.twig" with {
+					"enable": post.get_field('woo_landing_enable_products_carousel'),
+					"heading": post.get_field('woo_landing_products_carousel_heading'),
+					"products": post.get_field('woo_landing_products_carousel_products'),
+					"cta_text": post.get_field('woo_landing_products_cta_button_text'),
+				} %}
+
+				{# CTA Break #}
+				{% include "components/landing/cta-break.twig" with {
+					"enable": post.get_field('woo_landing_enable_cta_break'),
+					"text": post.get_field('woo_landing_cta_break_text'),
+					"button": post.get_field('woo_landing_cta_break_button'),
+					"link": post.get_field('woo_landing_cta_break_button_link'),
+				} %}
+
+				{# Mentions #}
+				{% include "components/landing/mentions.twig" with {
+					"enable": post.get_field('woo_landing_enable_mentions'),
+					"mentions": post.get_field('woo_landing_mentions'),
+				} %}
+
+				{# Cards #}
+				{% if post.get_field('enable_cards') %}
+					{% include "components/cards/cards.twig" with {
+						"content": post.get_field('cards'),
+						"wrapper_classes": 'landing-page-cards'
+					} %}
+				{% endif %}
+
+				{# CTA Block #}
+				{% include "components/landing/cta-block.twig" with {
+					"enable": post.get_field('woo_landing_enable_cta_block'),
+					"blocks": post.get_field('woo_landing_cta_block'),
+				} %}
+
+				{# Footer Banner #}
+				{% include "components/landing/banner-footer.twig" with {
+					"enable": post.get_field('woo_landing_enable_footer_banner_copy'),
+					"banner": post.get_field('woo_landing_footer_banner_copy'),
+				} %}
+
+				{# Built to Last #}
+				{% if post.get_field('enable_bult_to_last') %}
+					{% include "components/front-page/built-to-last.twig" with {
+						"content": post.get_field('built_to_last'),
+						"bg": post.get_field('built_to_last').background_image,
+						"position": post.get_field('built_to_last').position,
+						"title": post.get_field('built_to_last').title,
+						"blurb": post.get_field('built_to_last').blurb,
+						"button": post.get_field('built_to_last').button,
+						"button_text": post.get_field('built_to_last').button.text,
+						"button_link": post.get_field('built_to_last').button.link,
+					} %}
+				{% endif %}
+
+			{% endblock %}
+		{% endembed %}
+	{{function('tha_content_bottom')}}
+	{{function('tha_content_after')}}
+{% endblock %}

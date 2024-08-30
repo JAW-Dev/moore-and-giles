@@ -1,0 +1,21 @@
+<div class="product-category-banner__body wrap">
+	{% if not content.buttons %}
+		{% set no_buttons = " no-buttons" %}
+	{% endif %}
+	{% if title %}
+		<header class="product-category-banner__header{{no_buttons}}">
+			<h2 class="product-category-banner__title">{{ content.title }}</h2>
+		</header>
+	{% endif %}
+
+	{% if content.buttons %}
+		<div class="product-category-banner__buttons">
+			{% for button in content.buttons %}
+				{% set bg = button.background | get_timber_image_src('thumbnail') %}
+				<a class="product-category-banner__button-link" href="{{ button.link.url }}" style="background-image: url({{bg}})">
+					<span class="product-category-banner__button-text">{{ button.text }}</span>
+				</a>
+			{% endfor %}
+		</div>
+	{% endif %}
+</div>

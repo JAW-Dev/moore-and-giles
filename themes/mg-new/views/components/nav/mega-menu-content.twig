@@ -1,0 +1,123 @@
+{% if mega_menu %}
+	<div class="mega-menu-content-outer">
+		<div class="wrap p0">
+
+			{% if mega_menu.drop_top %}
+				<nav class="mega-menu-drop-top">
+					{% for drop_top_item in mega_menu.drop_top %}
+						<a href="{{ drop_top_item.link.url }}" target="{{ drop_top_item.link.target}}" class="top-menu-item">{{ drop_top_item.link.title }}</a>
+					{% endfor %}
+				</nav>
+			{% endif %}
+			
+			{% if mega_menu.mega_menu_items %}
+				<div class="mega-menu-content-wrap">
+					{% for menu_item in mega_menu.mega_menu_items %}
+						{% set side_items = menu_item.dropdown_side_items %}
+						{% set side_bottom_items = menu_item.dropdown_side_bottom_items %}
+						{% set main_loop_key = loop.index %}
+						{% if loop.first %}
+							{% set active_class = 'active' %}
+						{% else %}
+							{% set active_class = '' %}
+						{% endif %}
+
+						<div class="mega-menu-item-content {{ active_class }}" id="mega-menu-item-{{loop.index}}">
+							<div class="side-links">
+								{% for link in side_items if link.category is not null %}
+									{% set permalink = function( 'get_term_link', link.category.term_id ) %}
+									{% if loop.first %}
+										{% set active_class = 'active' %}
+									{% else %}
+										{% set active_class = '' %}
+									{% endif %}
+
+									{% if link.title_text %}
+										{% set title = link.title_text %}
+									{% else %}
+										{% set title = link.category.name %}
+									{% endif %}
+
+									<a href="{{ permalink }}" class="side-hover-item {{ active_class }}" id="side-hover-item-{{main_loop_key}}-{{loop.index}}">{{ title }}</a>
+								{% endfor %}
+								{% if side_bottom_items %}
+									<div class="bottom-links">
+										{% for link in side_bottom_items if link.category is not null %}
+											{% set permalink = function( 'get_term_link', link.category.term_id ) %}
+
+											{% if link.title_text %}
+												{% set title = link.title_text %}
+											{% else %}
+												{% set title = link.category.name %}
+											{% endif %}
+											
+											<a href="{{ permalink }}" class="side-hover-item" id="side-hover-bottom-item-{{main_loop_key}}-{{loop.index}}">{{ title }}</a>
+										{% endfor %}
+									</div>
+								{% endif %}
+							</div>
+							<div class="right-content">
+								{% for cat in side_items if cat.category is not null %}
+									{% set products = function( 'obj_get_cat_pop_products', cat.category.term_id ) %}
+									{% if loop.first %}
+										{% set active_class = 'active' %}
+									{% else %}
+										{% set active_class = '' %}
+									{% endif %}
+									<div class="side-hover-content {{ active_class }}" id="side-hover-item-{{main_loop_key}}-{{loop.index}}">
+										{% for product in products %}
+											{% set permalink = function( 'get_permalink', product.ID ) %}
+											{% set product_thumb_id = function('get_post_thumbnail_id', product.ID ) %}
+											{% set color_attr  = function('wc_get_product_terms', product.ID, 'pa_color' ) %}
+
+											<a href="{{ permalink }}" class="product-link">
+												{% if product_thumb_id %}
+													<img alt="{{ product.post_title }}" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-mg-src="{{ product_thumb_id|get_timber_image_src('thumbnail') }}" class="image"/>
+                    							{% endif %} 
+												<div class="product-title">{{ product.post_title }}</div>
+												{% if color_attr and color_attr|length == 1 %}
+													<div class="product-color">{{ color_attr[0].name }}</div>
+												{% elseif color_attr|length > 1 %}
+													<div class="product-color">Available in {{ color_attr|length }} colors.</div>
+												{% endif %}
+											</a>
+										{% endfor %}
+									</div>
+								{% endfor %}
+								{% if side_bottom_items %}
+									{% for cat in side_bottom_items if cat.category is not null %}
+										{% set products = function( 'obj_get_cat_pop_products', cat.category.term_id ) %}
+
+										<div class="side-hover-content" id="side-hover-bottom-item-{{main_loop_key}}-{{loop.index}}">
+											{% for product in products %}
+												{% set permalink = function( 'get_permalink', product.ID ) %}
+												{% set product_thumb_id = function('get_post_thumbnail_id', product.ID ) %}
+												{% set color_attr  = function('wc_get_product_terms', product.ID, 'pa_color' ) %}
+
+
+
+												<a href="{{ permalink }}" class="product-link">
+													{% if product_thumb_id %}
+														<img alt="{{ product.post_title }}" src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-mg-src="{{ product_thumb_id|get_timber_image_src('thumbnail') }}" class="image"/>
+													{% endif %}
+													<div class="product-title">{{ product.post_title }}</div>
+													{% if color_attr and color_attr|length == 1 %}
+														<div class="">{{ color_attr[0].name }}</div>
+													{% elseif color_attr|length > 1 %}
+														<div class="product-color">Available in {{ color_attr|length }} colors.</div>
+													{% endif %}
+												</a>
+											{% endfor %}
+										</div>
+									{% endfor %}
+								{% endif %}
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+			{% endif %}
+
+		</div>
+	</div>
+{% endif %}
+

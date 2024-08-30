@@ -1,0 +1,30 @@
+.woocommerce-product-options-processing__to,
+.woocommerce-product-options-processing__amount,
+.woocommerce-product-options-processing__prefix {
+	label {
+		display: none;
+		float: none;
+		width: 0;
+		margin: 0;
+	}
+}
+
+.woocommerce-product-variable-processing__to {
+	label {
+		visibility: hidden;
+	}
+}
+
+.woocommerce-product-variable-processing__amount,
+.woocommerce-product-variable-processing__prefix {
+	margin-top: 0;
+	label {
+		display: none !important;
+	}
+}
+
+.woocommerce_variable_attributes {
+	.checkbox.disable_personalization {
+		margin-right: px-to-rem(4) !important;
+	}
+}

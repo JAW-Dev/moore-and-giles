@@ -1,0 +1,18 @@
+.site-below-menu-bar {
+  background-color: $light-3;
+  .wrap {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+  }
+
+  .bullet {
+    margin: 0 1rem;
+  }
+
+  .details {
+    margin-left: 2rem;
+    text-decoration: underline;
+    color: #323232;
+  }
+}

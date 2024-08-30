@@ -1,0 +1,21 @@
+@charset "UTF-8";
+// ========================================
+// Fields
+// ========================================
+
+.addon-field-wrapper,
+.addon-subfield-wrapper {
+  .text,
+  .textarea,
+  .select,
+  .radio,
+  .checkbox {
+    width: auto;
+  }
+  .checkbox,
+  .radio,
+  .radio + label,
+  .checkbox + label {
+    display: inline-block;
+  }
+}

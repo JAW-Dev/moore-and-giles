@@ -1,0 +1,12 @@
+{% if post.get_field('films') %}
+    <script src="https://player.vimeo.com/api/player.js"></script>
+    <section class="films-section section-margin">
+        <div class="wrap p0">
+            <div class="films-grid">
+                {% for film in post.get_field('films') %}
+                    {% include 'components/films/film.twig' %}
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endif %}

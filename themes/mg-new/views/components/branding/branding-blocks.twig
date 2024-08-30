@@ -1,0 +1,45 @@
+{% if post.get_field('logo_blocks') %}
+    <section class="branding-blocks section-margin" id={{ post.get_field( 'logos_meta_section_id' ) }}>
+        <div class="wrap p0">
+            <div class="branding-blocks__inner">
+                {% for bblock in post.get_field('logo_blocks') %}
+                    {% set img_id = bblock.image_to_display %}
+                    {% set image = img_id | get_timber_image_responsive('thumbnail') %}
+                    {% set title = bblock.logo_title %}
+                    {% set print = bblock.file_for_print %}
+                    {% set web = bblock.file_for_web %}
+                    {% if image %}
+                        <div class="branding-block">
+                            <div class="branding-block__image-wrap">
+                                <img class="branding-block__image" {{ image }}></div>
+                                {% if title %}
+                                    <h3 class="branding-block__title mt0">
+                                        {{ title }}</h3>
+                                {% endif %}
+                                {% if print %}
+                                    <a target="_blank" href="{{ print }}" class="branding-block__download">
+                                        <div class="words">
+                                            Download for Print
+                                        </div>
+                                        <div class="svg-wrap">
+                                            {% include 'components/icons/download.svg' %}
+                                        </div>
+                                    </a>
+                                {% endif %}
+                                {% if web %}
+                                    <a target="_blank" href="{{ web }}" class="branding-block__download">
+                                        <div class="words">
+                                            Download for Web
+                                        </div>
+                                        <div class="svg-wrap">
+                                            {% include 'components/icons/download.svg' %}
+                                        </div>
+                                    </a>
+                                {% endif %}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    {% endif %}

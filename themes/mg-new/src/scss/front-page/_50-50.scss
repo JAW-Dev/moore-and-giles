@@ -1,0 +1,55 @@
+.fifty-fifty-front-page {
+  background: $light-1;
+
+  .wrap {
+    justify-content: center;
+    align-items: center;
+
+    .pane {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      border-bottom: 1px solid $dark-1;
+      margin-bottom: 40px;
+      padding-bottom: 40px;
+
+      &:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      .content-wrap {
+        max-width: 400px;
+        text-align: center;
+      }
+
+      .title {
+        margin-top: 0;
+        font-weight: 600;
+      }
+
+      .text {
+        margin-bottom: 2em;
+        line-height: 1.75em;
+      }
+    }
+  }
+}
+
+@media (min-width: $break-tablet-large) {
+  .fifty-fifty-front-page {
+    .wrap {
+      .pane {
+        border-bottom: none;
+        padding-bottom: 0;
+        margin-bottom: 0;
+        border-right: 1px solid $dark-1;
+
+        &:last-child {
+          border-right: none;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{% if not blurb %}
+	{% set has_blurb = ' no-blurb' %}
+{% else %}
+	{% set has_blurb = '' %}
+{% endif %}
+
+{% if not title %}
+	{% set banner_title = post_title %}
+{% else %}
+	{% set banner_title = title %}
+{% endif %}
+
+<div class="wrap wysiwyg-content hero-banner__content{{ has_blurb }}">
+	{% if content_type == 'basic' %}
+
+		{% if banner_title %}
+			<h2 class="hero-banner__content-heading">{{ banner_title }}</h2>
+		{% endif %}
+
+		{% if blurb %}
+			<div class="hero-banner__content-blurb">{{ blurb }}</div>
+		{% endif %}
+
+		{% if button %}
+			<a class="button button__orange hero-banner__content-button" href="{{ button_link.url }}">
+				<span class="hero-banner__content-button-text">{{ button_text }}</span>
+			</a>
+		{% endif %}
+
+	{% elseif content_type == 'editor' %}
+		{{ editor }}
+	{% endif %}
+</div>

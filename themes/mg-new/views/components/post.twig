@@ -1,0 +1,12 @@
+<article class="post post-type-{{post.post_type}}" id="post-{{post.ID}}" itemscope itemtype="https://schema.org/BlogPosting">
+    <section class="post-content" itemprop="mainEntityOfPage">
+        {% include 'components/post/header.twig' %}
+        <div class="post-body-outer lmb0" itemprop="articleBody">
+            <div class="wrap p0">
+                <div class="post-body-inner">
+                    {{post.content}}
+                </div>
+            </div>
+        </div>
+    </section><!--/itemprop=mainEntityOfPage-->
+</article><!--/itemtype=BlogPosting-->

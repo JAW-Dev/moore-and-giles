@@ -1,0 +1,11 @@
+{% if wrapper_classes %}
+	{% set wrapper_classes = ' '~wrapper_classes %}
+{% else %}
+	{% set wrapper_classes = '' %}
+{% endif %}
+
+<section class="wrap{{wrapper_classes}}">
+	<div class="blurb__body">
+		{{content.header_blurb}}
+	</div>
+</section>

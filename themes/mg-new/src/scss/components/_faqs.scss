@@ -1,0 +1,14 @@
+.faq-grid-wrap {
+  display: grid;
+  grid-gap: $spacing-desktop * 2;
+  grid-template-columns: 1fr;
+
+  @media (min-width: $break-tablet) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.faq-block__title {
+  margin-top: 0;
+  margin-bottom: $spacing-desktop;
+}

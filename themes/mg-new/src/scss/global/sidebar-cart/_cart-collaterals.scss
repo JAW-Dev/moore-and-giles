@@ -1,0 +1,35 @@
+.cart-collaterals {
+  .cart_totals {
+    margin-bottom: 0.5rem;
+    padding-top: 0.5rem;
+
+    h2,
+    table,
+    .wc-proceed-to-checkout,
+    .order-total {
+      display: none;
+    }
+    .cart-subtotal {
+      font-size: cRem(22);
+      font-weight: 700;
+      text-align: right;
+    }
+  }
+  .blockUI.blockOverlay {
+    display: none !important;
+  }
+}
+
+.woocommerce .cart-collaterals .cart_totals,
+.woocommerce-page .cart-collaterals .cart_totals {
+  float: none;
+  width: 100%;
+}
+
+.woocommerce table.shop_table {
+  border: none;
+}
+
+.woocommerce table.shop_table td {
+  padding: 0;
+}

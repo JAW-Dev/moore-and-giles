@@ -1,0 +1,93 @@
+body.mg-body .copy-carousel {
+
+  &.section-background {
+    background-position: left bottom;
+  }
+
+  .wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__selector {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 4rem;
+    border: 2px solid $dark-1;
+    border-radius: cRem(30);
+    padding: cRem(4);
+    text-align: center;
+  }
+
+  &__selector-item {
+    display: inline-block;
+    border-radius: cRem(30);
+    background-color: transparent;
+    color: inherit;
+    padding: 0 2rem;
+    font-size: cRem(11);
+    line-height: 2.3;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    &.selected {
+      background-color: $accent-1;
+      color: white;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: #EFC34E;
+      }
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__carousel {
+    width: 100%;
+    margin-bottom: 4rem;
+  }
+
+  &__carousel-item {
+    display: inline-block;
+    font-size: 1.5rem;
+    text-align: center;
+    font-family: $font-serif;
+
+    @media (min-width: 590px) {
+      font-size: cRem(28);
+    }
+  }
+
+  &__link {
+    position: relative;
+    padding-right: cRem(38);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    &:before {
+      content: "";
+      position: absolute;
+      width: cRem(19);
+      height: cRem(19);
+      top: -1px;
+      right: 0px;
+
+      background: url("../icons/arrow-orange.svg") no-repeat;
+      background-size: cRem(19) cRem(19);
+      transform: rotate(180deg);
+    }
+
+    &:hover {
+      &:before {
+        top: cRem(-3);
+        background: url("../icons/arrow.svg") no-repeat;
+      }
+    }
+  }
+}

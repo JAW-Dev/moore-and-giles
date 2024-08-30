@@ -1,0 +1,41 @@
+{% set cream_image = post.get_field('33_cream_image') %}
+{% set cream_section_title = post.get_field('33_cream_section_title') %}
+{% set cream_section_blurb = post.get_field('33_cream_section_blurb') %}
+{% set cream_button = post.get_field('33_cream_button') %}
+
+{% if cream_image is not empty %}
+<section class="cream-33-cta section-margin">
+    <div class="wrap p0">
+        <div class="cream-33-cta__inner">
+
+            {% if cream_image %}
+                <div class="cream-33-cta__first">
+                    {% set cream_image = cream_image | get_timber_image_responsive('large') %}
+                    <img{{cream_image}} class="cream-33-cta__image">
+                </div>
+            {% endif %}
+    
+            <div class="cream-33-cta__second">
+                <div class="cream-33-cta__second-inner">
+                    {% if cream_section_title %}
+                        <h3 class="cream-33-cta__title mt0">
+                            {{ cream_section_title }}
+                        </h3>
+                    {% endif %}
+                    {% if cream_section_blurb %}
+                        <div class="cream-33-cta__blurb lmb0 fmt0">
+                            {{ cream_section_blurb }}
+                        </div>
+                    {% endif %}
+                    {% if cream_button %}
+                        {% set button = cream_button %}
+                        <div class="cream-33-cta__button-wrap">
+                            {% include 'components/buttons/primary.twig' %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}

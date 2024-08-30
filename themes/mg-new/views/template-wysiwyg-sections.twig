@@ -1,0 +1,23 @@
+{#
+Template Name: WYSIWYG Sections
+#}
+
+{% extends "base.twig" %}
+
+{% block layout %}
+    {{function('tha_content_before')}}
+    {{function('tha_content_top')}}
+    {% embed '/layouts/full-width.twig' %}
+        {% block content %}
+
+            {% set sections = post.get_field('wysiwgy_sections') %}
+
+            <div class="wrap p0">
+                {% include 'components/wysiwyg/sections.twig' %}
+            </div>
+
+        {% endblock %}
+    {% endembed %}
+    {{function('tha_content_bottom')}}
+    {{function('tha_content_after')}}
+{% endblock %}

@@ -1,0 +1,26 @@
+.site-header {
+  .site-header-main {
+    .nav {
+      transition: width 0.3s ease;
+    }
+
+    .nav-wrap {
+      justify-content: space-evenly;
+    }
+
+    .divider {
+      background: $dark-1;
+      margin-bottom: cRem(28);
+    }
+
+    /**
+     * We do the desktop header @ 900px (tablet-large) for ipad / tablet-large users.
+     * No need for the mobile menu they have enough room for activities
+     */
+    @media (min-width: $break-tablet-large) {
+      .divider {
+        display: none;
+      }
+    }
+  }
+}

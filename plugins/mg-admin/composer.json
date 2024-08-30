@@ -1,0 +1,24 @@
+{
+	"name": "objectiv/mg-admin",
+	"description": "Custom admin functionality",
+	"version": "1.0.0",
+	"license": "GPL-2.0-or-later",
+	"authors": [
+		{
+			"name": "objectiv"
+		}
+	],
+	"config": {
+		"optimize-autoloader": true,
+		"classmap-authoritative": true
+	},
+	"autoload": {
+		"psr-4": {
+			"MgAdmin\\": "includes/classes"
+		},
+		"classmap": [
+			"includes/classes"
+		],
+		"files": []
+	}
+}

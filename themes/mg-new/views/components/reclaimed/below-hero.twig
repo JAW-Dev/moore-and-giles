@@ -1,0 +1,18 @@
+{% if( post.get_field('below_hero_intro_blurb') and post.get_field('below_hero_button_text') ) %}
+    {% set blurb = post.get_field('below_hero_intro_blurb') %}
+    {% set button_text = post.get_field('below_hero_button_text') %}
+    <section class="below-hero-intro">
+        {% include "components/icons/reclaimed-project.svg" %}
+
+        <div class="wrap p0">
+            <div class="intro-content">
+
+                <div class="lmb0 fmt0 f22 ff-roboto-slab">
+                    {{ blurb }}
+                </div>
+
+                <a href="#shop_now" class="button button__orange rounded wide margin-top-2">{{button_text}}</a>
+            </div>
+        </div>
+    </section>
+{% endif %}

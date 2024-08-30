@@ -1,0 +1,99 @@
+.about-the-leather {
+  align-items: center;
+  background-color: #6e706f;
+  flex-direction: column;
+
+  &.active {
+    display: flex;
+  }
+
+  @media (min-width: $break-tablet-large) {
+    align-items: unset;
+    flex-direction: row;
+  }
+
+  .about-the-leather__image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 200px;
+    width: 100%;
+
+    @media (min-width: $break-tablet-large) {
+      max-width: 50%;
+      min-height: 100%;
+      min-width: 50%;
+    }
+  }
+
+  .about-the-leather__content {
+    max-width: 50%;
+    max-width: 530px;
+    text-align: center;
+
+    @media (min-width: $break-tablet) {
+      text-align: unset;
+    }
+  }
+
+  .about-the-leather__content-inner {
+    display: flex;
+    flex-direction: column;
+    padding: $spacing-mobile * 2;
+
+    @media (min-width: $break-tablet) {
+      padding: $spacing-desktop * 2;
+    }
+
+    @media (min-width: $break-desktop) {
+      padding-right: 0;
+    }
+  }
+
+  .about-the-leather__content-title {
+    color: white;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+  }
+
+  .about-the-leather__content-blurb {
+    color: white;
+    font-weight: 100;
+    line-height: 1.5em;
+  }
+
+  .about-the-leather__content-footer {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: $break-tablet) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    div {
+      color: white;
+      font-size: cRem(16);
+      font-weight: bold;
+      font-weight: 500;
+      margin-bottom: cRem(6);
+      max-width: 280px;
+      text-align: center;
+
+      @media (min-width: $break-tablet) {
+        margin-bottom: 0;
+        margin-right: cRem(32);
+        text-align: left;
+      }
+    }
+
+    .button {
+      margin-top: cRem(12);
+
+      @media (min-width: $break-tablet) {
+        margin-top: 0;
+      }
+    }
+  }
+}

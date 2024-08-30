@@ -1,0 +1,52 @@
+@charset "UTF-8";
+// ========================================
+// Add Font Face
+// ========================================
+
+@mixin addFontFace($fontFamily, $basePath, $formats, $defList) {
+	@if type_of($defList) == 'list' {
+		@each $def in $defList {
+			$src: ();
+
+			@each $format in $formats {
+				$ext: $format;
+
+				@if ($format == 'truetype') {
+					$ext: 'ttf';
+				}
+
+				$url: url('#{$basePath}/#{map-get($def, 'file')}.#{$ext}') format(quote($format));
+				$src: append($src, $url, comma);
+			}
+
+			@font-face {
+				font-family: quote($fontFamily);
+				font-style: map-get($def, 'style');
+				font-weight: map-get($def, 'weight');
+				font-display: swap;
+				src: $src;
+			}
+		}
+	} @else {
+		$src: ();
+
+		@each $format in $formats {
+			$ext: $format;
+
+			@if ($format == 'truetype') {
+				$ext: 'ttf';
+			}
+
+			$url: url('#{$basePath}/#{map-get($defList, 'file')}.#{$ext}') format(quote($format));
+			$src: append($src, $url, comma);
+		}
+
+		@font-face {
+			font-family: quote($fontFamily);
+			font-style: map-get($defList, 'style');
+			font-weight: map-get($defList, 'weight');
+			font-display: swap;
+			src: $src;
+		}
+	}
+}

@@ -1,0 +1,118 @@
+.woocommerce div.product form.cart div.quantity {
+  float: none;
+  margin-right: 0;
+  width: auto;
+}
+
+.woocommerce .quantity .qty {
+  background: transparent;
+  line-height: unset;
+  width: auto;
+}
+
+.quantity-wrapper {
+  align-items: flex-start;
+
+  .text {
+    border: none;
+    box-shadow: none;
+    font-size: 14px;
+    margin-left: 10px;
+    margin-right: 10px;
+    min-height: 0;
+    outline: none;
+  }
+}
+
+.input-text-wrap {
+  align-items: center;
+  border-bottom: 1px solid $dark-4;
+  border-top: 1px solid $dark-4;
+  display: flex;
+  justify-content: center;
+}
+
+.quantity-counter {
+  align-items: center;
+  display: flex;
+  position: relative;
+  &__input,
+  &__buttons {
+    input {
+      border-bottom: none;
+      color: $light-4;
+      margin: 0;
+      padding: 0;
+      transition: none;
+      width: auto;
+    }
+  }
+
+  &__input {
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      appearance: none;
+      margin: 0;
+    }
+    input[type="number"] {
+      -moz-appearance: textfield;
+      color: $dark-2;
+      font-weight: 100;
+      max-width: 2.5rem !important;
+      text-align: left !important;
+    }
+  }
+  &__buttons,
+  &__buttons button {
+    display: flex;
+  }
+  &__buttons button {
+    align-items: center;
+    color: $dark-4 !important;
+    display: flex !important;
+    height: cRem(22);
+    justify-content: center;
+    line-height: normal;
+    min-height: cRem(22);
+    padding: 0 !important;
+    width: cRem(32) !important;
+
+    &.minus,
+    &.plus {
+      border: 1px solid $dark-4;
+    }
+
+    &.minus {
+      border-bottom-left-radius: cRem(10);
+      border-bottom-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border-right: 1px solid $dark-4;
+      border-top-left-radius: cRem(10);
+      border-top-right-radius: 0;
+      border-top-right-radius: 0;
+    }
+    &.plus {
+      border-bottom-left-radius: 0;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: cRem(10);
+      border-left: 1px solid $dark-4;
+      border-top-left-radius: 0;
+      border-top-left-radius: 0;
+      border-top-right-radius: cRem(10);
+    }
+    &:hover {
+      cursor: pointer;
+    }
+    &:hover,
+    &:focus {
+      background-color: $dark-4 !important;
+      border-color: $dark-4 !important;
+      color: white !important;
+    }
+    &:active {
+      background-color: $dark-4;
+      border-color: $dark-4;
+    }
+  }
+}

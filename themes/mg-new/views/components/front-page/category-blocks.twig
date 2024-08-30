@@ -1,0 +1,15 @@
+<section id="category-display" class="category-display">
+    <div class="wrap">
+        <div class="categories">
+            {% for category in categories %}
+                {% set image = category['category_image'] %}
+                {% set cat = category['product_category'] %}
+                {% set show_on = category['show_on'] %}
+
+                <div class="category mg-background-image {{ function('implode', " ", show_on) }}" style="background-image: url({{ image|get_timber_image_src('homepage_category_block') }})">
+                    <a href="{{ function('get_term_link', cat) }}" class="button button__ghost button__font-base category-display__button"><span class="prefix">Shop</span> {{ cat.name }}</a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

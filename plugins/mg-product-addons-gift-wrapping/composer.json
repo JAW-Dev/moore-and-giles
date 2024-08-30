@@ -1,0 +1,17 @@
+{
+    "name": "objectiv/mg-product-addons-gift-wrapping",
+    "description": "A WordPress plugin boilerplate",
+    "version": "1.0.0",
+    "license": "GFDL-1.2-or-later",
+    "authors": [{ "name": "objectiv" }],
+    "config": {
+        "optimize-autoloader": true,
+        "classmap-authoritative": true
+    },
+    "autoload": {
+        "psr-4": {"MG_Product_Addons_Gift_Wrapping\\": "includes/Classes"},
+        "classmap": [
+            "includes/Classes"
+        ]
+    }
+}

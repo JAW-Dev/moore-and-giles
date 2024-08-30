@@ -1,0 +1,19 @@
+{
+    "name": "objectiv/mg-specialty-coupons",
+    "description": "Create coupons for special events",
+    "version": "1.0.0",
+    "license": "GPL-2.0",
+    "config": {
+        "optimize-autoloader": true,
+        "classmap-authoritative": true
+    },
+    "authors": [{ "name": "objectiv" }],
+    "autoload": {
+        "psr-4": {"MGSpecialtyCoupons\\": "includes/classes"},
+        "classmap": [
+            "includes/classes"
+        ],
+        "files": [],
+        "classmap-authoritative": true
+    }
+}

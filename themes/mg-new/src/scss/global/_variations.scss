@@ -1,0 +1,12 @@
+.woocommerce div.product form.cart .variations select {
+  margin: 0;
+}
+
+.woocommerce div.product form.cart .variations tr {
+  display: flex;
+}
+
+.woocommerce div.product form.cart .reset_variations {
+  // margin-left: cRem(10);
+  display: none;
+}

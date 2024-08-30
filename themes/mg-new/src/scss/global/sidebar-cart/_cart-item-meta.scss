@@ -1,0 +1,17 @@
+.cart-item-meta {
+  font-size: cRem(13);
+  letter-spacing: 0.5px;
+  font-weight: 300;
+  line-height: cRem(20);
+
+  .personalization-wrapper {
+    margin-left: auto;
+    font-weight: normal;
+  }
+
+  .cart-item-bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+  }
+}

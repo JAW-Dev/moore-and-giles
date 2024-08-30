@@ -1,0 +1,288 @@
+.gform_wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 800px;
+
+  ul,
+  li {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  .validation_error {
+    color: $red;
+    width: 100%;
+  }
+
+  .gfield.gfield_error {
+    input {
+      border-color: $red;
+    }
+
+    .validation_message {
+      color: $red;
+      font-size: cRem(16);
+      margin-top: $spacing-desktop / 2;
+    }
+  }
+
+  label {
+    margin-bottom: cRem(6);
+  }
+
+  form > .validation_error {
+    margin-bottom: $spacing-desktop;
+  }
+}
+
+.gform_wrapper .ginput_container_textarea {
+  display: flex;
+}
+
+.gform_wrapper .textarea {
+  width: 100%;
+}
+
+.field_sublabel_below .ginput_complex {
+  input,
+  select {
+    margin-bottom: 0 !important;
+  }
+
+  label {
+    margin-top: $spacing-desktop / 2;
+  }
+}
+
+.gform_fields {
+  margin: 0;
+  padding: 0;
+}
+
+li.gfield {
+  list-style-type: none;
+  margin-top: $spacing-desktop;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+
+  .gfield_description {
+    font-size: cRem(16);
+    color: $dark-4;
+  }
+}
+
+.ginput_complex {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: $spacing-desktop;
+
+  .name_first,
+  .name_last,
+  .address_line_1,
+  .address_line_2 {
+    width: 49%;
+  }
+
+  .address_line_1,
+  .address_line_2,
+  .address_city,
+  .address_state,
+  .address_zip {
+    width: 100%;
+    margin-bottom: $spacing-desktop;
+  }
+
+  select {
+    width: 100%;
+  }
+
+  .ginput_full,
+  .ginput_cardinfo_left,
+  .ginput_cardinfo_right {
+    width: 100%;
+  }
+
+  .gform_card_icon_container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .ginput_cardextras {
+    margin-top: $spacing-desktop;
+
+    .ginput_card_expiration_container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      select {
+        width: 49%;
+      }
+    }
+  }
+
+  .ginput_card_security_code_icon {
+    display: none;
+  }
+
+  @media (min-width: $break-tablet) {
+    .address_city,
+    .address_state,
+    .address_zip {
+      width: 32%;
+    }
+
+    .ginput_cardextras {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .ginput_cardinfo_left,
+    .ginput_cardinfo_right {
+      width: 49%;
+    }
+  }
+}
+
+.gf_clear {
+  width: 100%;
+}
+
+.gfield_total {
+  margin-top: $spacing-desktop;
+}
+
+.gform_wrapper div.gform_card_icon {
+  background-image: url(../icons/gf-creditcard-icons.png);
+  background-repeat: no-repeat;
+  float: left;
+  height: 32px;
+  margin-right: 4px;
+  text-indent: -9000px;
+  width: 36px;
+
+  &.gform_card_icon_amex {
+    background-position: -72px 0;
+  }
+
+  &.gform_card_icon_discover {
+    background-position: -108px 0;
+  }
+
+  &.gform_card_icon_mastercard {
+    background-position: -36px 0;
+  }
+  &.gform_card_icon_visa {
+    background-position: 0 0;
+  }
+}
+
+// Gform Validation container
+.gform_validation_container,
+.gform_wrapper .gform_validation_container,
+body
+  .gform_wrapper
+  .gform_body
+  ul.gform_fields
+  li.gfield.gform_validation_container,
+body .gform_wrapper li.gform_validation_container,
+body .gform_wrapper ul.gform_fields li.gfield.gform_validation_container {
+  display: none !important;
+  position: absolute !important;
+  left: -9000px;
+}
+
+.gform_footer {
+  margin-top: $spacing-desktop;
+}
+.gfield_required {
+  color: $accent-1;
+  margin-left: 3px;
+}
+
+.gform_page_footer {
+  display: flex;
+  flex-direction: column;
+  margin-top: $spacing-mobile;
+
+  @media (min-width: $break-tablet-large) {
+    flex-direction: row;
+    justify-content: center;
+    margin-top: $spacing-mobile;
+}
+
+  input {
+    margin-top: $spacing-mobile;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+
+    @media (min-width: $break-tablet-large) {
+      margin-top: 0;
+      max-width: 300px;
+      margin-left: 4px;
+      margin-right: 4px;
+    }
+  }
+}
+
+table.gfield_list.gfield_list_container {
+  width: 100%;
+}
+
+td.gfield_list_cell {
+  width: 90%;
+}
+
+// Gravity Forms UI Datepicker Styles (from GF)
+.ui-datepicker {
+  background: white;
+  border-radius: 4px;
+  border: $base-border;
+  padding: $spacing-mobile;
+
+  .ui-datepicker-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .ui-datepicker-prev,
+  .ui-datepicker-next {
+    cursor: pointer;
+    width: 50%;
+  }
+
+  .ui-datepicker-next {
+    text-align: right;
+  }
+
+  .ui-datepicker-title {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    select {
+      background: none;
+      padding: 0px;
+      text-decoration: underline;
+      width: auto;
+    }
+  }
+
+  a.ui-state-default {
+    padding: 0 2px;
+  }
+
+  .ui-datepicker-current-day a,
+  a.ui-state-default:hover {
+    background: $dark-2;
+    color: white;
+    padding: 0 2px;
+  }
+}

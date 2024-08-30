@@ -1,0 +1,57 @@
+.left-lead-5050-text {
+  display: flex;
+  flex-direction: column;
+  padding: cRem(80) 5%;
+  font-family: $font-sans;
+
+  @media (min-width: $break-desktop) {
+    flex-direction: row;
+  }
+
+  &__left-column {
+    margin-right: 0;
+    margin-bottom: cRem(45);
+    font-size: cRem(24);
+    font-weight: bold;
+
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: $font-sans;
+      font-size: cRem(24);
+      margin-top: 0;
+      font-weight: bold;
+    }
+
+    p {
+      margin-bottom: 2rem;
+    }
+
+    @media (min-width: $break-desktop) {
+      margin-right: cRem(45);
+      margin-bottom: 0;
+    }
+  }
+
+  &__right-column {
+    font-size: cRem(16);
+    min-width: none;
+    width: 100%;
+
+    @media (min-width: $break-desktop) {
+      min-width: 50%;
+      width: 50%;
+    }
+
+    p {
+      margin-top: 0;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &.no-top-padding {
+    padding-top: 0;
+  }
+}

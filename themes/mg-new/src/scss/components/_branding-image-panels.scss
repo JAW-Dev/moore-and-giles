@@ -1,0 +1,12 @@
+.branding-image-panel {
+  padding: $spacing-desktop * 8 0;
+}
+
+.branding-image-panels__inner {
+  text-align: center;
+
+  .branding-image-panel__title {
+    color: white;
+    margin-top: 0;
+  }
+}

@@ -1,0 +1,144 @@
+//***********************************
+// Quickview Summary
+//***********************************
+#jckqv #jckqv_summary {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0;
+
+  @media (min-width: 900px) {
+    padding-left: cRem(50);
+  }
+
+  h1,
+  p,
+  .quickview-modal__more {
+    font-family: get_font("sans-serif");
+    color: $dark-2;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    letter-spacing: cRem(0.4);
+    margin: 0 0 0.30rem;
+    font-weight: bold;
+  }
+
+  #jckqv_desc {
+    display: none;
+    p {
+     margin: 0;
+    }
+  }
+
+  .jckqv-loaded .single_variation_wrap {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-top: 0;
+  }
+
+  .woocommerce-variation-add-to-cart {
+    margin-top: auto;
+  }
+
+  .counter-button-wrapper {
+    margin: 0;
+    display: flex;
+    align-items: center;
+
+    .quantity-wrapper,
+    .button {
+      margin-left: 0;
+    }
+  }
+
+  .addon-field-container {
+    display: none;
+    height: cRem(60);
+  }
+
+  .single_add_to_cart_button {
+    margin-left: auto;
+  }
+
+  p.below-button-message {
+    margin-bottom: 0;
+    margin-top: 2rem;
+    color: #D44D3D !important;
+    font-size: 0.85rem !important;
+    font-style: italic;
+    text-align: center;
+
+    &.out-of-stock {
+      margin-top: 0;
+    }
+  }
+
+  .woocommerce_waitlist {
+    max-width: 190px;
+    margin-right: auto;
+    margin-left: 0;
+  }
+
+  .quickview-modal__more {
+    position: relative;
+    bottom: 2rem;
+    display: inline-block !important;
+    height: 1.2rem;
+    bottom: 0px;
+    padding-right: 2rem;
+    margin-top: 1.3rem;
+    color: $dark-3 !important;
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 500;
+    width: cRem(200);
+
+    @media (min-width: 900px) {
+      position: absolute;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      width: cRem(19);
+      height: cRem(19);
+      top: cRem(3);
+      right: 0px;
+
+      background: url("../icons/arrow-light.svg") no-repeat;
+      background-size: cRem(19) cRem(19);
+      transform: rotate(180deg);
+
+      @media (min-width: 900px) {
+        top: 0.15rem;
+        right: 0px;
+      }
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    @media (min-width: $break-tablet-large) {
+      position: relative;
+      bottom: cRem(0);
+    }
+  }
+
+  &.out-of-stock {
+    .woocommerce-variation-add-to-cart {
+      display: none;
+    }
+
+    .affirm-as-low-as {
+      margin-bottom: 0;
+    }
+  }
+
+  .hide {
+    display: none;
+  }
+}

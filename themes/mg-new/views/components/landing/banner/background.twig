@@ -1,0 +1,8 @@
+{% if background.type == 'image' %}
+	<div class="hero-banner__background-wrapper" style="background-image: url({{ background.image|get_timber_image_src('large') }})"></div>
+{% elseif background.type == 'video' %}
+	<div class="hero-banner__video-wrapper">
+		{% set video_src  = 'src="'~background.video~'"' %}
+		<iframe {{ video_src }} class="hero-banner__background-video" frameborder="0"></iframe>
+	</div>
+{% endif %}

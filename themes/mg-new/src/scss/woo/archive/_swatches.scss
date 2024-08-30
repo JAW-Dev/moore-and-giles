@@ -1,0 +1,17 @@
+.woo-variation-swatches.wvs-attr-behavior-blur
+  .variable-item:not(.radio-variable-item).disabled,
+.woo-variation-swatches.wvs-attr-behavior-blur
+  .variable-item:not(.radio-variable-item).disabled:hover,
+.woo-variation-swatches.wvs-attr-behavior-blur
+  .variable-item:not(.radio-variable-item).out-of-stock,
+.woo-variation-swatches.wvs-attr-behavior-blur
+  .variable-item:not(.radio-variable-item).out-of-stock:hover {
+  display: none;
+}
+
+.tease-product__wrap {
+  .variable-item-contents {
+    min-width: 20px !important;
+    height: 20px !important;
+  }
+}

@@ -1,0 +1,14 @@
+@charset "UTF-8";
+// ========================================
+// Styles
+// ========================================
+
+// Dependencies
+@import 'dependencies';
+
+@include load-tailwind(config('process.tailwind'));
+@include purgecss-start(config('process.tailwind'));
+
+@import '_partials/**/*.scss';
+
+@include purgecss-end(config('process.tailwind'));

@@ -1,0 +1,48 @@
+{% set text_class = '' %}
+
+{% if hero_img is empty %}
+    {% set hero_img = post.get_field('hero_image') %}
+{% endif %}
+
+{% if hero_title is empty %}
+    {% set hero_title = post.get_field('hero_title') %}
+{% endif %}
+
+{% if hero_blurb is empty %}
+    {% set hero_blurb = post.get_field('hero_blurb') %}
+{% endif %}
+
+{# Set up the hero img if it isn't set already #}
+{% if hero_img is empty %}
+    {% set hero_img = post.thumbnail | get_timber_image_src('large') %}
+{% else %}
+    {% set hero_img = hero_img | get_timber_image_src('large') %}
+{% endif %}
+
+{% if hero_img is not empty %}
+    {% set text_class = 'white-text' %}
+{% endif %}
+
+{# Set up the hero title if it isn't set already #}
+{% if hero_title is empty %}
+    {% set hero_title = post.title %}
+{% endif %}
+
+{% if hero_img is not empty or hero_title is not empty or hero_blurb is not empty %}
+
+    <section class="page-hero" style="background-image: url({{ hero_img }})">
+        <div class="wrap p0">
+            <div class="inner-page-hero lmb0 {{ text_class }}">
+                {% if hero_title is not empty %}
+                    <h1 class="page-hero__title">{{ hero_title }}</h1>
+                {% endif %}
+                {% if hero_blurb is not empty %}
+                    <div class="page-hero__blurb lmb0">
+                        {{ hero_blurb }}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+
+{% endif %}

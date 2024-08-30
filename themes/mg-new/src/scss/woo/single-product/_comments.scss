@@ -1,0 +1,354 @@
+// The base star letter spacing
+$star-letter-spacing: 10px;
+
+// Calculate the new full width based on the scale (scale 1-5, so 5)
+$width-adjustment-for-stars: ($star-letter-spacing * 5) - 3;
+
+// The comments modal menu slide styles
+.comments-menu-active {
+  .site-container {
+    position: fixed;
+    right: 100%;
+  }
+
+  .single-product-reviews .comments-template {
+    left: 0;
+    top: 0;
+  }
+}
+
+body.mg-body .single-product-reviews .comments-template-main-mobile {
+  .button {
+    margin: 0 1rem;
+    width: cRem(176);
+    min-width: cRem(176);
+
+    &:first-child {
+      margin: 0 1rem 1rem;
+    }
+  }
+}
+
+// For logged in users
+body.admin-bar
+  .comments-menu-active
+  .single-product-reviews
+  .comments-template {
+  top: 46px;
+}
+
+// Kill the margin on the submit button
+.woocommerce #review_form #respond .form-submit {
+  margin-bottom: 0;
+}
+
+// Because for some stupid reason they thought using this many selectors was smart
+body.woocommerce #reviews #comments ol.commentlist {
+  padding-left: 0;
+
+  li .comment-text {
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid $dark-4;
+    padding: 0 0 2.5em 0;
+    margin: 0 0 2.5em 0;
+
+    .description {
+      margin-bottom: 2em;
+
+      *:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .comment-published-date-wrap {
+      color: $dark-3;
+      font-size: cRem(15);
+    }
+
+    .star-rating {
+      float: none;
+      letter-spacing: $star-letter-spacing/2;
+      width: calc(5.4em + #{$width-adjustment-for-stars/2});
+      margin-bottom: 2em;
+    }
+
+    .meta {
+      font-size: .9em !important;
+
+      .owner-rating-wrap {
+        .woocommerce-review__author {
+          color: $dark-3;
+          margin-top: 0;
+          margin-bottom: 0.5em;
+        }
+
+        .star-rating {
+          display: none;
+        }
+      }
+
+      .verified-owner-wrap {
+        display: flex;
+        align-items: center;
+        color: $dark-3;
+        font-weight: 300;
+        margin-bottom: 2em;
+
+        .circle-check {
+          display: inline-block;
+          margin-right: 0.5em;
+        }
+      }
+    }
+  }
+}
+
+.single-product-reviews {
+  &.no-comments .comments-template-main-mobile .title {
+    margin-bottom: 1em;
+  }
+
+  .reviews {
+    .more-reviews-control {
+      text-align: center;
+    }
+  }
+
+  .comments-template-main-mobile {
+    text-align: center;
+
+    .title {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .woocommerce-product-rating {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1em;
+
+      &:after {
+        content: none;
+      }
+
+      .star-rating {
+        float: none;
+        margin: 0 0.5em 0 0;
+        text-align: left;
+        letter-spacing: $star-letter-spacing/2;
+        width: calc(5.4em + #{$width-adjustment-for-stars/2});
+      }
+
+      .count {
+        margin-top: 2px;
+        color: $dark-3;
+      }
+    }
+
+    .mobile-average-blurb-wrap {
+      display: inline-block;
+      line-height: 1.5em;
+      max-width: 225px;
+      margin-bottom: 1em;
+    }
+
+    .reviews-actions {
+      .button {
+        margin: 0 1em;
+
+        &:first-child {
+          margin-bottom: 1em;
+        }
+      }
+    }
+  }
+
+  .comments-template {
+    position: fixed;
+    display: block;
+    left: 100%;
+    width: 100vw;
+    height: calc(100vh - 3em);
+    overflow-y: auto;
+    transition: get-anim();
+    padding: 2em 2em 4em 2em;
+    box-sizing: border-box;
+
+    .comment-header-controls-wrap {
+      overflow: hidden;
+    }
+
+    .reviews {
+      margin-bottom: 2em;
+    }
+
+    .title {
+      margin-bottom: 0.5em;
+    }
+
+    .comment-desktop-control-write,
+    .comment-header-desktop-display {
+      display: none;
+    }
+
+    .comment-modal-review-rating {
+      .count {
+        display: none;
+      }
+
+      .mobile-average-blurb-wrap {
+        max-width: 225px;
+      }
+
+      .star-rating {
+        margin-bottom: 1em;
+        font-size: 1.75em;
+        letter-spacing: $star-letter-spacing;
+        width: calc(5.4em + #{$width-adjustment-for-stars});
+      }
+    }
+
+    .comments-list-border-mobile {
+      background-color: $dark-4;
+      border: none;
+      height: 1px;
+      width: 100%;
+      margin: 2.5em 0;
+      clear: both;
+    }
+
+    .commentlist {
+      box-sizing: border-box;
+    }
+
+    .review-form-wrapper {
+      display: none;
+      margin-top: 2em;
+      padding-top: 2em;
+      border-top: 1px solid $dark-2;
+    }
+
+    .mobile-comments-modal-controls {
+      text-align: right;
+
+      .close-icon-wrap {
+        display: inline-block;
+        cursor: pointer;
+
+        svg {
+          path {
+            stroke: $dark-3;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $wrap-woo-archive) {
+  body.woocommerce #reviews #comments ol.commentlist {
+    .comment-text {
+      & > .star-rating {
+        display: none;
+      }
+
+      .meta {
+        .owner-rating-wrap {
+          display: flex;
+          align-items: center;
+          margin-bottom: 0.75em;
+
+          .woocommerce-review__author {
+            max-width: 250px;
+            margin: 0 0.75em 0 0 !important;
+            width: 100%;
+            display: inline-block;
+            border-right: 1px solid $accent-1;
+          }
+
+          .star-rating {
+            margin-bottom: 0;
+            display: inline-block !important;
+            color: $dark-2;
+          }
+        }
+      }
+    }
+  }
+
+  .single-product-reviews {
+    .comments-wrap {
+      max-width: $wrap-woo-archive;
+      display: flex;
+      justify-content: center;
+    }
+
+    .comments-template-main-mobile {
+      display: none;
+    }
+
+    .comments-template {
+      display: block;
+      position: static;
+      left: 0;
+      width: 100%;
+      height: auto;
+      box-sizing: border-box;
+      padding: 0;
+
+      #reviews {
+        margin-bottom: 0;
+      }
+
+      .comment-modal-control-write {
+        display: none;
+      }
+
+      .comment-header-modal-display {
+        display: none;
+      }
+
+      .comment-header-desktop-display {
+        display: block;
+
+        .title {
+          border-right: 2px solid $accent-1;
+          padding-right: 0.5em;
+          margin: 0.1em 0.3em 0.3em 0;
+          display: inline-block;
+          line-height: 0.75em;
+          float: left;
+          &.no-comments {
+            border-right: none;
+            padding-right: 0;
+          }
+        }
+
+        .star-rating {
+          float: left;
+          letter-spacing: $star-letter-spacing/2;
+          width: calc(5.4em + #{$width-adjustment-for-stars/2});
+        }
+
+        // .mobile-average-blurb-wrap {
+        //   font-size: 0.85em;
+        // }
+      }
+
+      .comments-list-border-mobile {
+        margin: 1.5em 0 3em 0;
+      }
+
+      .comment-desktop-control-write {
+        display: block;
+        float: right;
+      }
+
+      .mobile-comments-modal-controls {
+        display: none;
+      }
+    }
+  }
+}

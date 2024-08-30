@@ -1,0 +1,22 @@
+{# Only show section if the hashtag and gallery are present #}
+{% if hashtag and gallery %}
+    <section id="hashtag-gallery" class="hashtag-gallery">
+        <div class="wrap hashtag-gallery-wrap">
+            <div class="instagram-icon-wrap">
+                {{ svg('instagram') }}
+            </div>
+            <h2 class="hashtag">
+                #{{ hashtag }}
+            </h2>
+            <div class="carousel-container">
+                <div class="prev-arrow arrow">{{ svg('right-arrow-thin') }}</div>
+                <div class="carousel">
+                    {% for item in gallery %}
+                        <img {{ item['image']|get_timber_image_responsive('thumbnail')  }} />
+                    {% endfor %}
+                </div>
+                <div class="next-arrow arrow">{{ svg('right-arrow-thin') }}</div>
+            </div>
+        </div>
+    </section>
+{% endif %}

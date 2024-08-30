@@ -1,0 +1,15 @@
+.tippy-popper {
+  .tippy-tooltip {
+    color: inherit;
+    // background-color: white;
+    max-width: cRem(300);
+    // padding: cRem(22) cRem(14);
+    box-shadow: 0 0 13px 1px hsla(120, 100%, 2%, 0.2),
+      0 1px 1px -8px hsla(0, 0%, 0%, 0.2), 0 1px 1px -2px hsla(0, 0%, 0%, 0.2);
+    background-color: white;
+  }
+  .tippy-content {
+    padding: 18px 0px;
+    font-size: cRem(16);
+  }
+}

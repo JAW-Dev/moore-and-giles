@@ -1,0 +1,23 @@
+.site-header {
+  .site-header-main .wrap {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: cRem(20) 0;
+
+    @media (min-width: $break-tablet-large) {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: $header-border-padding 0;
+    }
+
+    .right-icon-menu-wrap,
+    .left-mega-menu-wrap {
+      width: 100%;
+
+      @media (min-width: $break-tablet-large) {
+        width: calc(50% - 90px);
+      }
+    }
+  }
+}

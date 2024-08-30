@@ -1,0 +1,59 @@
+.white-text {
+  color: white;
+}
+
+.yellow-text {
+  color: $accent-1;
+}
+
+.tac {
+  text-align: center;
+}
+
+.text-upper {
+  text-transform: uppercase;
+}
+
+.f14 {
+  font-size: cRem(14);
+}
+
+.f18 {
+  font-size: cRem(18);
+}
+
+.f22 {
+  font-size: cRem(22);
+}
+
+.f24 {
+  font-size: cRem(24);
+}
+
+.f28 {
+  font-size: cRem(28);
+}
+
+.f64 {
+  font-size: cRem(64);
+}
+
+.ff-proxima {
+  font-family: $font-sans;
+}
+
+.ff-garamond {
+  font-family: $font-serif;
+}
+
+.ff-roboto-slab {
+  font-family: "Roboto Slab";
+}
+
+.lh-1 {
+  line-height: 1 !important;
+}
+
+.font-bold {
+  font-weight: bold;
+}

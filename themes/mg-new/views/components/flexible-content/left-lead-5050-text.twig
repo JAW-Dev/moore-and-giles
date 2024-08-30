@@ -1,0 +1,11 @@
+{# The custom classes #}
+{% if content.classes %}
+	{% set custom_classes = ' '~content.classes %}
+{% else %}
+	{% set custom_classes = '' %}
+{% endif %}
+
+<section class="left-lead-5050-text{{ custom_classes }}">
+	<div class="left-lead-5050-text__left-column">{{content.left_column}}</div>
+	<div class="left-lead-5050-text__right-column">{{content.right_column}}</div>
+</section>

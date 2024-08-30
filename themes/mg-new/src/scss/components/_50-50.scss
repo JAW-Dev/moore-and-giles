@@ -1,0 +1,31 @@
+.fifty-fifty {
+  .wrap {
+    display: flex;
+    flex-direction: column;
+
+    &.row-reverse {
+      flex-direction: row-reverse;
+    }
+
+    > div,
+    > img {
+      width: 50%;
+    }
+  }
+
+  &__body {
+    flex-grow: 1;
+  }
+}
+
+@media (min-width: $break-tablet-large) {
+  .fifty-fifty {
+    .wrap {
+      flex-direction: row;
+
+      .pane {
+        width: 50%;
+      }
+    }
+  }
+}

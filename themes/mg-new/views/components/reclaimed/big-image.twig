@@ -1,0 +1,17 @@
+{% if( post.get_field('bi_image') ) %}
+    {% set image = post.get_field('bi_image') %}
+    {% set image_html = image | get_timber_image_responsive('large') %}
+    {% set text = post.get_field('bi_image_text') %}
+    <section class="big-image">
+        <div class="image-wrap">
+            <img class="display-block" {{ image_html }}>
+        </div>
+        {% if( text ) %}
+            <div class="big-image-text-wrap">
+                    <div class="big-image-text-inner">
+                        <div class="big-image-text ff-roboto-slab">{{ text }}</div>
+                    </div>
+            </div>
+        {% endif %}
+    </section>
+{% endif %}

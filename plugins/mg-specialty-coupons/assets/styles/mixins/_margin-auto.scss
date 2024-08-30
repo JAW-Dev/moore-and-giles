@@ -1,0 +1,25 @@
+@charset "UTF-8";
+// ========================================
+// Margin auto
+// ========================================
+
+/// Horizontally center a block element
+///
+/// @example scss - Basic Usage Sass
+///    .center-my-block-thingie {
+///        @include margin-auto();
+///    }
+///
+/// @example scss - Basic Usage CSS Output
+///    .center-my-block-thingie {
+///        display: block;
+///        margin-right: auto;
+///        margin-left: auto;
+///    }
+
+@mixin margin-auto {
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+
+}

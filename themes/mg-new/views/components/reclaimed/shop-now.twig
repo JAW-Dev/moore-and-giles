@@ -1,0 +1,72 @@
+{% if( post.get_field('shopping_products_to_display') ) %}
+    {% set section_title = post.get_field('shopping_section_title') %}
+    {% set section_title_mobile = post.get_field('shopping_section_title_mobile') %}
+    {% set products = post.get_field('shopping_products_to_display') %}
+    {% set display_graphic = post.get_field('shopping_display_graphic') %}
+    <section class="shop-now" id="shop_now">
+        <div class="wrap p0">
+            <div class="shop-now-inner margin-top-sec margin-bot-sec">
+                <div class="mobile-version">
+                    {% if( section_title_mobile ) %}
+                        <div class="shop-now-title tac margin-bot-2">
+                        	<h2 class="section-title ff-roboto-slab">
+                        	    {{ section_title_mobile }}
+                        	</h2>
+                        	<div class="shop-arrow">
+                        	    <svg width="43" height="96" viewBox="0 0 43 96" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g stroke="#D7D8D8" stroke-linecap="round" stroke-width="4"><path d="M21.111 2v76M41 75L23.143 93.303c-.908.93-2.378.93-3.286 0L2 75"/></g></g></svg>
+                        	</div>
+                        </div>
+                    {% endif %}
+
+                    <div class="mobile-products">
+                        {% for product in products %}
+                            {% include 'components/reclaimed/shop-now/mobile-product.twig' %}
+                        {% endfor %}
+
+                    </div>
+
+                    {% if( display_graphic ) %}
+                        <div class="graphic margin-top-sec tac">
+                            {% include 'components/icons/reclaimed-project-definition.svg' %}
+                        </div>
+                    {% endif %}
+
+                </div>
+                <div class="desktop-version">
+
+                    <div class="desktop-products first">
+                        {% for product in products %}
+                            {% if( loop.index is odd ) %}
+                                {% include 'components/reclaimed/shop-now/desktop-product.twig' %}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+
+                    <div class="desktop-products second">
+                        {% if( section_title ) %}
+                            <div class="shop-now-title">
+                                <h2 class="section-title ff-roboto-slab">
+                                    {{ section_title }}
+                                </h2>
+                                <div class="shop-arrow">
+                                    <svg width="43" height="96" viewBox="0 0 43 96" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g stroke="#D7D8D8" stroke-linecap="round" stroke-width="4"><path d="M21.111 2v76M41 75L23.143 93.303c-.908.93-2.378.93-3.286 0L2 75"/></g></g></svg>
+                                </div>
+                            </div>
+                        {% endif %}
+                        {% for product in products %}
+                            {% if( loop.index is even ) %}
+                                {% include 'components/reclaimed/shop-now/desktop-product.twig' %}
+                            {% endif %}
+                        {% endfor %}
+                        {% if( display_graphic ) %}
+                            <div class="graphic">
+                                {% include 'components/icons/reclaimed-project-definition.svg' %}
+                            </div>
+                        {% endif %}
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+{% endif %}

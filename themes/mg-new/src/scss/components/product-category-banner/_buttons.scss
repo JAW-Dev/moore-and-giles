@@ -1,0 +1,28 @@
+.product-category-banner {
+  &__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: cRem(890);
+  }
+
+  &__button-link {
+    font-size: cRem(14);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: white;
+    padding: cRem(38) 1rem;
+    margin: cRem(15);
+    min-width: cRem(260);
+    box-sizing: border-box;
+    text-align: center;
+    background-color: black;
+    border-radius: cRem(10);
+    box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.36);
+    text-shadow: 0px 2px 6px rgba(0,0,0,0.5);
+
+    &:hover {
+      color: $accent-2;
+    }
+  }
+}

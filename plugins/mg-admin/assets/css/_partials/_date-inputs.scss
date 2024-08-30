@@ -1,0 +1,10 @@
+input[name="date-from"], input[name="date-to"]{
+	width: rem(150);
+	height: rem(28);
+	margin: 0;
+	line-height: rem(28);
+}
+
+.wrap .order-dates {
+	float: left;
+}

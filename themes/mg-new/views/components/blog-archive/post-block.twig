@@ -1,0 +1,24 @@
+<article id="post-{{post.id}}" class="post-block" itemscope="itemscope" itemtype="http://schema.org/BlogPosting">
+    <a href="{{post.link}}">
+        {% if post.thumbnail %}
+            {% set image = post.thumbnail | get_timber_image('post_archive') %}
+            <div class="post-block__image-wrap" itemprop="image" itemscope="itemscope" itemtype="http://schema.org/ImageObject">
+                <img {{ image }} class="post-block__image">
+            </div>
+            <!--/itemprop=image-->
+        {% endif %}
+        <div class="post-block__lower">
+            <header class="post-block__header">
+                <h3 class="post-block__title" itemprop="headline">{{post.title}}</h3>
+            </header>
+            <footer class="post-block__footer">
+                <div class="post-block__footer_first">
+                    Read More
+                </div>
+                <div class="post-block__footer_second">
+                    <time datetime="{{post.date(" y-m-d")}}"="Y-m-d" )}}""=")}}" "">{{post.date}}</time>
+                </div>
+            </footer>
+        </div>
+    </a>
+</article>

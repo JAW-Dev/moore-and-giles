@@ -1,0 +1,13 @@
+{# See Timber Docs. Do not remove this. Product context will be incorrect if removed. #}
+{% if set_product %}
+    {{ set_woo_product(product) }}
+{% endif %}
+
+{% if enable %}
+	<section class="cta-break">
+		<h2 class="cta-break__heading">{{ text }}</h2>
+		{% if button %}
+			<a href="{{ link }}" class="cta-break__link button alt">{{button}}</a>
+		{% endif %}
+	</section>
+{% endif %}

@@ -1,0 +1,52 @@
+.hashtag-gallery {
+  display: none;
+}
+
+@media (min-width: $break-tablet-large) {
+  .hashtag-gallery {
+    display: block;
+
+    .hashtag-gallery-wrap {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .carousel-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      width: 100%;
+
+      .prev-arrow {
+        position: relative;
+        transform: scale(-1);
+      }
+
+      .prev-arrow,
+      .next-arrow {
+        cursor: pointer;
+
+        svg polyline {
+          transform: get-anim();
+        }
+
+        &:hover {
+          svg polyline {
+            stroke: $accent-1;
+          }
+        }
+      }
+
+      .slick-slide > div {
+        margin: 0 1em;
+      }
+
+      .carousel {
+        margin: 0 1em;
+        width: 90%;
+      }
+    }
+  }
+}

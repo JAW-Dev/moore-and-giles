@@ -1,0 +1,9 @@
+.facet-reset-button {
+    display: none;
+    line-height: 1;
+    padding: 6px 10px;
+
+    .fwp-filtered & {
+        display: unset;
+    }
+}

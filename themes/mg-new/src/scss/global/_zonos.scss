@@ -1,0 +1,22 @@
+body #zonos {
+  display: block;
+  right: 10px;
+  bottom: 50px;
+  left: auto !important;
+  z-index: 1000 !important;
+}
+
+body .z-intl #zonos {
+  display: block;
+}
+
+#zonos > .z-flag,
+#zonos.intl .z-flag,
+#zonos.op .z-flag {
+  right: 10px;
+  left: auto !important;
+  bottom: 20px !important;
+  &:hover {
+    bottom: 20px !important;
+  }
+}

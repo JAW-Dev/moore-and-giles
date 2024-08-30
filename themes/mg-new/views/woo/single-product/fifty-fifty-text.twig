@@ -1,0 +1,12 @@
+<section id="fifty-fifty-text" class="fifty-fifty-text">
+	<div class="fifty-fifty-text__wrap wrap">
+
+		{% for item in content %}
+			<div class="fifty-fifty-text__body">
+				<h3 class="fifty-fifty-text__title">{{item['title']}}</h3>
+				<div class="fifty-fifty-text__blurb">{{item['blurb']}}</div>
+			</div>
+		{% endfor %}
+
+	</div>
+</section>

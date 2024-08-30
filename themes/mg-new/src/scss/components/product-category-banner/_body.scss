@@ -1,0 +1,26 @@
+.product-category-banner {
+  &__body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+  }
+
+  &__header {
+    text-align: center;
+    display: block;
+
+    &.no-buttons h2 {
+      margin: 0;
+    }
+  }
+
+  &__title {
+    margin: 0 0 1rem;
+    font-size: cRem(63);
+    color: white;
+  }
+
+
+}

@@ -1,0 +1,26 @@
+.jump-nav {
+  display: none;
+
+  @media (min-width: $break-tablet) {
+    display: block;
+  }
+}
+
+.jump-nav__inner {
+  @media (min-width: $break-tablet) {
+    border-bottom: 2px solid get-color(light, 3);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: $spacing-desktop 0;
+  }
+}
+
+.jump-nav__item {
+  color: get-color(dark, 3);
+  opacity: 0.6;
+
+  &:hover {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,59 @@
+{#
+Template Name: Page List
+#}
+{% extends "base.twig" %}
+{% block layout %}
+    <div class="mlra mw-600 margin-bot-2 margin-top-2">
+
+    {% if page_list_details.all_templates is not empty %}
+        <h2>Pages with Templates</h2>
+        {% for template in page_list_details.all_templates %}
+
+            <h4>{{template}}</h4>
+            {% for page in page_list_details.all_pages %}
+                {% set permalink = function('get_permalink', page.ID) %}
+                {% set page_template = function('get_page_template_slug', page.ID)%}
+                {% set post_status = function('get_post_status', page.ID)%}
+
+                {% if page_template == template %}
+                    <li>
+                        <a href="{{ permalink }}">{{ page.post_title }}</a> 
+                        {% if template is not empty %}
+                            - {{ template }}
+                        {% endif %}
+                        - {{ post_status }}                        
+                    </li>
+                {% endif %}
+                
+            {% endfor %}
+        {% endfor %}
+    {% endif %}
+    
+    {# Output All Pages #}
+    {% if page_list_details.all_pages is not empty %}
+        <hr class="margin-bot-2 margin-top-2">
+        <h2>Pages without Templates</h2>
+        {% set post_statuses = function('get_post_statuses') %}
+        {% for key,ps in post_statuses %}
+            <h4>{{ps}}</h4>
+            <ul>
+                {% for page in page_list_details.all_pages %}
+                    {% set permalink = function('get_permalink', page.ID) %}
+                    {% set page_template = function('get_page_template_slug', page.ID)%}
+                    {% set post_status = function('get_post_status', page.ID)%}
+                    {% if page_template is empty and key == post_status %}
+                        <li>
+                            <a href="{{ permalink }}">{{ page.post_title }}</a> - {{ post_status }}
+                        </li>
+                    {% endif %}
+                    
+                {% endfor %}
+            </ul>
+
+        {% endfor %}
+    {% endif %}
+    
+    </div>
+    
+
+{% endblock %}

@@ -1,0 +1,81 @@
+{% if content.hero_banner_classes %}
+	{% set custom_classes = ' '~content.hero_banner_classes %}
+{% else %}
+	{% set custom_classes = '' %}
+{% endif %}
+
+{% if wrapper_classes %}
+	{% set wrapper_classes = ' '~wrapper_classes %}
+{% else %}
+	{% set wrapper_classes = '' %}
+{% endif %}
+
+{% set background_type = content.hero_banner_background_type %}
+{% set content_type = content.hero_banner_content_type %}
+
+{% if fn( 'is_wc_endpoint_url', 'order-received' ) %}
+	{% set enabled = true %}
+	{% set title = "Thank You For Your Order" %}
+	{% set blurb = "Your order has been received." %}
+{% elseif fn('is_404') %}
+	{% set enabled = true %}
+	{% set title = "Page Not Found" %}
+	{% set blurb = "We're sorry, but the page you're looking for could not be found." %}
+	{% set content_type = 'basic' %}
+{% else %}
+	{% set enabled = content.hero_banner_enabled %}
+	{% set title = content.hero_banner_content_type_basic_title %}
+	{% set blurb = content.hero_banner_content_type_basic_blurb %}
+{% endif %}
+
+{% if post._wp_page_template is defined %}
+	{% if post._wp_page_template == "default" and title is empty %}
+		{% set title = post.title %}
+		{% set content_type = 'basic' %}
+	{% endif %}
+{% endif %}
+
+{#} Set the background attributes{#}
+{% if background_type == 'image' %}
+	{% set classes = 'hero-banner hero-banner--image' %}
+	{% set background_class = ' mg-background-image' %}
+{% elseif background_type == 'video' %}
+	{% set classes = 'hero-banner hero-banner--video' %}
+	{% set background_class = '' %}
+{% else %}
+	{% set classes = 'hero-banner hero-banner--none' %}
+	{% set background_class = '' %}
+{% endif %}
+
+{% if enabled == true %}
+	<section id="hero-banner" class="{{ classes }}{{ custom_classes }}{{ wrapper_classes }}{{ background_class }}">
+		{% include "components/hero-banner/background.twig" with {
+			"background_type": background_type,
+			"thumbnail": post.thumbnail,
+			"image": content.hero_banner_background_type_image,
+			"video": content.hero_banner_background_type_video,
+		} %}
+		{% include "components/hero-banner/content.twig" with {
+			"content_type": content_type,
+			"post_title": post.title,
+			"title": title,
+			"include_title": content.hero_banner_include_title,
+			"blurb": blurb,
+			"editor": content.hero_banner_content_type_editor,
+			"button": content.hero_banner_button_enabled,
+			"button_text": content.hero_banner_button_text,
+			"button_link": content.hero_banner_button_link,
+		} %}
+	</section>
+{% else %}
+	{% include "components/hero-banner/content.twig" with {
+			"content_type": content_type,
+			"post_title": post.title,
+			"title": title,
+			"blurb": blurb,
+			"editor": content.hero_banner_content_type_editor,
+			"button": content.hero_banner_button_enabled,
+			"button_text": content.hero_banner_button_text,
+			"button_link": content.hero_banner_button_link,
+		} %}
+{% endif %}

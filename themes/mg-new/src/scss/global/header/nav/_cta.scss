@@ -1,0 +1,46 @@
+.site-header {
+  .site-header-main {
+    .nav_cta {
+      text-align: center;
+      margin-top: 3rem;
+
+      p {
+        font-size: cRem(14);
+        margin: 0 0 0.65rem;
+        text-align: center;
+        color: $light-4;
+      }
+
+      .button {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+      }
+
+      /**
+       * We do the desktop header @ 900px (tablet-large) for ipad / tablet-large users.
+       * No need for the mobile menu they have enough room for activities
+       */
+      @media (min-width: $break-tablet-large) {
+        display: block;
+        width: cRem(157);
+        max-width: cRem(157);
+        min-width: cRem(157);
+        margin-left: 0.75rem;
+        margin-top: 0;
+
+        p,
+        .button {
+          font-size: cRem(12);
+        }
+
+        .button {
+          display: block;
+        }
+      }
+
+      @media (min-width: 1049px) {
+        margin-left: 2rem;
+      }
+    }
+  }
+}

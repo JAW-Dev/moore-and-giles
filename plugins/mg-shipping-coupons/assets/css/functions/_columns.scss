@@ -1,0 +1,89 @@
+@charset "UTF-8";
+// ========================================
+// Columns
+// ========================================
+
+@function get-col-width($columns) {
+	$width: false;
+	@if $columns == "1" {
+		$width: 12;
+	} @else if $columns == "2" {
+		$width: 6;
+	} @else if $columns == "3" {
+		$width: 4;
+	} @else if $columns == "4" {
+		$width: 3;
+	} @else if $columns == "5" {
+		$width: 2.4;
+	} @else if $columns == "6" {
+		$width: 2;
+	} @else if $columns == "7" {
+		$width: 1.7141;
+	} @else if $columns == "8" {
+		$width: 1.5;
+	} @else if $columns == "9" {
+		$width: 1.333;
+	} @else if $columns == "10" {
+		$width: 1.2;
+	} @else if $columns == "11" {
+		$width: 1.0909;
+	} @else if $columns == "12" {
+		$width: 1;
+	}
+
+	@return $width;
+}
+
+@function get-col-space($columns) {
+	$space: false;
+	@if $columns == "1" {
+		$space: 0;
+	} @else if $columns == "2" {
+		$space: 2;
+	} @else if $columns == "3" {
+		$space: 1.5;
+	} @else if $columns == "4" {
+		$space: 1.33;
+	} @else if $columns == "5" {
+		$space: 1.25;
+	} @else if $columns == "6" {
+		$space: 1.2;
+	} @else if $columns == "7" {
+		$space: 1.16;
+	} @else if $columns == "8" {
+		$space: 1.14;
+	} @else if $columns == "9" {
+		$space: 1.127;
+	} @else if $columns == "10" {
+		$space: 1.11;
+	} @else if $columns == "11" {
+		$space: 1.1;
+	} @else if $columns == "12" {
+		$space: 1.09;
+	}
+
+	@return $space;
+}
+
+@function get-columns($columns) {
+	$width: get-col-width($columns);
+	$space: get-col-space($columns);
+	$calc: false;
+
+	@if $columns == "1" {
+		$calc: calc((100% / 12) * #{$width});
+	} @else {
+		$calc: calc(((100% / 12) * #{$width}) - (#{$gutter} / #{$space}));
+	}
+
+	@return $calc;
+}
+
+@function get-grid-columns($columns) {
+	$width: get-col-width($columns);
+	$space: get-col-space($columns);
+
+	$calc: calc((100% / 12) * #{$width});
+
+	@return $calc;
+}

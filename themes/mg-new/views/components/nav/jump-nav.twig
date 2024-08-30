@@ -1,0 +1,11 @@
+{% if post.get_field('jump_nav_items') %}
+    <section class="jump-nav">
+        <div class="wrap p0">
+            <div class="jump-nav__inner">
+                {% for item in post.get_field('jump_nav_items') %}
+                    <a class="jump-nav__item" href="#{{item.anchor_id}}">{{item.nav_label}}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endif %}

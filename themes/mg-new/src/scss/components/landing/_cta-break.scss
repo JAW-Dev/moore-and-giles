@@ -1,0 +1,19 @@
+.cta-break {
+  max-width: cRem(670);
+  margin: cRem(50) auto 0;
+  border-top: 1px solid $dark-2;
+  text-align: center;
+
+  &__heading {
+    font-size: 0.95rem;
+    color: $dark-2;
+    letter-spacing: 4px;
+    font-family: $font-sans;
+    text-transform: uppercase;
+    margin: cRem(26) 0;
+  }
+
+  &__link {
+    width: cRem(138);
+  }
+}

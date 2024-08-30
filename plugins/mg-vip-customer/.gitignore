@@ -1,0 +1,22 @@
+# Directories
+/node_modules/
+
+# Sytem Files
+.DS_Store
+
+# env files
+.env*
+
+# Log files
+*.log
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw*
+
+wp-content/plugins/mg-shipping-coupons/node_modules

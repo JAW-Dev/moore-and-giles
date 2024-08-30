@@ -1,0 +1,87 @@
+{% extends "base.twig" %}
+
+{% block layout %}
+	{{function('tha_content_before')}}
+
+    {% embed '/layouts/normal.twig' %}
+        {% block content %}
+			{# Travel With Us These Holidays Section #}
+			{% if post.get_field('travel_with_us_these_holidays_section_enable') %}
+				{% include "components/front-page/featured-products.twig" with {
+					"content": post.get_field('travel_with_us_these_holidays_section'),
+					"title": post.get_field('travel_with_us_these_holidays_section').title,
+					"side_title": post.get_field('travel_with_us_these_holidays_section').side_title,
+					"side_subtitle": post.get_field('travel_with_us_these_holidays_section').side_subtitle,
+					"side_text": post.get_field('travel_with_us_these_holidays_section').side_text,
+					"carousel": post.get_field('travel_with_us_these_holidays_section').carousel,
+				} %}
+			{% endif %}
+
+            {# Category Blocks #}
+			{% if post.get_field('category_display_enable') %}
+				{% include "components/front-page/category-blocks.twig" with {
+					"categories": post.get_field('category_display')
+				} %}
+			{% endif %}
+
+            {# Materials Matter #}
+			{% if post.get_field('materials_matter_enable') %}
+				{% include "components/front-page/materials-matter.twig" with {
+					"title": post.get_field('materials_matter')['title'],
+					"text": post.get_field('materials_matter')['text'],
+					"btn_text": post.get_field('materials_matter')['button_text'],
+					"btn_link": post.get_field('materials_matter')['button_link'],
+					"bg": post.get_field('materials_matter')['background_image'],
+					"side_image": post.get_field('materials_matter')['side_image']
+				} %}
+			{% endif %}
+
+			{# Customer Reviews #}
+			{% if post.get_field('customer_reviews_enable') %}
+				{% include "components/front-page/customer-reviews.twig" with {
+					"content": post.get_field('customer_reviews'),
+					"title": post.get_field('customer_reviews').title,
+					"reviews": post.get_field('customer_reviews').reviews,
+				} %}
+			{% endif %}
+
+			{# Built to Last #}
+			{% if post.get_field('enable_bult_to_last') %}
+				{% include "components/front-page/built-to-last.twig" with {
+					"content": post.get_field('built_to_last'),
+					"bg": post.get_field('built_to_last').background_image,
+					"position": post.get_field('built_to_last').position,
+					"title": post.get_field('built_to_last').title,
+					"blurb": post.get_field('built_to_last').blurb,
+					"button": post.get_field('built_to_last').button,
+					"button_text": post.get_field('built_to_last').button.text,
+					"button_link": post.get_field('built_to_last').button.link,
+				} %}
+			{% endif %}
+
+            {# 50-50 #}
+			{% if post.get_field('policy_block_enable') %}
+				{% include "components/front-page/50-50.twig" with {
+					"section_id": "fifty-fifty-front-page",
+					"content_left": post.get_field('policy_blocks')[0],
+					"content_right": post.get_field('policy_blocks')[1]
+				} %}
+			{% endif %}
+
+            {# Sign Up - Also used in footer #}
+			{% include "components/sign-up.twig" with {
+				"type": "frontpage"
+			} %}
+
+            {# Carousel #}
+			{% if post.get_field('mentions_carousel_enable') %}
+				{% include "components/front-page/carousel.twig" with {
+					"mentions": post.get_field('mentions_carousel'),
+				} %}
+			{% endif %}
+
+        {% endblock %}
+    {% endembed %}
+
+	{{function('tha_content_after')}}
+{% endblock %}

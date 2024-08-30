@@ -1,0 +1,31 @@
+/**
+ * If your IDE is yelling about a missing variable it most likely is generated from site-settings.json. Check there.
+ */
+@function get-color($type, $number) {
+  @return map-get(map-get($colors, $type), $number);
+}
+
+@function get-wrap($type) {
+  @return map-get($wraps, $type);
+}
+
+@function get-breakpoint($type) {
+  @return map-get($breakpoints, $type);
+}
+
+@function get-font($type) {
+  @return map-get($fonts, $type);
+}
+
+@function get-spacing($type) {
+  @return map-get($spacing, $type);
+}
+
+@function get-anim($targets: all, $duration: $base-duration, $timing: $base-timing) {
+  @return $targets $duration $timing;
+}
+
+@function cRem($size) {
+  $remSize: $size / 16;
+  @return #{$remSize}rem;
+}

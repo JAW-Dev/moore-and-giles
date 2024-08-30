@@ -1,0 +1,18 @@
+{% set re_how_title = post.get_field('re_how_title') %}
+{% set re_how_icon_blurbs = post.get_field('re_how_icon_blurbs') %}
+
+{% if re_how_title is not empty or re_how_icon_blurbs is not empty %}
+    <section class="return-how section-margin">    
+        <div class="wrap p0">
+            <div class="return-how__inner">
+                {% if re_how_title %}
+                    <h2 class="return-how__title">{{ re_how_title }}</h2>
+                {% endif %}
+                {% if re_how_icon_blurbs is not empty %}
+                    {% set icon_blurbs = re_how_icon_blurbs %}
+                    {% include 'components/icon-blurbs/icon-blurb-grid.twig' %}
+                {% endif %}
+            </div>
+        </div>
+    </section>
+{% endif %}

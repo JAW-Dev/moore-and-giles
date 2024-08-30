@@ -1,0 +1,20 @@
+{# See Timber Docs. Do not remove this. Product context will be incorrect if removed. #}
+{% if set_product %}
+    {{ set_woo_product(product) }}
+{% endif %}
+
+<figure class="media-figure {% if not product.thumbnail %}placeholder{% endif %}{% if classes %} {{classes}}{% endif %}">
+	{% if link %}
+		<a href="{{ product.link }}" class="media-figure__image-link">
+	{% endif %}
+
+	{% if product.thumbnail %}
+		<img src="{{ product.thumbnail.src|resize(post_thumb_size[0], post_thumb_size[1]) }}" class="media-figure__image"/>
+	{% else %}
+		<img src="{{ fn('wc_placeholder_img_src') }}" class="media-figure__image--placeholder"/>
+	{% endif %}
+
+	{% if link %}
+		</a>
+	{% endif %}
+</figure>

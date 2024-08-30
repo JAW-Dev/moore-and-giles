@@ -1,0 +1,69 @@
+{#
+Template Name: Materials Matter
+#}
+
+{% extends "base.twig" %}
+{% block layout %}
+    {{function('tha_content_before')}}
+    {{function('tha_content_top')}}
+    {% embed '/layouts/full-width.twig' %}
+        {% block content %}
+            {# Banner 1 #}
+			{% if post.get_field('materials_matter_hero_one').hero_banner_enabled %}
+				{% include "components/hero-banner/banner.twig" with {
+					"content": post.get_field('materials_matter_hero_one'),
+					"wrapper_classes": "banner-one",
+				} %}
+			{% endif %}
+
+			{% if post.content %}
+				<div class="post_content wrap">
+					{{post.content}}
+				</div>
+			{% endif %}
+
+			{# Banner 2 #}
+			{% if post.get_field('materials_matter_hero_two').hero_banner_enabled %}
+				{% include "components/hero-banner/banner.twig" with {
+					"content": post.get_field('materials_matter_hero_two'),
+					"wrapper_classes": "banner-two",
+				} %}
+			{% endif %}
+
+			{# Offset Image Section 1 #}
+			{% if post.get_field('materials_matter_offset_image_section_one').enable_offset_image_section %}
+				{% include "components/materials-matter/offset-image.twig" with {
+					"content": post.get_field('materials_matter_offset_image_section_one'),
+					"wrapper_classes": "offset-image offset-image-one",
+				} %}
+			{% endif %}
+
+			{# Offset Image Section 2 #}
+            {% if post.get_field('materials_matter_offset_image_section_two').enable_offset_image_section %}
+				{% include "components/materials-matter/offset-image.twig" with {
+					"content": post.get_field('materials_matter_offset_image_section_two'),
+					"wrapper_classes": "offset-image offset-image-two",
+				} %}
+			{% endif %}
+
+			{# Banner 3 #}
+			{% if post.get_field('materials_matter_hero_three').hero_banner_enabled %}
+				{% include "components/hero-banner/banner.twig" with {
+					"content": post.get_field('materials_matter_hero_three'),
+					"wrapper_classes": "banner-three",
+				} %}
+			{% endif %}
+
+			{# Banner 4 #}
+			{% if post.get_field('materials_matter_hero_four').hero_banner_enabled %}
+				{% include "components/hero-banner/banner.twig" with {
+					"content": post.get_field('materials_matter_hero_four'),
+					"wrapper_classes": "banner-four",
+				} %}
+			{% endif %}
+
+        {% endblock %}
+    {% endembed %}
+    {{function('tha_content_bottom')}}
+    {{function('tha_content_after')}}
+{% endblock %}

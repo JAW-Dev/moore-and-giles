@@ -1,0 +1,22 @@
+.site-container {
+  .site-content {
+    .divider-wrap {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: $break-tablet-large) {
+  .site-container {
+    .site-content {
+      .divider-wrap {
+        display: block;
+        padding: 0;
+
+        .divider {
+          background-color: $dark-2;
+        }
+      }
+    }
+  }
+}

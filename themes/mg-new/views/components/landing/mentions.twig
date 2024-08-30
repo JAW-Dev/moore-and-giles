@@ -1,0 +1,27 @@
+{% if enable %}
+
+<section id="carousel-mentions" class="carousel-mentions landing-mentions">
+    <div class="wrap">
+        <h5 class="title">In the news</h5>
+        <div class="carousel-container">
+            <div class="prev-arrow arrow">{{ svg('right-arrow-thin') }}</div>
+            <div class="carousel">
+                {% for mention in mentions %}
+                    <div><h2>{{ mention['text'] }}</h2></div>
+                {% endfor %}
+            </div>
+            <div class="next-arrow arrow">{{ svg('right-arrow-thin') }}</div>
+        </div>
+        <div class="company-shoutouts">
+            {% for shoutout in company_shoutouts %}
+
+            {% endfor %}
+
+            {% for mention in mentions %}
+                <img {{ mention['logo']|get_timber_image_responsive('medium') }} />
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% endif %}

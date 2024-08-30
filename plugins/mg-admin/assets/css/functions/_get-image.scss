@@ -1,0 +1,8 @@
+@charset "UTF-8";
+// ========================================
+// Get Image
+// ========================================
+
+@function get-image($file: null) {
+	@return url('../images/' + $file);
+}

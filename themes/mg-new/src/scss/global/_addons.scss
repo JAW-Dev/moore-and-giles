@@ -1,0 +1,123 @@
+.addon-field-container {
+  margin: 0;
+  padding-bottom: 1rem;
+  height: auto;
+  position: relative;
+
+  .varible-product-label {
+    height: auto;
+    margin-bottom: 1rem;
+  }
+
+  .addon-field-wrapper {
+    position: relative;
+
+    &.personalization {
+    }
+
+    &.gift-wrapping {
+      display: flex;
+      align-items: center;
+
+      .product-addon-label {
+        margin-bottom: 0;
+        font-size: 13px;
+        letter-spacing: 0.5px;
+        line-height: 20px;
+        color: $dark-2;
+      }
+    }
+
+    &.personalization {
+      .text-wrap label {
+        &.hide {
+          display: none;
+        }
+      }
+      .text {
+        position: relative;
+        display: none;
+        background: $light-1;
+        margin-bottom: 0;
+        width: cRem(30);
+        border: 1px solid $dark-3;
+        border-radius: 3px;
+        padding: 0.5rem;
+        &:active,
+        &:focus {
+          background: transparent;
+        }
+        &.show {
+          display: inline-block;
+        }
+      }
+      &.checkbox-wrap {
+        min-height: cRem(44);
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    .addon-subfield-wrapper {
+      display: inline-block;
+      .personalization_addon-addon-subfield.first {
+        margin-left: cRem(14);
+      }
+    }
+
+    .addon-subfield label,
+    .product-addon-label-text {
+      font-weight: normal;
+      margin-left: 0.5em !important;
+      position: relative !important;
+    }
+
+    .addon-subfield label {
+      position: relative;
+      margin-bottom: 0;
+      line-height: 1;
+      &.hide {
+        display: none;
+      }
+    }
+
+    .help-icon {
+      display: inline-block;
+      background: url('../icons/help-icon.svg') center left no-repeat;
+      height: 0.85rem;
+      width: 0.85rem;
+      position: relative;
+      right: cRem(-6);
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &.personalization .help-icon.hide {
+      top: 0px !important;
+    }
+
+    .addon-field-price {
+      float: right;
+      position: relative;
+      font-size: 0.8rem;
+      font-weight: lighter;
+      margin-left: auto;
+    }
+  }
+}
+
+#jckqv {
+  .personalization-addon-field-container {
+    height: cRem(110);
+  }
+  .addon-field-price {
+    font-weight: normal;
+  }
+}
+
+.cart__content {
+  .addon-field-container {
+    padding-bottom: 0;
+  }
+}

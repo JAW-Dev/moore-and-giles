@@ -1,0 +1,50 @@
+//***********************************
+// Quickview Image Gallery
+//***********************************
+#jckqv {
+  .iconic-woothumbs-all-images-wrap {
+    margin: 0 auto;
+
+    @media (min-width: 900px) {
+      margin: 0;
+    }
+  }
+
+  // .iconic-woothumbs-images-wrap {
+  //   top: 0;
+  //   transform: none;
+
+  //   @media (min-width: 900px) {
+  //     top: 50%;
+  //     transform: translateY(-50%);
+  //   }
+  // }
+
+  .iconic-woothumbs-thumbnails-wrap--vertical {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .iconic-woothumbs-thumbnails__control {
+    opacity: 1;
+  }
+
+  .iconic-woothumbs-icon {
+    color: $dark-3;
+    &:hover {
+      color: darken($dark-3, 20%);
+    }
+  }
+
+  .iconic-woothumbs-all-images-wrap--thumbnails-left
+    .iconic-woothumbs-thumbnails-wrap,
+  .iconic-woothumbs-all-images-wrap--thumbnails-right
+    .iconic-woothumbs-thumbnails-wrap {
+    width: cRem(55);
+  }
+
+  .iconic-woothumbs-images__arrow {
+    display: none !important;
+  }
+}

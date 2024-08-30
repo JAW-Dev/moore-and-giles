@@ -1,0 +1,88 @@
+{% set showBorder = border ? ' border' : '' %}
+
+{% if similar or also_in or pairs %}
+	<div class="other-products">
+		<div class="wrap other-products-wrap{{showBorder}}">
+			<div class="other-products-container">
+				<div class="other-products-nav">
+					{% if similar %}
+						<div class="nav-container">
+							<h5 id="similar-nav-item" class="similar-nav-item active"><a class="text-button" href="javascript:;">Recommended</a></h5>
+						</div>
+					{% endif %}
+					{% if also_in %}
+						<div class="nav-container">
+							<h5 id="also-in-nav-item" class="also-in-nav-item"><a class="text-button" href="javascript:;">Also in this collection</a></h5>
+						</div>
+					{% endif %}
+					{% if pairs %}
+						<div class="nav-container">
+							<h5 id="pairs-well-nav-item" class="pairs-well-nav-item"><a class="text-button" href="javascript:;">Pairs well with</a></h5>
+						</div>
+					{% endif %}
+				</div>
+				<div class="carousel">
+					{% if similar %}
+						<div class="carousel-similar active">
+							{% for a_product_id in similar %}
+							{% set a_product = TimberPost(fn('get_post', a_product_id))  %}
+							{# {% set a_product = get_color_attributes(a_product_id)  %} #}
+								{% include "components/tease-product.twig" with {
+									"product": a_product,
+									"set_product": true
+								} %}
+							{% endfor %}
+						</div>
+					{% endif %}
+					{% if also_in %}
+						<div class="carousel-also-in">
+							{% for a_product_id in also_in %}
+								{% set a_product = TimberPost(fn('get_post', a_product_id))  %}
+
+								{% include "components/tease-product.twig" with {
+									"product": a_product,
+									"set_product": true
+								} %}
+							{% endfor %}
+						</div>
+					{% endif %}
+					{% if pairs %}
+						<div class="carousel-pairs-well">
+							{% for p_product_id in pairs %}
+								{% set p_product = TimberPost(fn('get_post', p_product_id))  %}
+
+								{% include "components/tease-product.twig" with {
+									"product": p_product,
+									"set_product": true
+								} %}
+							{% endfor %}
+						</div>
+					{% endif %}
+				</div>
+				<div class="carousel-nav">
+					{% if similar %}
+						<div class="carousel-nav-similar active">
+							<div class="prev-arrow arrow">{{ svg('long-arrow') }}</div>
+							<div class="dots"></div>
+							<div class="next-arrow arrow">{{ svg('long-arrow') }}</div>
+						</div>
+					{% endif %}
+					{% if also_in %}
+						<div class="carousel-nav-also-in">
+							<div class="prev-arrow arrow">{{ svg('long-arrow') }}</div>
+							<div class="dots"></div>
+							<div class="next-arrow arrow">{{ svg('long-arrow') }}</div>
+						</div>
+					{% endif %}
+					{% if pairs %}
+						<div class="carousel-nav-pairs-well">
+							<div class="prev-arrow arrow">{{ svg('long-arrow') }}</div>
+							<div class="dots"></div>
+							<div class="next-arrow arrow">{{ svg('long-arrow') }}</div>
+						</div>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
+{% endif %}

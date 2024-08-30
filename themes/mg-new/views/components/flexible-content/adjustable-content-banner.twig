@@ -1,0 +1,61 @@
+{# {{ error_log_print(content) }} #}
+
+{# Set the background size #}
+{% set background_size = ' '~content.background_size %}
+
+{# The custom classes #}
+{% if content.classes %}
+	{% set custom_classes = ' '~content.classes %}
+{% else %}
+	{% set custom_classes = '' %}
+{% endif %}
+
+{# The content position #}
+{% if content.position %}
+	{% set position = ' '~content.position %}
+{% else %}
+	{% set position = ' left' %}
+{% endif %}
+
+{# The background type #}
+{% set background_type = content.background_type %}
+
+{# Set the button style class #}
+{% set button_style = ' '~content.button.button_style %}
+
+{# Set the background type class #}
+{% set background_type_class = ' '~background_type %}
+
+{% if background_type == 'image' %}
+	<section class="adjustable-content-banner{{ custom_classes }}{{position}}{{background_size}}{{background_type_class}}" style="background-image: url({{ content.image | get_timber_image_src('large') }})">
+{% elseif background_type == 'video' %}
+	<section class="adjustable-content-banner{{ custom_classes }}{{position}}{{background_size}}{{background_type_class}}">
+{% endif %}
+
+	{% if background_type == 'video' %}
+		<div class="adjustable-content-banner__background-video">
+			{% set video_src  = 'src="'~content.video~'"' %}
+			<iframe {{ video_src }} frameborder="0"></iframe>
+		</div>
+	{% endif %}
+
+	{% if content.title or content.blurb or content.button.text %}
+		<div class="adjustable-content-banner__body">
+
+			{% if content.title %}
+				<h2 class="adjustable-content-banner__title">{{content.title}}</h2>
+			{% endif %}
+
+			{% if content.blurb %}
+				<div class="adjustable-content-banner__blurb">{{content.blurb}}</div>
+			{% endif %}
+
+			{% if content.button.text %}
+				<a href="{{content.button.link.url}}" class="button adjustable-content-banner__button{{button_style}}" target="{{content.button.link.target}}">
+					<span class="adjustable-content-banner__link-text">{{content.button.text}}</span>
+				</a>
+			{% endif %}
+
+		</div>
+	{% endif %}
+</section>

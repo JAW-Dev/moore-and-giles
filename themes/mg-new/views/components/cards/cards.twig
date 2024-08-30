@@ -1,0 +1,18 @@
+{% if wrapper_classes %}
+	{% set wrapper_classes = ' '~wrapper_classes %}
+{% else %}
+	{% set wrapper_classes = '' %}
+{% endif %}
+
+<section class="cards wrap{{ wrapper_classes }}">
+	{% for card in content.cards %}
+		<div class="cards__card">
+			{% include "components/cards/content.twig" with {
+				"content": card,
+			} %}
+			{% include "components/cards/background.twig" with {
+				"content": card,
+			} %}
+		</div>
+	{% endfor %}
+</section>

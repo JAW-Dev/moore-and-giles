@@ -1,0 +1,242 @@
+.datepicker {
+	&-container {
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		width: px-ro-rem( 210 );
+		font-size:  px-ro-rem( 12 );
+		line-height:  px-ro-rem( 30 );
+		touch-action: none;
+		-webkit-touch-callout: none;
+		user-select: none;
+		background-color: white;
+		direction: ltr;
+		-webkit-tap-highlight-color: transparent;
+
+		&::before,
+		&::after {
+			position: absolute;
+			display: block;
+			width: 0;
+			height: 0;
+			content: " ";
+			border:  px-ro-rem( 5 ) solid transparent;
+		}
+	}
+
+	&-dropdown {
+		position: absolute;
+		z-index: 1;
+		box-sizing: content-box;
+		border: 1px solid $grey70;
+		box-shadow: 0 3px 6px $grey70;
+	}
+
+	&-inline {
+	  	position: static;
+	}
+
+	&-top-left,
+	&-top-right {
+		border-top-color: $grey60;
+
+		&::before,
+		&::after {
+			top: px-to-rem( -5 );
+			left: px-to-rem( 10 );
+			border-top: 0;
+		}
+
+	  &::before {
+			border-bottom-color: $grey60;
+	  }
+
+	  &::after {
+			top: px-to-rem( -4 );
+			border-bottom-color: white;
+	  }
+	}
+
+	&-bottom-left,
+	&-bottom-right {
+		border-bottom-color: $grey60;
+
+		&::before,
+		&::after {
+			bottom: px-to-rem( -5 );
+			left: px-to-rem( 10 );
+			border-bottom: 0;
+		}
+
+		&::before {
+			border-top-color: $grey60;
+		}
+
+		&::after {
+			bottom: px-to-rem( -4 );
+			border-top-color: white;
+		}
+	}
+
+	&-top-right,
+	&-bottom-right {
+		&::before,
+		&::after {
+			right: px-to-rem( 10 );
+			left: auto;
+		}
+	}
+
+	&-panel {
+		> ul {
+			width: 102%;
+			padding: 0;
+			margin: 0;
+
+			&::before,
+			&::after {
+				display: table;
+				content: " ";
+			}
+
+			&::after {
+				clear: both;
+			}
+
+			> li {
+				float: left;
+				width: px-to-rem( 30 );
+				height: px-to-rem( 30 );
+				padding: 0;
+				margin: 0;
+				text-align: center;
+				list-style: none;
+				cursor: pointer;
+				background-color: white;
+
+				&:hover {
+					background-color: $grey90;
+				}
+
+				&.muted,
+				&.muted:hover {
+					color: $grey65;
+				}
+
+				&.highlighted {
+					background-color: $grey90;
+
+					&:hover {
+						background-color: $grey80;
+					}
+				}
+
+				&.picked,
+				&.picked:hover {
+					color: $grey80;
+				}
+
+				&.disabled,
+				&.disabled:hover {
+					color: $grey80;
+					cursor: default;
+					background-color: white;
+
+					&.highlighted {
+						background-color: $grey90;
+					}
+				}
+
+				&[data-view="years prev"],
+				&[data-view="year prev"],
+				&[data-view="month prev"],
+				&[data-view="years next"],
+				&[data-view="year next"],
+				&[data-view="month next"],
+				&[data-view="next"] {
+					font-size: px-to-rem( 18 );
+				}
+
+				&[data-view="years current"],
+				&[data-view="year current"],
+				&[data-view="month current"] {
+					width: px-to-rem( 150 );
+				}
+			}
+
+			&[data-view="years"],
+			&[data-view="months"] {
+				> li {
+					width: px-to-rem( 52.5 );
+					height: px-to-rem( 52.5 );
+					line-height: px-to-rem( 52.5 );
+				}
+			}
+
+			&[data-view="week"] {
+				> li,
+				> li:hover {
+					cursor: default;
+					background-color: white;
+				}
+			}
+		}
+	}
+
+	&-hide {
+	  	display: none;
+	}
+}
+
+.repeatable-wrap td {
+	padding: 0 1rem 0 0;
+	margin: 0;
+
+	&:last-child {
+		padding-right: 0;
+	}
+
+	input {
+		margin: 0;
+	}
+}
+
+.buttons button {
+	min-width: px-to-rem( 25 );
+	height: px-to-rem( 25 );
+	background-color: $grey25;
+	border: none;
+	mask-repeat: no-repeat;
+	mask-position: center center;
+	mask-size: px-to-rem( 20 ) px-to-rem( 20 );
+
+	@supports not (mask-repeat: no-repeat) {
+		background-color: transparent;
+	}
+
+	&:hover {
+		cursor: pointer;
+		background-color: $grey45;
+	}
+}
+
+.buttons button.add {
+	mask-image: url( "../images/plus-circle.svg" );
+
+	@supports not (mask-repeat: no-repeat) {
+		&::after {
+			content: "Add";
+		}
+	}
+}
+
+.buttons button.remove {
+	mask-image: url( "../images/minus-circle.svg" );
+
+	@supports not (mask-repeat: no-repeat) {
+		&::after {
+			content: "Remove";
+		}
+	}
+}

@@ -1,0 +1,38 @@
+.wrap {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $wrap-mobile;
+  padding: 3em 0;
+  width: 100%;
+
+  @media (min-width: $break-desktop) {
+    max-width: $wrap-desktop;
+    width: 95%;
+
+    &.wrap-woo-archive {
+      max-width: $wrap-woo-archive;
+      width: 95%;
+    }
+  }
+}
+
+.site-content,
+.site-footer {
+  display: flex;
+  justify-content: center;
+}
+
+// Site Content Search Active
+.search-active .site-content {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity $base-duration $base-timing;
+}
+
+.site-container {
+  display: block;
+  position: relative;
+  right: 0;
+  transition: get-anim();
+  width: 100%;
+}

@@ -1,0 +1,43 @@
+/**
+	Doing this allows us to see what the content in the content editor will look like on the
+	website ahead of time in the wysiwyg
+ */
+@import "style.css";
+
+/**
+	The following styles are tinymce box overrides to make it look for sane
+ */
+#tinymce {
+	padding: 20px !important;
+}
+
+#tinymce > *:first-child {
+	margin-top: 0 !important;
+	padding-top: 0 !important;
+}
+
+#tinymce > *:last-child {
+	margin-bottom: 0 !important;
+	padding-bottom: 0 !important;
+}
+
+/**
+	Styles we want to show up in the list but are already defined
+ */
+
+/**
+	Easy Columns
+ */
+.flex-columns {}
+
+	/**
+		Buttons
+	 */
+.button {}
+.button.small {}
+.button.secondary {}
+.button.secondary.reversed {}
+.button.secondary.white {}
+.button.secondary.white.reversed {}
+.disabled {}
+.text-button {}

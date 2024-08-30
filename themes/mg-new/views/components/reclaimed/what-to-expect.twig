@@ -1,0 +1,38 @@
+{% if( post.get_field('wte_section_title') or post.get_field('wte_first_images') or post.get_field('wte_full_width_images') ) %}
+    {% set intro_text = post.get_field('wte_section_title') %}
+    {% set first_images = post.get_field('wte_first_images') %}
+    {% set full_images = post.get_field('wte_full_width_images') %}
+    <section class="what-to-expect">
+            <div class="wrap p0">
+                <div class="intro-text f24 tac margin-top-sec margin-bot-sec fmt0 lmb0 ff-roboto-slab">
+                    {{ intro_text }}
+                </div>
+            </div>
+
+            {% if( first_images ) %}
+                <div class="first-images-wrap">
+                    {% for image in first_images %}
+                        {% set caption = image.caption %}
+                        {% set image_url = image.id | get_timber_image_src('full') %}
+
+                        {% if( image_url ) %}
+                            <div class="image bg-cover" style="background-image: url({{ image_url }})">
+                                {% if( caption ) %}
+                                    <div class="caption ff-roboto-slab">{{ caption }}</div>
+                                {% endif %}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            {% if( full_images ) %}
+                <div class="full-images-wrap">
+                    {% for image in full_images %}
+                        {% set image_html = image.id | get_timber_image_responsive('full') %}
+                        <img class="display-block" {{ image_html }}>
+                    {% endfor %}
+                </div>
+            {% endif %}
+    </section>
+{% endif %}

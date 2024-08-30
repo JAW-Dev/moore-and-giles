@@ -1,0 +1,26 @@
+@charset "UTF-8";
+// ========================================
+// Tail Wind
+// ========================================
+
+@mixin load-tailwind($load: false) {
+	@if $load == true {
+		/* purgecss start ignore */
+		@tailwind base;
+		@tailwind components;
+		/* purgecss end ignore */
+		@tailwind utilities;
+	}
+}
+
+@mixin purgecss-start($load: false) {
+	@if $load == true {
+		/* purgecss start ignore */
+	}
+}
+
+@mixin purgecss-end($load: false) {
+	@if $load == true {
+		/* purgecss end ignore */
+	}
+}

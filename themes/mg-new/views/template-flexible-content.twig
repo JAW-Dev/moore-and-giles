@@ -1,0 +1,17 @@
+{#
+Template Name: Flexible Content
+#}
+
+{% extends "base.twig" %}
+
+{% block layout %}
+    {{function('tha_content_before')}}
+    {{function('tha_content_top')}}
+    {% embed '/layouts/full-width.twig' %}
+        {% block content %}
+			{{template_flexible_content()}}
+        {% endblock %}
+    {% endembed %}
+    {{function('tha_content_bottom')}}
+    {{function('tha_content_after')}}
+{% endblock %}

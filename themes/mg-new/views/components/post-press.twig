@@ -1,0 +1,32 @@
+{% set hero_img = 'dd' %}
+{% set hero_blurb = '' %}
+{% include 'components/hero/hero.twig' %}
+
+{% set regular_thumb = post.thumbnail | get_timber_image_responsive('full') %}
+{% set second_thumb_id = function ('objectiv_get_press_secondary_image_id', post.ID, 'press', 'inside-image') %}
+{% set second_thumb = second_thumb_id | get_timber_image_responsive('full') %}
+{% if regular_thumb == second_thumb %}
+    {% set second_thumb = '' %}
+{% endif %}
+
+{% if second_thumb is not empty or regular_thumb is not empty %}
+    <article class="post post-type-{{post.post_type}}" id="post-{{post.ID}}" itemscope="itemscope" itemtype="https://schema.org/BlogPosting">
+        <section class="post-content" itemprop="mainEntityOfPage">
+            <div class="post-body-outer lmb0" itemprop="articleBody">
+                <div class="wrap p0">
+                    <div class="post-body-inner tac">
+                        {% if regular_thumb is not empty %}
+                            <img {{ regular_thumb }}>
+                        {% endif %}
+                        {% if second_thumb is not empty %}
+                            <img {{ second_thumb }}>
+                        {% endif %}
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--/itemprop=mainEntityOfPage-->
+    </article>
+    <!--/itemtype=BlogPosting-->
+{% endif %}

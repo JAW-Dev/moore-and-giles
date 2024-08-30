@@ -1,0 +1,105 @@
+.woocommerce-single-product {
+  .faq-wrap {
+    &.show-border {
+      border-top: 1px solid $dark-4;
+    }
+  }
+
+  .single-product-faq {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    .single-product-faq-section-title {
+      color: $dark-3;
+      font-weight: 100;
+      margin-top: 0;
+    }
+
+    .single-product-faq-items {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .single-product-faq-item {
+      max-width: 100%;
+      width: 100%;
+
+      &.active {
+        .arrow {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    .single-product-faq-title-bar {
+      cursor: pointer;
+      border-bottom: 1px solid $dark-4;
+      padding: 5px 0;
+      margin-bottom: 0.8em;
+      font-size: cRem(16);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &:hover {
+        $accent-color: $accent-1;
+
+        .title {
+          color: $accent-color;
+        }
+
+        .arrow svg polyline {
+          stroke: $accent-color;
+        }
+      }
+
+      .title {
+        transition: get-anim();
+      }
+
+      .arrow {
+        $size: 15px;
+        display: flex;
+        transition: transform $base-duration $base-timing;
+
+        svg {
+          width: $size;
+          height: $size;
+          transform: rotate(90deg);
+
+          polyline {
+            stroke: #4a4a4a;
+          }
+        }
+      }
+    }
+
+    .single-product-faq-content-container {
+      display: none;
+
+      .content {
+        margin-bottom: 0.8em;
+
+        *:first-child {
+          margin-top: 0;
+        }
+        *:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $break-tablet-large) {
+  .woocommerce-single-product {
+    .single-product-faq {
+      .single-product-faq-item {
+        max-width: 500px;
+      }
+    }
+  }
+}

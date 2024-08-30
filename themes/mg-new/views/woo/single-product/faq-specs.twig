@@ -1,0 +1,32 @@
+{% set showBorder = (product_description or features or dimensions) and faq ? true : false %}
+
+{% if description_blurb or description_title or faq or features or dimensions %}
+	<div class="faq-specs-bg-wrap">
+
+		<div class="wrap specs-wrap">
+
+			{% if description_blurb or description_title %}
+				{% include 'woo/single-product/product-description.twig' with {
+						"title": description_title,
+						"description": description_blurb,
+					}
+				%}
+			{% endif %}
+
+			{% include 'woo/single-product/specs.twig' with {
+				"features": features,
+				"dimensions": dimensions,
+				"description": description_blurb,
+			} %}
+
+		</div>
+
+		{% if faq %}
+			<div class="wrap faq-wrap {% if showBorder %}show-border{% endif %}">
+				{% include 'woo/single-product/faq.twig' with {
+					"faq": faq
+				} %}
+			</div>
+		{% endif %}
+	</div>
+{% endif %}

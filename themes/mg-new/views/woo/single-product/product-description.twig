@@ -1,0 +1,10 @@
+{% if title or description %}
+	<div class="specs-wrap__header">
+		{% if title %}
+			<h3 class="specs-wrap__title">{{title}}</h3>
+		{% endif %}
+		{% if description %}
+			<p class="specs-wrap__blurb">{{description|wpautop}}</p>
+		{% endif %}
+	</div>
+{% endif %}

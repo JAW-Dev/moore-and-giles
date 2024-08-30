@@ -1,0 +1,36 @@
+{% if wrapper_classes %}
+	{% set classes = wrapper_classes %}
+{% else %}
+	{% set classes = '' %}
+{% endif %}
+
+<section class="{{classes}}">
+	<div class="wrap">
+
+		{% if content.image  %}
+			<img src="{{content.image | get_timber_image_src('medium')}}" class="offset-image__image" />
+		{% endif %}
+
+		<div class="offset-image__body">
+
+			{% if content.title %}
+				<h3 class="offset-image__title">
+					{{content.title}}
+				</h3>
+			{% endif %}
+
+			{% if content.blurb %}
+				<p class="offset-image__text">
+					{{content.blurb}}
+				</p>
+			{% endif %}
+
+			{% if content.button_text %}
+				<a class="button button__ghost button__small button__font-base offset-image__button" href="{{content.button_link}}">
+					<span class="offset-image__button-text">{{content.button_text}}</span>
+				</a>
+			{% endif %}
+
+		</div>
+	</div>
+</section>

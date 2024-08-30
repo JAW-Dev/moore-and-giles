@@ -1,0 +1,66 @@
+[
+    {
+        "key": "group_5cd1a810701b7",
+        "title": "WooCommerce – VIP Customer",
+        "fields": [
+            {
+                "key": "field_5cd1a8187e5a0",
+                "label": "Customer Emails",
+                "name": "mg_vip_customer_emails",
+                "type": "textarea",
+                "instructions": "Enter each VIP customer email separated by a comma.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "maxlength": "",
+                "rows": "",
+                "new_lines": ""
+            },
+            {
+                "key": "field_5cd1a8327e5a1",
+                "label": "Coupons",
+                "name": "coupons",
+                "type": "post_object",
+                "instructions": "Select the Coupons you want to apply to the VIP customers",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "post_type": [
+                    "shop_coupon"
+                ],
+                "taxonomy": "",
+                "allow_null": 1,
+                "multiple": 1,
+                "return_format": "id",
+                "ui": 1
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "options_page",
+                    "operator": "==",
+                    "value": "acf-options-vip-customers"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    }
+]

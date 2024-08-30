@@ -1,0 +1,21 @@
+{% if( post.get_field('film_yellow_text') or post.get_field('film_black_text') and post.get_field('film_video_url') ) %}
+    {% set yellow_text = post.get_field('film_yellow_text') %}
+    {% set black_text = post.get_field('film_black_text') %}
+    {% set video_url = post.get_field('film_video_url') %}
+    <section class="watch-film">
+        <div class="wrap p0">
+            <div class="watch-film-inner">
+                <div class="text f22 ff-roboto-slab">
+                	{% if( yellow_text ) %}
+                        <span class="yellow-text font-bold">{{ yellow_text }}</span>
+                    {% endif %}
+                	{% if( black_text ) %}
+                        <span class="black-text">{{ black_text }}</span>
+                    {% endif %}
+                </div>
+
+                <a href="{{ video_url }}" class="button rounded wide video_modal">Watch Film</a>
+            </div>
+        </div>
+    </section>
+{% endif %}

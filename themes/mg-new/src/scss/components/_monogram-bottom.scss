@@ -1,0 +1,214 @@
+.monogram-below-hero__blurb {
+  font-size: cRem(20);
+  margin: 0 auto;
+  max-width: 700px;
+  text-align: center;
+}
+
+.monogram-below-hero__image {
+  display: block;
+}
+
+.monogram-bottom__intro-text {
+  p {
+    font-size: cRem(18);
+    margin: 0 auto;
+    max-width: 700px;
+  }
+}
+
+.monogram-bottom__form-steps {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: $spacing-desktop 0;
+
+  .monogram-bottom__form-step {
+    align-items: center;
+    display: flex;
+    margin-bottom: $spacing-mobile;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  @media (min-width: $break-tablet) {
+    flex-direction: row;
+
+    .monogram-bottom__form-step {
+      margin-bottom: 0;
+      margin-right: $spacing-desktop / 2;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.form-step-inner {
+  align-items: center;
+  display: flex;
+
+  svg {
+    display: none;
+  }
+
+  @media (min-width: $break-tablet) {
+    svg {
+      display: block;
+      margin-left: 10px;
+      margin-top: -3px;
+    }
+  }
+}
+
+.monogram-bottom__form-wrap {
+  padding-bottom: $spacing-mobile * 2;
+  padding-top: $spacing-mobile * 2;
+
+  .validation_error {
+    text-align: center;
+  }
+
+  .gform_previous_button {
+    float: left;
+  }
+
+  .gform_button {
+    float: right;
+  }
+
+  .gform_wrapper div.validation_error {
+    border-top: none;
+    border-bottom: none;
+  }
+
+  #gform_page_20_1 {
+    ul.gform_fields li.gfield {
+      padding: 0px;
+      padding-bottom: 16px;
+      position: relative;
+    }
+
+    // Error Overrides on Page 1
+    .validation_message {
+      display: none;
+    }
+
+    li.gfield.gfield_error {
+      background-color: white;
+      border-top: none;
+      border-bottom: none;
+    }
+
+    li.gfield_error ul.gfield_checkbox {
+      color: $red;
+    }
+
+    li.gfield_error
+      input:not([type='radio']):not([type='checkbox']):not([type='submit']):not([type='button']):not([type='image']):not([type='file']) {
+      border-bottom-color: $red;
+    }
+    // End Error Overrides
+
+    .gform_page_footer {
+      text-align: center;
+
+      .gform_previous_button {
+        float: none;
+      }
+    }
+
+    ul.gform_fields {
+      text-align: center;
+
+      li.gfield {
+        display: inline-block;
+        float: none;
+      }
+    }
+
+    .gfield_label,
+    div.charleft {
+      display: none;
+    }
+
+    li.gfield.letter {
+      clear: none;
+      display: inline-block;
+      float: left;
+      margin: 0px 6px 0px 0px;
+      padding: 0px;
+      width: 80px;
+
+      &:nth-child(3) {
+        margin-right: 0px;
+      }
+
+      input {
+        // border-width: 3px;
+        box-shadow: none;
+        color: $accent-1;
+        font-size: 90px;
+        padding: 0px;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 100;
+
+        &::placeholder {
+          color: $dark-2;
+        }
+      }
+    }
+
+    li.gfield.confirm-field {
+      display: inline-block;
+      margin-top: $spacing-desktop;
+      text-align: center;
+      width: 100%;
+
+      &.gfield_error label {
+        color: $red;
+      }
+    }
+  }
+
+  .gform_wrapper .top_label input.small,
+  .gform_wrapper .top_label select.small {
+    width: 100%;
+  }
+
+  .gform_wrapper .gfield_checkbox li label {
+    cursor: pointer;
+    font-weight: 100;
+    position: relative;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+  }
+
+  .gform_wrapper ul.gfield_radio li input[type='radio']:checked + label,
+  .gform_wrapper ul.gfield_checkbox li input[type='checkbox']:checked + label {
+    font-weight: 100;
+    position: relative;
+  }
+
+  .gform_wrapper .confirm-field .gfield_checkbox li input[type='checkbox'],
+  .gform_wrapper .confirm-field .gfield_radio li input[type='radio'],
+  .gform_wrapper .confirm-field .gfield_checkbox li input {
+    margin-right: 0.25rem;
+    margin-top: 0px;
+  }
+
+  .gform_wrapper .gform_footer {
+    text-align: center;
+  }
+}
+
+.hidden-pers-input {
+  position: fixed;
+  left: -100000px;
+}

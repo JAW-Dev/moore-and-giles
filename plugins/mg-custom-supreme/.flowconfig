@@ -1,0 +1,14 @@
+[ignore]
+.*/node_modules/.*
+.*/node_modules/styled-components/.*
+.*/node_modules/coloreact/.*
+.*/node_modules/color-convert/.*
+.*/node_modules/color-namer/.*
+
+[include]
+
+[libs]
+
+[lints]
+
+[options]

@@ -1,0 +1,21 @@
+{% if cta is not empty %}
+    {% set button = cta.button %}
+    <div class="simple-cta tac pad-top-sec pad-bot-sec bg-light-1">
+        <div class="wrap p0">
+            {% if cta.title is not empty %}
+                <h2 class="mt0">{{ cta.title }}</h2>
+            {% endif %}
+            {% if cta.blurb is not empty %}
+                <div class="mw-400 mlra wysiwyg-content">
+                    {{ cta.blurb }}
+                </div>
+            {% endif %}
+            {% if button %}
+                <div class="tac margin-top-2">
+                    {% include 'components/buttons/primary.twig' %}
+                </div>
+            {% endif %}
+
+        </div>
+    </div>
+{% endif %}

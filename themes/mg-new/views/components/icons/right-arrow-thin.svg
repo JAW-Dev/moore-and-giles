@@ -1,0 +1,22 @@
+<svg width="10px" height="17px" viewBox="0 0 10 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="8.64999066e-20 0 10.7474443 0 10.7474443 10.9581785 0 10.9581785 0 0"></polygon>
+    </defs>
+    <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-1107.000000, -3216.000000)">
+            <g id="Quotes" transform="translate(318.000000, 3135.000000)">
+                <g id="Image-NAV" transform="translate(399.500000, 89.500000) rotate(-270.000000) translate(-399.500000, -89.500000) translate(391.000000, -310.000000)">
+                    <g id="arrow" transform="translate(8.500000, 8.500000) rotate(-135.000000) translate(-8.500000, -8.500000) translate(3.000000, 3.000000)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <g id="Clip-2"></g>
+                        <polyline id="Stroke-1" stroke="#222E32" stroke-width="2.5" mask="url(#mask-2)" points="10.7474443 0 10.7474443 10.9581785 0 10.9581785"></polyline>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

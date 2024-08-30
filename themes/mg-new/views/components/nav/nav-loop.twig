@@ -1,0 +1,36 @@
+{% if nav %}
+	<ul
+		class="nav-wrap {{ (child_call is defined) ? 'nav-child-wrap-list nav-wrap-child-of-' ~ parentSlug : ((orientation) ? orientation : 'horizontal') ~ "-list" }}"
+		data-parent="{{ parentSlug }}"
+		data-parent-title="{{ parentTitle }}"
+	>
+	{% for item in nav %}
+		{% set item_title = item.title %}
+
+		<li
+			class="{{item.classes | join(' ')}} menu-specific-item_{{ function('sanitize_title', item_title) }}"
+			data-slug="{{ function('sanitize_title', item_title) }}"
+			data-title="{{ item_title }}"
+			data-link="{{ item.get_link }}"
+			itemprop="name"
+		>
+			{% if function('sanitize_title', item_title) == 'cart' %}
+				<div class="menu-item__cart-count-container">
+				</div>
+			{% endif %}
+			<a href="{{item.get_link}}" itemprop="url" class="{{ (has_icons) ? "vertical-list" : "" }}">
+				{% if has_icons %}
+                    {{ svg(item.master_object.get_field('bsm_icon')) }}
+				{% endif %}
+                {{item_title}}
+			</a>
+			{% include "components/nav/nav-loop.twig" with {
+				'parentSlug': function('sanitize_title', item_title),
+				'parentTitle': item_title,
+				'nav': item.get_children,
+				'child_call': true
+			} %}
+		</li>
+	{% endfor %}
+	</ul>
+{% endif %}

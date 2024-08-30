@@ -1,0 +1,124 @@
+.category-display {
+  .wrap {
+    padding: 0;
+  }
+
+  .categories {
+    .category {
+      margin-bottom: 20px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &.desktop {
+        display: none;
+      }
+
+      &.mobile {
+        display: flex;
+      }
+
+      &:after {
+        content: ' ';
+        padding-bottom: 100%;
+        display: table;
+      }
+    }
+  }
+}
+
+@media (min-width: $break-front-page-custom-breakpoint-cat-blocks) {
+  $margin: 8px;
+
+  .category-display {
+    .wrap {
+      max-width: 100%;
+      width: 100%;
+    }
+
+    .categories {
+      display: flex;
+      flex-wrap: wrap;
+
+      .secondary {
+        border-color: white;
+        color: white;
+
+        &:hover {
+          background-color: white;
+          color: #000;
+        }
+      }
+
+      .category {
+        display: flex;
+        padding: 12em 0;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        margin: $margin;
+        text-align: center;
+
+        .prefix {
+          display: none;
+        }
+
+        &:after {
+          content: none;
+        }
+
+        &.mobile {
+          display: none;
+        }
+
+        &.desktop {
+          display: flex;
+        }
+      }
+
+      .category.desktop:nth-child(1) {
+        width: calc(50% - #{$margin});
+        margin-left: 0;
+      }
+
+      .category.desktop:nth-child(2) {
+        width: calc(50% - #{$margin});
+        margin-right: 0;
+      }
+
+      .category.desktop:nth-child(3) {
+        width: calc(33.3% - #{$margin});
+        margin-left: 0;
+      }
+
+      .category.desktop:nth-child(4) {
+        width: calc(33.3% - #{$margin * 2});
+      }
+
+      .category.desktop:nth-child(5) {
+        width: calc(33.3% - #{$margin});
+        margin-right: 0;
+      }
+
+      .category.desktop:nth-child(n + 6) {
+        display: none;
+      }
+
+      .category:nth-child(1),
+      .category:nth-child(2) {
+        margin-top: 0;
+      }
+
+      .category:nth-child(3),
+      .category:nth-child(4),
+      .category:nth-child(5) {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

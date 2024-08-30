@@ -1,0 +1,18 @@
+{% if image_blocks %}
+    <div class="image-blocks-outer section-margin">
+        <div class="wrap p0">
+            <div class="image-blocks-inner grid one2">
+                {% for image_block in image_blocks %}
+                    {% set img_id = image_block.bg_image %}
+                    {% set image = img_id | get_timber_image_src('medium') %}
+                    {% set button = image_block.link %}
+                    <a href="{{ button.url }}" target="{{ button.target }}">
+                        <div class="image-block-image flex justify-center align-center mh-350 bg-img pad-all-1" style="background-image: url({{ image }})">
+                            <div class="fake-button pad-all-2 secondary small white">{{button.title}}</div>
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endif %}

@@ -1,0 +1,13 @@
+{% if banner.background.type == 'image' %}
+	{% set section_attrs  = ' class="hero-banner front-page-banner mg-background-image"' %}
+{% elseif banner.background.type == 'video' %}
+	{% set section_attrs  = ' class="hero-banner front-page-banner video-banner"' %}
+{% else %}
+	{% set section_attrs  = '' %}
+{% endif %}
+
+<section id="front-page-banner"{{section_attrs}}>
+	{% include "components/landing/banner/background.twig" with { "background": banner.background } %}
+	{% include "components/landing/banner/content.twig" with { "content": banner.content } %}
+</section>
+		

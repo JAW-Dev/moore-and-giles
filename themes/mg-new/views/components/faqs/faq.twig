@@ -1,0 +1,13 @@
+{% if faq is not empty %}
+    {% set title = faq.title %}
+    {% set blurb = faq.blurb %}
+    {% set class = faq_class %}
+    {% set id = function ('objectiv_id_from_string', title, false) %}
+
+    {% if title is not empty and blurb is not empty %}
+        <div class="faq-block {{class}}" id="{{id}}-{{loop.index}}">
+            <h3 class="faq-block__title">{{ title }}</h3>
+            <div class="faq-block__blurb wysiwyg-content">{{ blurb }}</div>
+        </div>
+    {% endif %}
+{% endif %}

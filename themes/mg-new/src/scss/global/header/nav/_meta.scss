@@ -1,0 +1,123 @@
+.site-header {
+  .site-header-main {
+    .nav-meta {
+      .nav-wrap {
+        margin: 0;
+      }
+
+      .menu-item {
+        position: relative;
+        width: auto;
+
+        a {
+          align-items: center;
+          color: $dark-3;
+          font-size: cRem(12);
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          transition: all 0.3s ease;
+
+          svg {
+            height: 16px;
+            margin-bottom: 3px;
+            margin-left: -1px;
+            transition: all 0.3s ease;
+            width: 16px;
+
+            path {
+              transition: all 0.3s ease;
+            }
+          }
+        }
+
+        &__cart-count-container {
+          left: 50%;
+          margin-left: cRem(-8);
+          position: absolute;
+          top: -14px;
+        }
+
+        &__cart-count {
+          background: $accent-1;
+          border-radius: 100%;
+          color: white;
+          font-size: cRem(10);
+          height: cRem(12);
+          padding: cRem(2);
+          text-align: center;
+          width: cRem(12);
+        }
+      }
+
+      /**
+       * We do the desktop header @ 900px (tablet-large) for ipad / tablet-large users.
+       * No need for the mobile menu they have enough room for activities
+       */
+      @media (min-width: $break-tablet-large) {
+        .menu {
+          display: none;
+        }
+
+        .nav-wrap {
+          display: flex;
+          justify-content: flex-end;
+
+          .cart {
+            border-right: 1px solid $dark-1;
+            justify-content: center;
+            order: 2;
+          }
+
+          .menu-item.search {
+            display: flex;
+            justify-content: flex-end;
+            order: 3;
+            padding-right: 0;
+
+            path:first-child {
+              fill: none !important;
+            }
+          }
+
+          .cart {
+            path {
+              stroke: none !important;
+            }
+          }
+
+          .menu-item {
+            padding: cRem(20) cRem(32);
+            text-align: center;
+
+            &__cart-count-container {
+              top: cRem(3);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.right-icon-menu-wrap {
+  @media (min-width: $break-tablet-large) {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .meta-menu-cta {
+    display: none;
+    margin-left: cRem(64);
+    max-width: cRem(160);
+    text-align: center;
+
+    @media (min-width: 1100px) {
+      display: block;
+    }
+
+    .blurb {
+      color: $dark-3;
+      font-size: cRem(14);
+    }
+  }
+}

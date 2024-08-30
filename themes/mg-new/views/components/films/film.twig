@@ -1,0 +1,19 @@
+{% set film_id = film.film_id %}
+{% set film_title = film.film_title %}
+{% set film_blurb = film.film_blurb %}
+
+{% if film_id is not empty %}
+    <div class="film">
+        <div style="padding:56.25% 0 0 0;position:relative;">
+            <iframe src="https://player.vimeo.com/video/{{ film_id }}" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        </div>
+        <div class="film-details">
+            {% if film_title %}
+                <h3 class="film-title">{{ film_title }}</h3>
+            {% endif %}
+            {% if film_blurb %}
+                <p class="film-blurb mb0">{{ film_blurb }}</p>
+            {% endif %}
+        </div>
+    </div>
+{% endif %}

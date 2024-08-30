@@ -1,0 +1,78 @@
+{% set fd_intro_text = post.get_field('fd_intro_text') %}
+{% set fd_personalize_blurb = post.get_field('fd_personalize_blurb') %}
+{% set fd_step_1_text = post.get_field('fd_step_1_text') %}
+{% set fd_step_2_text = post.get_field('fd_step_2_text') %}
+{% set fd_step_3_text = post.get_field('fd_step_3_text') %}
+{% set fd_step_4_text = post.get_field('fd_step_4_text') %}
+{% set fd_form_title_text = post.get_field('fd_form_title_text') %}
+{% set fd_form = post.get_field('fd_form') %}
+
+{% if fd_form is not empty %}
+    <section class="monogram-bottom section-margin">
+        <div class="wrap p0">
+            <div class="monogram-bottom__inner">
+
+                <!-- Personalize blurb -->
+                {% if fd_intro_text is not empty or fd_personalize_blurb is not empty %}
+                    <div class="monogram-bottom__intro-text tac">
+                        <p>
+                            {% if fd_intro_text is not empty %}
+                                <span class="yellow-text">{{ fd_intro_text }}</span>
+                            {% endif %}
+                            {% if fd_personalize_blurb is not empty %}
+                                {{ fd_personalize_blurb }}
+                            {% endif %}
+                        </p>
+                    </div>
+                {% endif %}
+
+                {% if fd_step_1_text is not empty or fd_step_2_text is not empty or fd_step_3_text is not empty or fd_step_4_text is not empty %}
+                    <div class="monogram-bottom__form-steps">
+
+                        {% if fd_step_1_text is not empty %}
+                            <div class="monogram-bottom__form-step">
+                                <div class="form-step-inner">
+                                    {{ fd_step_1_text }}
+                                    {% include 'components/icons/right-arrow.svg' %}
+                                </div>
+                            </div>
+                        {% endif %}
+
+                        {% if fd_step_2_text is not empty %}
+                            <div class="monogram-bottom__form-step">
+                                <div class="form-step-inner">
+                                    {{ fd_step_2_text }}
+                                    {% include 'components/icons/right-arrow.svg' %}
+                                </div>
+                            </div>
+                        {% endif %}
+
+                        {% if fd_step_3_text is not empty %}
+                            <div class="monogram-bottom__form-step">
+                                <div class="form-step-inner">
+                                    {{ fd_step_3_text }}
+                                    {% include 'components/icons/right-arrow.svg' %}
+                                </div>
+                            </div>
+                        {% endif %}
+
+                        {% if fd_step_4_text is not empty %}
+                            <div class="monogram-bottom__form-step">
+                                <div class="form-step-inner">
+                                    {{ fd_step_4_text }}
+                                </div>
+                            </div>
+                        {% endif %}
+
+                    </div>
+                {% endif %}
+
+                {% if fd_form is not empty %}
+                    <div class="monogram-bottom__form-wrap" id="monogram-bottom-form">
+                        {{ function('objectiv_gform', fd_form.id ) }}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+{% endif %}

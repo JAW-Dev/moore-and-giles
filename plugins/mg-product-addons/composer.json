@@ -1,0 +1,20 @@
+{
+    "name": "objectiv/mg-product-addons",
+    "description": "A WordPress plugin boilerplate",
+    "version": "1.0.0",
+    "license": "GFDL-1.2-or-later",
+    "authors": [{ "name": "objectiv" }],
+    "config": {
+        "optimize-autoloader": true,
+        "classmap-authoritative": true
+    },
+    "autoload": {
+        "psr-4": {"MG_Product_Addons\\": "includes/Classes"},
+        "classmap": [
+            "includes/Classes"
+        ],
+        "files": [
+            "includes/functions/render_cart_addons.php"
+        ]
+    }
+}

@@ -1,0 +1,13 @@
+<header>
+    {% set image_url = post.thumbnail|get_timber_image_src('large') %}
+
+    <div class="blog-hero-bg bg-img" style="background-image: url( {{ image_url }} )">
+        <div class="blog-hero-content-outer">
+            <div class="blog-hero-content">
+                <h1 class="post-title" itemprop="headline">{{post.title}}</h1>
+                {% include 'components/post/meta.twig' %}
+            </div>
+        </div>
+    </div>
+    
+</header>

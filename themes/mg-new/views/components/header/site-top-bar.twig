@@ -1,0 +1,16 @@
+<div class="site-top-bar">
+    <div class="wrap">
+        {% if top_bar_left_text %}
+            <div class="left-text">{{ top_bar_left_text }}</div>
+        {% endif %}
+
+        <div class="right-link">
+            {% if user %}
+                <a href="/my-account">My Account</a>
+            {% else %}
+                <a href="/login">Sign In</a>
+            {% endif %}
+        </div>
+        
+    </div>
+</div>

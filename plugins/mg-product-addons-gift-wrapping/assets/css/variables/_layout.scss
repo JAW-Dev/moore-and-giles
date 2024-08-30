@@ -1,0 +1,24 @@
+@charset "UTF-8";
+// ========================================
+// Layout
+// ========================================
+
+// Gutter.
+$gutter: 1rem;
+
+// Breakpoints.
+$breakpoints: (
+	mobile: 320px,
+	mobile-lg: 425px,
+	tablet-sm: 640px,
+	tablet: 768px,
+	tablet-lg: 980px,
+	desktop-sm: 1024px,
+	desktop: 1200px
+);
+
+// z-index
+$layers: (
+	"base",
+	"body"
+);

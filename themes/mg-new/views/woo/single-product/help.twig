@@ -1,0 +1,32 @@
+{% if tooltip %}
+	<div class="help-links">
+		{% if tooltip['shipping']['label'] %}
+			<div class="tooltip help-links__shipping" data-template="help-links-shipping">
+				{{tooltip['shipping']['label']}}
+			</div>
+		{% endif %}
+
+		{% if tooltip['product_care']['label'] %}
+			<div class="tooltip help-links__product-care" data-template="help-links-product-care">
+				{{tooltip['product_care']['label']}}
+			</div>
+		{% endif %}
+
+		{% if tooltip['help']['label'] %}
+			<div class="tooltip help-links__help" data-template="help-links-help">
+				{{tooltip['help']['label']}}
+			</div>
+		{% endif %}
+		<div style="display: none">
+			<div id="help-links-shipping">
+				{{tooltip['shipping']['copy']}}
+			</div>
+			<div id="help-links-product-care">
+				{{tooltip['product_care']['copy']}}
+			</div>
+			<div id="help-links-help">
+				{{tooltip['help']['copy']}}
+			</div>
+		</div>
+	</div>
+{% endif %}

@@ -1,0 +1,51 @@
+{
+	"base-font-size": "14px",
+	"base-desktop-font-size": "16px",
+	"front-page-custom-breakpoint-cat-blocks": "1050px",
+	"header-border-padding": "2.2em",
+	"base-duration": "0.3s",
+	"base-timing": "ease",
+	"base-border-color": "#6E7070",
+	"base-border": "1px solid #6E7070",
+	"breakpoints": {
+		"tablet": "600px",
+		"tablet-large": "900px",
+		"desktop": "1300px",
+		"desktop-large": "1800px"
+	},
+	"wraps": {
+		"mobile": "calc(100% - 3em)",
+		"desktop": "1300px",
+		"woo-archive": "1300px"
+	},
+	"colors": {
+		"accent": {
+			"1": "#EDB111",
+			"2": "#EFC34E",
+			"3": "#C99200"
+		},
+		"dark": {
+			"1": "#D8D8D8",
+			"2": "#222E32",
+			"3": "#6E7070",
+			"4": "#979797"
+		},
+		"light": {
+			"1": "#F6F6F6",
+			"2": "#FFF7E2",
+			"3": "#F4F4F4",
+			"4": "#9B9B9B",
+			"5": "#DCDCDC"
+		}
+	},
+	"fonts": {
+		"sans-serif": "proxima-nova",
+		"serif": "adobe-garamond-pro"
+	},
+	"spacing": {
+		"mobile": "14px",
+		"desktop": "21px",
+		"mobile-section": "56px",
+		"desktop-section": "63px"
+	}
+}

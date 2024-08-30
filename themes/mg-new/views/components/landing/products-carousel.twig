@@ -1,0 +1,44 @@
+{# See Timber Docs. Do not remove this. Product context will be incorrect if removed. #}
+{% if set_product %}
+    {{ set_woo_product(product) }}
+{% endif %}
+
+{% if enable %}
+	<section class="products-carousel">
+		<header class="products-carousel__header">
+			<h3 class="products-carousel__heading">{{ heading }}</h3>
+		</header>
+
+		<div class="products-carousel__container carousel">
+
+			{% for product in products %}
+				{% set product_obj = fn('wc_get_product', product.id) %}
+				<div class="products-carousel__wrapper">
+					<div class="products-carousel__item">
+						{% include "components/product-parts/thumbnail.twig" with {
+							"product": product,
+							"classes": "products-carousel__item-image-wrapper",
+							"link": true,
+							"set_product": false
+						} %}
+						<div class="media-content products-carousel__media-content products-carousel__media-content--top">
+
+							{% include "components/product-parts/title.twig" with {
+								"product": product,
+								"classes": "products-carousel__item-title",
+								"link": false,
+								"set_product": false
+							} %}
+						</div>
+
+						<div class="media-content products-carousel__media-content products-carousel__media-content--bottom">
+							<a href="{{ product.link }}" class="products-carousel__button media-content__button button alt">{{ cta_text }}</a>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+
+		</div>
+
+	</section>
+{% endif %}

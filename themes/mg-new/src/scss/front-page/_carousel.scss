@@ -1,0 +1,83 @@
+.carousel-mentions {
+  display: none;
+}
+
+@media (min-width: $break-tablet-large) {
+  .carousel-mentions {
+    display: block;
+
+    .wrap {
+      text-align: center;
+    }
+
+    .title {
+      margin: 0;
+    }
+
+    .carousel-container {
+      position: relative;
+      margin: 4em 0;
+
+      .carousel {
+        display: block;
+        text-align: center;
+        z-index: 1;
+
+        h2 {
+          display: inline-block;
+          max-width: 800px;
+          margin: 0;
+        }
+      }
+
+      .arrow {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 2;
+      }
+
+      .prev-arrow {
+        left: 0;
+
+        svg {
+          transform: scale(-1);
+        }
+      }
+
+      .next-arrow {
+        right: 0;
+      }
+    }
+
+    .company-shoutouts {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .slick-track {
+        display: flex !important;
+        align-items: center;
+      }
+
+      .slick-slide {
+        margin: 0 10px;
+      }
+
+      img {
+        filter: grayscale(100%);
+        opacity: 0.4;
+        max-width: 100px;
+        min-width: 100px;
+        height: auto;
+        margin: 0 1%;
+        transition: get-anim();
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

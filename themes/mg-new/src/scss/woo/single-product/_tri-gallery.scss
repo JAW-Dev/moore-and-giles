@@ -1,0 +1,30 @@
+.tri-gallery {
+  .top,
+  .left,
+  .right {
+    height: 100vw;
+    width: 100vw;
+  }
+}
+
+@media (min-width: $break-tablet-large) {
+  .tri-gallery {
+    .top {
+      height: 95vh;
+      width: 100%;
+    }
+
+    .bottom {
+      display: flex;
+      height: 65vh;
+
+      .left,
+      .right {
+        flex-basis: 0;
+        flex-grow: 1;
+        height: 100%;
+        width: auto;
+      }
+    }
+  }
+}

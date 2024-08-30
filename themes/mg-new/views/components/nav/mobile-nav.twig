@@ -1,0 +1,57 @@
+<div class="mobile-nav-container">
+    <div class="mobile-nav-overflow">
+        <div class="mobile-nav-controls">
+            <div class="back-icon-wrap">
+                {{ svg('arrow') }}
+                <span>Back</span>
+            </div>
+            <div class="close-icon-wrap">
+                {{ svg('close') }}
+            </div>
+        </div>
+        <div class="mobile-nav-level-container">
+            <div class="mobile-nav-first-level mobile-nav-level">
+                <div class="mobile-nav-meta-links">
+                    <a class="h5" href="/shop/">Shop</a>
+                    <a class="h5" href="/leather/">Browse Leather</a>
+                </div>
+                {% include "components/nav/nav.twig" with {
+                    "name": "woo_bags",
+                    "classes": "nav-woo_bags-mobile",
+                    "orientation": "vertical",
+                    "nav": nav.woo_bags,
+                } %}
+				{% if nav.mobile_middle %}
+					<hr class="divider" />
+					{% include "components/nav/nav.twig" with {
+						"name": "mobile_bottom",
+						"orientation": "vertical",
+						"nav": nav.mobile_middle
+					} %}
+				{% endif %}
+				{% if nav.mobile_bottom %}
+					<hr class="divider" />
+					{% include "components/nav/nav.twig" with {
+						"name": "mobile_bottom",
+						"orientation": "vertical",
+						"nav": nav.mobile_bottom
+					} %}
+				{% endif %}
+                {% include "components/social/social.twig" with {
+                    "items": social
+                } %}
+            </div>
+            <div class="mobile-nav-second-level mobile-nav-level">
+                <div class="mobile-nav-meta-links-target">
+                    <span class="h5">Shop</span>
+                    <a href="#" class="class-target h5"></a>
+                </div>
+                <div class="target">
+
+                </div>
+                <hr class="divider" />
+                <a href="#" class="accent-1 view-all">View All</a>
+            </div>
+        </div>
+    </div>
+</div>

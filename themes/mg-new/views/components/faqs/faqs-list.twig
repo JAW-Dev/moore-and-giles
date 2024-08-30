@@ -1,0 +1,8 @@
+{% if faqs is not empty %}
+    <div class="faq-list-wrap mw-600 mlra pad-top-sec margin-top-sec margin-bot-sec border-top">
+        {% for faq in faqs %}
+            {% set faq_class = 'list-faq margin-bot-2 lotmb0' %}
+            {% include 'components/faqs/faq.twig' %}
+        {% endfor %}
+    </div>
+{% endif %}

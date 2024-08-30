@@ -1,0 +1,23 @@
+{
+    "name": "jasonwitt/mg-source-codes",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Objectiv",
+            "email": "info@objectiv.co"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {"MG_Source_Codes\\": "includes/classes"},
+        "classmap": [
+                "includes/classes"
+        ],
+        "files": []
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "classmap-authoritative": true
+    }
+}

@@ -1,0 +1,49 @@
+{
+    "key": "group_5f62386ca7695",
+    "title": "Custom Furniture Template",
+    "fields": [
+        {
+            "key": "field_5f62387d65ff3",
+            "label": "Template",
+            "name": "mg_furniture_template",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "standard": "Standard",
+                "custom": "Custom"
+            },
+            "default_value": "standard",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_taxonomy",
+                "operator": "==",
+				"value": "product_cat:home"
+            }
+        ]
+    ],
+	"menu_order": 0,
+	"position": "side",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "",
+	"modified": 1603473070
+}

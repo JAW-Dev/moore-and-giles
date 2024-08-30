@@ -1,0 +1,16 @@
+<div class="right-icon-menu-wrap">
+	{% include "/components/nav/nav.twig" with {
+		"name": "meta",
+		"nav": nav.meta
+	} %}
+
+	{% if meta_menu_cta.link %}
+		<div class="meta-menu-cta">
+			{% if meta_menu_cta.blurb %}
+				<div class="blurb">{{ meta_menu_cta.blurb }}</div>
+			{% endif %}
+			<a href="{{ meta_menu_cta.link.url }}" class="button button__tiny" target="{{ meta_menu_cta.link.target }}">{{ meta_menu_cta.link.title }}</a>
+		</div>
+	{% endif %}
+
+</div>

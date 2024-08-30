@@ -1,0 +1,15 @@
+{% set hero_post = recent_posts|first %}
+
+{% if hero_post %}
+    {% set hero_image_url = hero_post.thumbnail | get_timber_image_src('large') %}
+
+    <div class="blog-hero-bg bg-img" style="background-image: url( {{ hero_image_url }} )">
+        <div class="blog-hero-content-outer shorter">
+            <div class="blog-hero-content">
+                <h1 class="post-title" itemprop="headline">{{ hero_post.title }}</h1>
+                <a href="{{ post.link }}" class="button">Read Post</a>
+            </div>
+        </div>
+    </div>
+
+{% endif %}

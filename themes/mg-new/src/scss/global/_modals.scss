@@ -1,0 +1,25 @@
+.modaal-content-container {
+  position: relative;
+}
+
+.modaal-wrapper .modaal-close {
+  position: absolute;
+  background-image: url('../icons/close.svg');
+  background-repeat: no-repeat;
+  border-radius: 0;
+  background-size: contain;
+  background-position: center center;
+  width: cRem(24);
+  height: cRem(24);
+  right: 1rem;
+  top: 1rem;
+
+  &:before,
+  &:after {
+    content: none;
+  }
+
+  &:hover {
+    background-color: transparent;
+  }
+}

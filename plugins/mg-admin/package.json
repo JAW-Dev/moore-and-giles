@@ -1,0 +1,220 @@
+{
+	"name": "mg-admin",
+	"version": "1.0.0",
+	"license": "GPL-2.0-or-later",
+	"scripts": {
+		"build": "NODE_ENV=production webpack",
+		"watch": "NODE_ENV=development webpack --fix",
+		"test:unit": "jest",
+		"test:unit:watch": "jest --watch",
+		"test:unit:coverage": "jest --coverage",
+		"lint": "eslint .",
+		"lint:fix": "eslint . --fix"
+	},
+	"browserslist": [
+		"> 1%",
+		"last 2 versions",
+		"not ie <= 8"
+	],
+	"devDependencies": {
+		"@babel/core": "^7.10.3",
+		"@babel/preset-env": "^7.10.3",
+		"@babel/preset-typescript": "^7.10.1",
+		"@fullhuman/postcss-purgecss": "^2.3.0",
+		"@types/jest": "^26.0.0",
+		"autoprefixer": "^9.8.1",
+		"babel-core": "^7.0.0-bridge.0",
+		"babel-eslint": "^10.1.0",
+		"babel-jest": "^26.0.1",
+		"babel-loader": "^8.1.0",
+		"clean-webpack-plugin": "^3.0.0",
+		"css-loader": "^3.6.0",
+		"cssnano": "^4.1.10",
+		"eslint": "^7.3.0",
+		"eslint-config-airbnb-base": "^14.2.0",
+		"eslint-config-prettier": "6.10.0",
+		"eslint-plugin-import": "^2.21.2",
+		"eslint-plugin-prettier": "^3.1.4",
+		"file-loader": "^6.0.0",
+		"imagemin-gifsicle": "^7.0.0",
+		"imagemin-mozjpeg": "^9.0.0",
+		"imagemin-optipng": "^8.0.0",
+		"imagemin-svgo": "^8.0.0",
+		"imagemin-webpack": "^5.1.1",
+		"jest": "^26.0.1",
+		"jest-cli": "^26.0.1",
+		"mini-css-extract-plugin": "^0.9.0",
+		"node-sass": "^4.14.1",
+		"node-sass-glob-importer": "^5.3.2",
+		"node-sass-json-importer": "^4.3.0",
+		"node-sass-utils": "^1.1.3",
+		"postcss-loader": "^3.0.0",
+		"prettier": "2.0.5",
+		"sass-loader": "^8.0.2",
+		"style-loader": "^1.2.1",
+		"stylelint": "^13.6.1",
+		"stylelint-config-css-modules": "^2.2.0",
+		"stylelint-config-prettier": "^8.0.2",
+		"stylelint-config-recess-order": "^2.0.4",
+		"stylelint-config-recommended": "^3.0.0",
+		"stylelint-config-standard": "^20.0.0",
+		"stylelint-scss": "^3.18.0",
+		"tailwindcss": "^1.4.6",
+		"terser-webpack-plugin": "^3.0.6",
+		"ts-jest": "^26.1.0",
+		"ts-loader": "^6.2.1",
+		"typescript": "^3.9.5",
+		"webpack": "^4.43.0",
+		"webpack-bundle-analyzer": "^3.8.0",
+		"webpack-cli": "^3.3.12",
+		"webpack-dev-server": "^3.11.0",
+		"webpack-fix-style-only-entries": "^0.5.1"
+	},
+	"babel": {
+		"presets": [
+			[
+				"@babel/preset-env",
+				{
+					"targets": {
+						"node": "current"
+					}
+				}
+			],
+			[
+				"@babel/preset-typescript"
+			]
+		]
+	},
+	"eslintConfig": {
+		"parser": "babel-eslint",
+		"extends": [
+			"airbnb-base",
+			"plugin:prettier/recommended"
+		],
+		"plugins": [
+			"prettier"
+		],
+		"rules": {
+			"import/no-extraneous-dependencies": [
+				"error",
+				{
+					"devDependencies": true,
+					"optionalDependencies": true,
+					"peerDependencies": true
+				}
+			],
+			"no-param-reassign": 0,
+			"no-plusplus": 0,
+			"consistent-return": 0,
+			"no-restricted-syntax": 0,
+			"no-undef": 0,
+			"no-console": [
+				"error",
+				{
+					"allow": [
+						"warn",
+						"error"
+					]
+				}
+			]
+		}
+	},
+	"eslintIgnore": [
+		"/node_modules/",
+		"/tests/",
+		"/src/",
+		"/vendor/",
+		"/config/",
+		"package.json"
+	],
+	"prettier": {
+		"arrowParens": "avoid",
+		"bracketSpacing": true,
+		"htmlWhitespaceSensitivity": "css",
+		"insertPragma": false,
+		"jsxBracketSameLine": true,
+		"jsxSingleQuote": true,
+		"printWidth": 180,
+		"proseWrap": "preserve",
+		"quoteProps": "as-needed",
+		"requirePragma": false,
+		"semi": true,
+		"singleQuote": true,
+		"tabWidth": 2,
+		"trailingComma": "none",
+		"useTabs": true
+	},
+	"jest": {
+		"testEnvironment": "node",
+		"preset": "ts-jest",
+		"clearMocks": true,
+		"coverageDirectory": "tests/unit/coverage",
+		"coveragePathIgnorePatterns": [
+			"/node_modules/"
+		],
+		"testMatch": [
+			"**/__tests__/**/*.[jt]s?(x)",
+			"**/?(*.)+(spec|test).[tj]s?(x)"
+		],
+		"testPathIgnorePatterns": [
+			"/node_modules/"
+		],
+		"transformIgnorePatterns": [
+			"/node_modules/"
+		],
+		"moduleNameMapper": {
+			"\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/tests/unit/__mocks__/fileMock.js",
+			"\\.(sa|sc|le|c)ss$": "<rootDir>/tests/unit/__mocks__/styleMock.js"
+		}
+	},
+	"stylelint": {
+		"root": true,
+		"extends": [
+			"stylelint-config-standard",
+			"stylelint-config-recess-order",
+			"stylelint-config-prettier",
+			"stylelint-config-css-modules"
+		],
+		"plugins": [
+			"stylelint-scss"
+		],
+		"ignoreFiles": [
+			"**/*.js"
+		],
+		"rules": {
+			"at-rule-empty-line-before": [
+				"always",
+				{
+					"except": [
+						"blockless-after-same-name-blockless",
+						"first-nested"
+					],
+					"ignore": [
+						"after-comment"
+					],
+					"ignoreAtRules": [
+						"else"
+					]
+				}
+			],
+			"selector-max-id": 4,
+			"color-hex-length": "long",
+			"declaration-no-important": true,
+			"font-family-name-quotes": "always-where-recommended",
+			"font-family-no-duplicate-names": true,
+			"font-family-no-missing-generic-family-keyword": true,
+			"function-url-quotes": "always",
+			"function-parentheses-space-inside": "never",
+			"max-empty-lines": 1,
+			"scss/dollar-variable-colon-space-after": "always",
+			"scss/dollar-variable-colon-space-before": "never",
+			"scss/dollar-variable-no-missing-interpolation": true,
+			"scss/double-slash-comment-whitespace-inside": "always",
+			"scss/operator-no-newline-before": true,
+			"scss/operator-no-unspaced": true,
+			"scss/selector-no-redundant-nesting-selector": true,
+			"at-rule-no-unknown": null,
+			"scss/at-rule-no-unknown": true
+		}
+	}
+}

@@ -1,0 +1,36 @@
+{% set ib_image = post.get_field('ib_image') %}
+{% set ib_blurb = post.get_field('ib_blurb') %}
+{% set ib_call_number = post.get_field('ib_call_number') %}
+{% set ib_button = post.get_field('ib_button') %}
+
+{% if ib_image is not empty or ib_blurb is not empty or ib_call_number is not empty or ib_button is not empty %}
+<section class="refurbishment-image-blurb">
+    {% if ib_image %}
+        {% set ib_image = ib_image | get_timber_image_responsive('large') %}
+        <img{{ib_image}} class="refurbishment-image-blurb__image">
+    {% endif %}
+    
+    <div class="wrap p0">
+        <div class="refurbishment-image-blurb__inner">
+            <div class="refurbishment-image-blurb__blurb-wrap">
+                {% if ib_blurb %}
+                    <div class="refurbishment-image-blurb__blurb lmb0 fmt0">
+                        {{ ib_blurb }}
+                    </div>
+                {% endif %}
+                {% if ib_button %}
+                    {% set button = ib_button %}
+                    <div class="refurbishment-image-blurb__button-wrap">
+                        {% include 'components/buttons/primary.twig' %}
+                    </div>
+                {% endif %}
+                {% if ib_call_number %}
+                    <div class="refurbishment-image-blurb__call-text">
+                        {{ ib_call_number }}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}

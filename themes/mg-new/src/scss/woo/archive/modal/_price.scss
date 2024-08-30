@@ -1,0 +1,53 @@
+//***********************************
+// Quickview Summary Price
+//***********************************
+#jckqv #jckqv_summary {
+  .price,
+  .price del,
+  p {
+    font-size: 1.5rem;
+  }
+
+  p.price {
+    margin: 0 0 1rem !important;
+    overflow: visible;
+    font-weight: bold;
+  }
+
+  p.price > .price {
+    margin: 0;
+  }
+
+  .price del,
+  .price ins, {
+    font-weight: 100 !important;
+  }
+
+  .product-type-simple p.price,
+  span.price {
+    margin-bottom: 0;
+    font-weight: 100;
+
+    del,
+    del span.amount {
+      color: #D7D7D7;
+      font-weight: 100;
+    }
+
+    ins,
+    ins span.amount {
+      color: #D44D3D;
+      text-decoration: none;
+      font-weight: 100;
+    }
+  }
+
+  p.stock {
+    font-size: .92em;
+    font-weight: bold;
+    margin: 1rem 0;
+    &.out-of-stock {
+      color: #ec5e5e;
+    }
+  }
+}

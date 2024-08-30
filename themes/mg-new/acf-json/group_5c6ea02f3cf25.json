@@ -1,0 +1,470 @@
+{
+    "key": "group_5c6ea02f3cf25",
+    "title": "Hero Banner",
+    "fields": [
+        {
+            "key": "field_5c6ea058f9082",
+            "label": "Enable Hero Banner",
+            "name": "hero_banner_enabled",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "On",
+            "ui_off_text": "Off"
+        },
+        {
+            "key": "field_5c6ea3d2406f9",
+            "label": "Classes",
+            "name": "hero_banner_classes",
+            "type": "text",
+            "instructions": "Add custom classes to the banner.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5c6ea058f9082",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "25",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5c6ea135eb7a3",
+            "label": "Background",
+            "name": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5c6ea058f9082",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 1,
+            "endpoint": 0
+        },
+        {
+            "key": "field_5c6ea160cdf8c",
+            "label": "Background Type",
+            "name": "hero_banner_background_type",
+            "type": "select",
+            "instructions": "Select the type of banner background.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5c6ea058f9082",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "33.333",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "none": "None",
+                "image": "Image",
+                "video": "Video"
+            },
+            "default_value": [
+                "none"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5c6ea35e406f7",
+            "label": "Image",
+            "name": "hero_banner_background_type_image",
+            "type": "image",
+            "instructions": "If no image is set, defaults to the Featured Image.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5c6ea058f9082",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_5c6ea160cdf8c",
+                        "operator": "==",
+                        "value": "image"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "33.333",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "id",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5c6ea5beb7e2c",
+            "label": "Video",
+            "name": "hero_banner_background_type_video",
+            "type": "text",
+            "instructions": "The video URL.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5c6ea058f9082",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_5c6ea160cdf8c",
+                        "operator": "==",
+                        "value": "video"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "66.666",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5c6ea6e0cd23d",
+            "label": "Content",
+            "name": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5c6ea058f9082",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 1,
+            "endpoint": 0
+        },
+        {
+            "key": "field_5c6ea6ffcd23e",
+            "label": "Content Type",
+            "name": "hero_banner_content_type",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5c6ea058f9082",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "basic": "Basic",
+                "editor": "Editor"
+            },
+            "allow_null": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
+            "key": "field_5c6ea7b7cd240",
+            "label": "Title",
+            "name": "hero_banner_content_type_basic_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5c6ea058f9082",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_5c6ea6ffcd23e",
+                        "operator": "==",
+                        "value": "basic"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5c6ff3a822553",
+            "label": "Blurb",
+            "name": "hero_banner_content_type_basic_blurb",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5c6ea058f9082",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_5c6ea6ffcd23e",
+                        "operator": "==",
+                        "value": "basic"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 1
+        },
+        {
+            "key": "field_5c6eaa27cd245",
+            "label": "Editor",
+            "name": "hero_banner_content_type_editor",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5c6ea058f9082",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_5c6ea6ffcd23e",
+                        "operator": "==",
+                        "value": "editor"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "<h2 class=\"hero-banner__content-heading\">Title<\/h2>\r\n<h3 class=\"hero-banner__content-subheading\">Blurb<\/h3>\r\n<a class=\"button hero-banner__content-button\" href=\"#\"><span class=\"hero-banner__content-button-text\">Button<\/span><\/a>",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 1
+        },
+        {
+            "key": "field_5c6eac0c641db",
+            "label": "Button Link",
+            "name": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5c6ea058f9082",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 1,
+            "endpoint": 0
+        },
+        {
+            "key": "field_5c6eaba9641da",
+            "label": "Enable Button",
+            "name": "hero_banner_button_enabled",
+            "type": "true_false",
+            "instructions": "Show a button link in the banner",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5c6ea058f9082",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "On",
+            "ui_off_text": "Off"
+        },
+        {
+            "key": "field_5c6eac29641dc",
+            "label": "Button Text",
+            "name": "hero_banner_button_text",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5c6ea058f9082",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_5c6eaba9641da",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5c6eac49641de",
+            "label": "Button Link",
+            "name": "hero_banner_button_link",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5c6ea058f9082",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
+                        "field": "field_5c6eaba9641da",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "!=",
+                "value": "template-materials-matter.php"
+            }
+        ]
+    ],
+    "menu_order": 1,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1581436019
+}

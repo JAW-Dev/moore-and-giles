@@ -1,0 +1,126 @@
+.specs-wrap {
+  display: block;
+
+  .specs-wrap__blurb {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  &__header {
+    text-align: center;
+    max-width: cRem(720);
+    margin: 0 auto;
+
+    h3 {
+      margin: 0 0 cRem(28);
+      font-family: $font-serif;
+    }
+  }
+
+  .specs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 900px;
+    overflow: hidden;
+
+    @media (min-width: $break-tablet) {
+      .features {
+        flex-grow: 3;
+      }
+
+      .dimensions-weight {
+        flex-grow: 1;
+      }
+    }
+
+    &.margin {
+      margin: cRem(60) auto 0;
+    }
+
+    & > div {
+      margin: 0;
+    }
+
+    .extra-info__header {
+      margin: 1em 0 1em;
+      font-size: cRem(16);
+      font-weight: bold;
+    }
+
+    .description {
+      width: 100%;
+    }
+
+    .features {
+      & > .list {
+        margin: 0;
+        columns: 1;
+        max-width: none;
+        list-style: none;
+        padding-left: 0;
+
+        @media (min-width: $break-tablet) {
+          columns: 2;
+          column-gap: 2rem;
+          max-width: cRem(400);
+        }
+
+        @media (min-width: $break-tablet-large) {
+          max-width: cRem(500);
+        }
+        li {
+          display: inline-block;
+          width: 100%;
+          margin-bottom: 0.5em;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+
+    .dimensions-weight {
+      .dimensions {
+        margin-bottom: 1em;
+      }
+    }
+  }
+}
+
+@media (min-width: $break-tablet-large) {
+  .specs-wrap {
+    .specs {
+      flex-wrap: nowrap;
+      justify-content: center;
+      max-width: cRem(600);
+
+      & > div {
+        margin: 0 2%;
+        &:first-child {
+          margin-left: 0;
+        }
+        &::last-child {
+          margin-right: 0;
+        }
+      }
+
+      .extra-info__header {
+        margin: 0 0 1em;
+      }
+
+      .description {
+        width: auto;
+      }
+
+      .features,
+      .dimensions-weight {
+        float: none;
+        width: auto;
+        flex-shrink: 1;
+        flex-basis: 0;
+      }
+    }
+  }
+}

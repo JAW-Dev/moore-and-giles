@@ -1,0 +1,21 @@
+{
+  "name": "objectivco/mg-woocommerce-custom-fields",
+  "description": "Custom fields for WooCommerce",
+  "type": "wordpress-plugin",
+  "config": {
+    "optimize-autoloader": true,
+    "classmap-authoritative": true
+  },
+  "authors": [
+    {
+      "name": "Clifton Griffin",
+      "email": "clif@objectiv.co"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "MG_WooCommerce_Custom_Fields\\": "includes/"
+    },
+    "files": []
+  }
+}

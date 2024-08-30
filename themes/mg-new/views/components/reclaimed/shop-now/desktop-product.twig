@@ -1,0 +1,43 @@
+<div class="desktop-product">
+    {% set product_id = product.product.id %}
+    {% set wc_product = function( 'wc_get_product', product_id ) %}
+    {% set product_name = product.product.post_title %}
+    {% set product_price = wc_product.get_price_html %}
+    {% set backorders_allowed = wc_product.backorders_allowed %}
+    {% set is_on_backorder = wc_product.is_on_backorder %}
+    {% set product_add_link = "/cart?add-to-cart=#{product_id}" %}
+    {% set product_permalink = function( 'get_permalink', product_id ) %}
+
+    {% if( product.image ) %}
+        {% set product_image = function('wp_get_attachment_image', product.image, 'large') %}
+    {% else %}
+        {% set product_image_id = function('get_post_thumbnail_id', product_id) %}
+        {% set product_image = function('wp_get_attachment_image', product_image_id, 'large') %}
+    {% endif %}
+
+    <a href="{{ product_permalink }}">
+        {% if( product_image ) %}
+            {{ product_image }}
+        {% endif %}
+    </a>
+
+
+    <div class="product-title-wrap">
+        <a href="{{ product_permalink }}">
+            <h3 class="ff-roboto-slab">{{ product_name }}</h3>
+        </a>
+        <span class="price ff-roboto-slab">{{ product_price }}</span>
+    </div>
+
+    <div class="links-wrap">
+        <a href="{{ product_permalink }}" class="learn-more ff-roboto-slab">Learn More</a>
+
+        {% if( is_on_backorder ) %}
+            <a href="{{ product_add_link }}" class="add-cart ff-roboto-slab">Pre-Order</a>
+        {% else %}
+            <a href="{{ product_add_link }}" class="add-cart ff-roboto-slab">Add to Cart</a>
+        {% endif %}
+
+    </div>
+
+</div>

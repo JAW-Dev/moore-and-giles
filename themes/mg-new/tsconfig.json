@@ -1,0 +1,23 @@
+{
+	"compilerOptions": {
+		"module": "commonjs",
+		"target": "es5",
+		"experimentalDecorators": true,
+		"preserveConstEnums": true,
+		"sourceMap": true,
+		"allowJs": true,
+		"noImplicitUseStrict": true,
+		"lib": [
+			"es5",
+			"es2015",
+			"dom",
+			"scripthost"
+		]
+	},
+	"files": [
+		"typings/index.d.ts"
+	],
+	"include": [
+		"./typings-custom/**/*.ts"
+	]
+}

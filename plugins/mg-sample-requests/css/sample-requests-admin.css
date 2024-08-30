@@ -1,0 +1,8 @@
+th.column-sent {
+	width: 4%;
+	text-align: center;
+}
+
+input.sent-check {
+	margin-top: 10px;
+}

@@ -1,0 +1,51 @@
+// Font Size
+$base-font-size: $base-font-size;
+$base-desktop-font-size: $base-desktop-font-size;
+
+// Borders
+$base-border-color: $base-border-color;
+$base-border: $base-border;
+
+// Colors
+$accent-1: get-color(accent, 1); //#EDB111
+$accent-2: get-color(accent, 2); //#EFC34E
+$accent-3: get-color(accent, 3); //#C99200
+
+$dark-1: get-color(dark, 1); //#D8D8D8
+$dark-2: get-color(dark, 2); //#222E32
+$dark-3: get-color(dark, 3); //#6E7070
+$dark-4: get-color(dark, 4); //#979797
+
+$light-1: get-color(light, 1); //#F6F6F6
+$light-2: get-color(light, 2); //#FFF7E2
+$light-3: get-color(light, 3); //#F4F4F4
+$light-4: get-color(light, 4); //#9B9B9B
+$light-5: get-color(light, 5); //#DCDCDC
+
+$red: #ec5e5e;
+
+// Wraps
+$wrap-mobile: get-wrap(mobile);
+$wrap-desktop: get-wrap(desktop);
+$wrap-woo-archive: get-wrap(woo-archive);
+
+// Breakpoints
+$break-tablet: get-breakpoint(tablet);
+$break-tablet-large: get-breakpoint(tablet-large);
+$break-desktop: get-breakpoint(desktop);
+$break-desktop-large: get-breakpoint(desktop-large);
+$break-front-page-custom-breakpoint-cat-blocks: $front-page-custom-breakpoint-cat-blocks;
+
+// Fonts
+$font-sans: get-font(sans-serif), sans-serif;
+$font-serif: get-font(serif), serif;
+
+// Spacing
+$spacing-mobile: get-spacing(mobile);
+$spacing-desktop: get-spacing(desktop);
+$spacing-mobile-section: get-spacing(mobile-section);
+$spacing-desktop-section: get-spacing(desktop-section);
+$header-border-padding: $header-border-padding;
+
+// Shadows
+$menu-shadow: 0 13px 12px 0 rgba(0,0,0,0.07);

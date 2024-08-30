@@ -1,0 +1,20 @@
+{% set bh_blurb = post.get_field('bh_blurb') %}
+{% set bh_full_width_image = post.get_field('bh_full_width_image') %}
+{% if bh_blurb is not empty or bh_full_width_image is not empty %}
+    <section class="monogram-below-hero">
+        <div class="wrap p0">
+            <div class="monogram-below-hero__inner section-margin">
+                {% if bh_blurb is not empty %}
+                    <div class="monogram-below-hero__blurb">
+                        {{ bh_blurb }}</div>
+                {% endif %}
+            </div>
+        </div>
+        {% if bh_full_width_image is not empty %}
+            {% set img_id = bh_full_width_image %}
+            {% set image = img_id | get_timber_image_responsive('large') %}
+            <div class="monogram-below-hero__image-wrap">
+                <img class="monogram-below-hero__image" {{ image }}></div>
+            {% endif %}
+        </section>
+    {% endif %}

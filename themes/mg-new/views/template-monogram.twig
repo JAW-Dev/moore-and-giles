@@ -1,0 +1,22 @@
+{#
+Template Name: Monogram
+#}
+
+{% extends "base.twig" %}
+
+{% block layout %}
+    {{function('tha_content_before')}}
+    {{function('tha_content_top')}}
+    {% embed '/layouts/full-width.twig' %}
+        {% block content %}
+
+            <div class="monogram-template">
+                {% include 'components/monogram/below-hero.twig' %}
+                {% include 'components/monogram/form.twig' %}
+            </div>
+
+        {% endblock %}
+    {% endembed %}
+    {{function('tha_content_bottom')}}
+    {{function('tha_content_after')}}
+{% endblock %}

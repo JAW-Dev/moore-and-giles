@@ -1,0 +1,30 @@
+@charset "UTF-8";
+// ========================================
+// Columns
+// ========================================
+
+// Grid Columns
+//
+// @example
+//   Basic Usage Sass.
+//     .foo {
+//       @include columns($column-number);
+//     }
+
+@mixin col($columns) {
+	$width: get-col-width($columns);
+	width: get-columns($columns);
+
+	&.no-gutter {
+		width: calc((100% / 12) * #{$width});
+	}
+}
+
+@mixin columns($columns) {
+	.row > [class^="col"] {
+		&.col-#{$columns} {
+			@include col(#{$columns});
+			margin-right: $gutter;
+		}
+	}
+}

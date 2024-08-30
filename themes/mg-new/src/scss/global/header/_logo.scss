@@ -1,0 +1,24 @@
+.site-header {
+  .site-header-main {
+    .logo {
+      svg.logo-mobile {
+        height: auto;
+        min-width: cRem(128);
+
+        @media (min-width: $break-tablet-large) {
+          display: none;
+        }
+      }
+
+      svg.logo-desktop {
+        display: none;
+
+        @media (min-width: $break-tablet-large) {
+          display: block;
+          height: auto;
+          max-width: cRem(160);
+        }
+      }
+    }
+  }
+}

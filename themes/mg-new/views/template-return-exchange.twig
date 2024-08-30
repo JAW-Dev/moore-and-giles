@@ -1,0 +1,21 @@
+{#
+Template Name: Return or Exchange
+#}
+
+{% extends "base.twig" %}
+
+{% block layout %}
+    {{function('tha_content_before')}}
+    {{function('tha_content_top')}}
+    {% embed '/layouts/full-width.twig' %}
+        {% block content %}
+
+            {% include 'components/return-exchange/begin.twig' %}
+            {% include 'components/return-exchange/how-it-works.twig' %}
+            {% include 'components/return-exchange/faq.twig' %}
+
+        {% endblock %}
+    {% endembed %}
+    {{function('tha_content_bottom')}}
+    {{function('tha_content_after')}}
+{% endblock %}

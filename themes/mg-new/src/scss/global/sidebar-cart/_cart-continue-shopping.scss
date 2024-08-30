@@ -1,0 +1,40 @@
+body.mg-body button.sidebar-cart__close {
+  background-color: transparent;
+  border: none;
+  border-radius: 0px;
+  color: $dark-4;
+  cursor: default;
+  font-size: cRem(16);
+  letter-spacing: normal;
+  padding: 0 0 rem(60);
+  font-weight: 500;
+  font-family: $font-sans;
+  text-transform: none;
+  &:before {
+    content: '<';
+    padding-right: cRem(8);
+  }
+  &:hover {
+    cursor: pointer;
+    color: $dark-3;
+    background-color: transparent;
+  }
+  @media (min-width: $break-tablet-large) {
+    background-color: transparent;
+    border: none;
+    border-radius: 0px;
+    color: $dark-4;
+    cursor: default;
+    font-size: cRem(16);
+    letter-spacing: normal;
+    padding: 0 0 cRem(60);
+    font-weight: 500;
+    font-family: $font-sans;
+    text-transform: none;
+    &:hover {
+      cursor: pointer;
+      color: $dark-3;
+      background-color: transparent;
+    }
+  }
+}

@@ -1,0 +1,49 @@
+.materials-matter {
+  background-position: center bottom;
+  background-size: contain;
+
+  .wrap {
+    display: flex;
+    padding: 3em 0 6em 0;
+  }
+
+  &__side-image-wrap {
+    display: none;
+    width: 50%;
+
+    @media ( min-width: $break-tablet ) {
+      display: block;
+    }
+  }
+  &__side-image {
+    display: none;
+
+    @media (min-width: $break-front-page-custom-breakpoint-cat-blocks) {
+      display: block;
+    }
+  }
+
+  &__body {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    @media (min-width: $break-front-page-custom-breakpoint-cat-blocks) {
+      width: 50%;
+    }
+
+    .title {
+      color: $accent-1;
+      font-weight: 600;
+      margin-bottom: 0.75em;
+    }
+
+    .text {
+      line-height: 1.5em;
+      max-width: 400px;
+      margin: 0 auto 2rem;
+    }
+  }
+}

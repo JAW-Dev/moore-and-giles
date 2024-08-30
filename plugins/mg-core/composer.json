@@ -1,0 +1,25 @@
+{
+	"name" : "objectivco/mg-core",
+	"description" : "Modular extensions for MG site.",
+	"type" : "wordpress-plugin",
+	"keywords" : [ "wordpress" ],
+	"license" : "GPL-2.0+",
+	"authors" : [
+		{
+			"name" : "Clifton Griffin",
+			"email" : "clif@objectiv.co",
+			"role" : "Lead Developer"
+		}
+	],
+	"autoload" : {
+		"psr-4" : {
+			"MG_Core\\" : "src"
+		}
+	},
+	"require" : {
+		"php" : ">=5.3.0",
+		"symfony/finder": "^4.2",
+		"kint-php/kint": "^3.1",
+		"objectivco/wordpress-simple-settings": "^0.6.0"
+	}
+}

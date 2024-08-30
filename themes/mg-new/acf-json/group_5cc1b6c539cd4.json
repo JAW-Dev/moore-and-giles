@@ -1,0 +1,78 @@
+{
+	"key": "group_5cc1b6c539cd4",
+	"title": "Component - Gift Wrapping",
+	"fields": [
+		{
+			"key": "field_5cc1b739c6207",
+			"label": "Enable Gift Wrapping",
+			"name": "mg_product_enable_gift_wrapping",
+			"type": "true_false",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"message": "",
+			"default_value": 0,
+			"ui": 0,
+			"ui_on_text": "",
+			"ui_off_text": ""
+		},
+		{
+			"key": "field_5cc1b6d5c6206",
+			"label": "Gift Box Size",
+			"name": "mg_gift_box_size",
+			"type": "select",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": [
+				[
+					{
+						"field": "field_5cc1b739c6207",
+						"operator": "==",
+						"value": "1"
+					}
+				]
+			],
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"choices": {
+				"large": "Large",
+				"small": "Small"
+			},
+			"default_value": [
+				"large"
+			],
+			"allow_null": 0,
+			"multiple": 0,
+			"ui": 0,
+			"return_format": "value",
+			"ajax": 0,
+			"placeholder": ""
+		}
+	],
+	"location": [
+		[
+			{
+				"param": "post_type",
+				"operator": "==",
+				"value": "product"
+			}
+		]
+	],
+	"menu_order": 0,
+	"position": "side",
+	"style": "default",
+	"label_placement": "top",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": 1,
+	"description": "",
+	"modified": 1580230800
+}

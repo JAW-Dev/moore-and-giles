@@ -1,0 +1,26 @@
+{% if post.get_field('panels') %}
+    <section class="branding-image-panels">
+        <div class="branding-image-panels__inner">
+            {% for ipanel in post.get_field('panels') %}
+                {% set section_id = ipanel.panel_meta_section_id %}
+                {% set img_id = ipanel.background_image %}
+                {% set img_src = img_id | get_timber_image_src('large') %}
+                {% set title = ipanel.title %}
+                {% set button = ipanel.button %}
+                <div class="branding-image-panel bg-img" id={{section_id}} style="background-image: url({{img_src}});">
+                    <div class="wrap p0">
+                        <div class="branding-image-panel__content">
+                            {% if title %}
+                                <h2 class="branding-image-panel__title">
+                                    {{ title }}</h2>
+                            {% endif %}
+							{% if button %}
+								<a target="{{button.target}}" href="{{button.url}}" class="button button__ghost">{{button.title}}</a>
+							{% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endif %}
